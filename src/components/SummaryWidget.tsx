@@ -60,18 +60,20 @@ const SummaryWidget: React.FC = () => {
   else if (totalAmount < 0) totalAmountColor = 'red';
 
   return (
-    <div className="p-4 bg-primary-subtle d-inline-block rounded mb-4">
-      <h2>Financial Summary</h2>
-      <p>
-        Total Amount:{' '}
-        <span style={{ color: totalAmountColor }}>
-          <strong>{formatPrice(totalAmount)}</strong>
-        </span>
-      </p>
-      <p>
-        Invoices Created in the Last 30 Days: <strong>{invoicesLast30Days}</strong>
-      </p>
-    </div>
+    <>
+      <div className="p-4 bg-primary-subtle d-inline-block rounded mb-4">
+        <h2>Financial Summary</h2>
+        <p>
+          Total Amount:{' '}
+          <span style={{ color: totalAmountColor }}>
+            <strong>{formatPrice(totalAmount)}</strong>
+          </span>
+        </p>
+        <p>
+          Invoices Created in the Last 30 Days: <strong>{invoicesLast30Days}</strong>
+        </p>
+      </div>
+    </>
   );
 };
 
