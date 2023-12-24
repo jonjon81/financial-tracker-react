@@ -1,0 +1,62 @@
+[
+  {
+    "clientName": "Client A",
+    "creationDate": "2023-10-01",
+    "referenceNumber": "INV-001",
+    "amount": -1500
+  },
+  {
+    "clientName": "Client B",
+    "creationDate": "2023-11-02",
+    "referenceNumber": "INV-002",
+    "amount": 8000.25
+  },
+  {
+    "clientName": "Client C",
+    "creationDate": "2023-12-03",
+    "referenceNumber": "INV-003",
+    "amount": 1800
+  },
+  {
+    "clientName": "Client D",
+    "creationDate": "2023-12-04",
+    "referenceNumber": "INV-004",
+    "amount": 1200
+  },
+  {
+    "clientName": "Client E",
+    "creationDate": "2023-12-05",
+    "referenceNumber": "INV-005",
+    "amount": 1600
+  },
+  {
+    "clientName": "Client F",
+    "creationDate": "2023-12-06",
+    "referenceNumber": "INV-006",
+    "amount": 1400
+  },
+  {
+    "clientName": "Client G",
+    "creationDate": "2023-12-07",
+    "referenceNumber": "INV-007",
+    "amount": 2200.5
+  },
+  {
+    "clientName": "Client H",
+    "creationDate": "2023-12-08",
+    "referenceNumber": "INV-008",
+    "amount": 1900
+  },
+  {
+    "clientName": "Client I",
+    "creationDate": "2023-12-09",
+    "referenceNumber": "INV-009",
+    "amount": 2500.75
+  },
+  {
+    "clientName": "Client J",
+    "creationDate": "2023-12-10",
+    "referenceNumber": "INV-010",
+    "amount": 2100
+  }
+]

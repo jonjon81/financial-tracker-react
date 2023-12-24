@@ -1,0 +1,74 @@
+[
+  {
+    "transactionDate": "2023-12-11",
+    "description": "Refund Issued",
+    "referenceNumber": "INV-001",
+    "amount": -1500
+  },
+  {
+    "transactionDate": "2023-12-12",
+    "description": "Payment received",
+    "referenceNumber": "INV-002",
+    "amount": 8000.25
+  },
+  {
+    "transactionDate": "2023-12-14",
+    "description": "Payment received",
+    "referenceNumber": "INV-004",
+    "amount": 1200
+  },
+  {
+    "transactionDate": "2023-12-15",
+    "description": "Payment received",
+    "referenceNumber": "INV-005",
+    "amount": 1600
+  },
+  {
+    "transactionDate": "2023-12-16",
+    "description": "Payment received",
+    "referenceNumber": "INV-006",
+    "amount": 1400
+  },
+  {
+    "transactionDate": "2023-12-17",
+    "description": "Payment received",
+    "referenceNumber": "INV-007",
+    "amount": 2200.5
+  },
+  {
+    "transactionDate": "2023-12-19",
+    "description": "Payment received",
+    "referenceNumber": "INV-009",
+    "amount": 2500.75
+  },
+  {
+    "transactionDate": "2023-12-20",
+    "description": "Expense Paid",
+    "referenceNumber": "EXP-001",
+    "amount": -3243
+  },
+  {
+    "transactionDate": "2023-12-21",
+    "description": "Expense Paid",
+    "referenceNumber": "EXP-002",
+    "amount": -134
+  },
+  {
+    "transactionDate": "2023-12-21",
+    "description": "Expense Paid",
+    "referenceNumber": "EXP-003",
+    "amount": -222
+  },
+  {
+    "transactionDate": "2023-12-21",
+    "description": "Expense Paid",
+    "referenceNumber": "EXP-004",
+    "amount": -400
+  },
+  {
+    "transactionDate": "2023-12-22",
+    "description": "Expense Paid",
+    "referenceNumber": "EXP-005",
+    "amount": -600
+  }
+]
