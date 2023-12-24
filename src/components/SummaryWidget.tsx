@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Transaction } from '../types/Transactions';
 import { fetchTransactions } from '../services/mockBackend';
-import { fetchInvoices } from '../services/mockBackend';
-import { Invoice } from '../types/Invoice';
 import { formatPrice } from '../utils/helpers';
 
-const SummaryWidget: React.FC = () => {
+interface SummaryProps {
+  receivedData: number;
+}
+
+const SummaryWidget: React.FC<SummaryProps> = ({ receivedData }) => {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
-  const [invoices, setInvoices] = useState<Invoice[]>([]);
 
   useEffect(() => {
     // Fetch mock transactions data
@@ -20,18 +21,7 @@ const SummaryWidget: React.FC = () => {
       }
     };
 
-    // Fetch mock invoices data
-    const fetchInvoicesData = async () => {
-      try {
-        const data = await fetchInvoices();
-        setInvoices(data);
-      } catch (error) {
-        console.error('Error fetching mock invoices:', error);
-      }
-    };
-
     fetchTransactionsData();
-    fetchInvoicesData();
   }, []);
 
   const calculateTotalAmount = (): number => {
@@ -39,18 +29,7 @@ const SummaryWidget: React.FC = () => {
     return transactions.reduce((total, transaction) => total + transaction.amount, 0);
   };
 
-  const calculateInvoicesCreatedLast30Days = (): number => {
-    const thirtyDaysAgo = new Date();
-    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-
-    // Filter invoices created in the last 30 days
-    const invoicesLast30Days = invoices.filter((invoice) => new Date(invoice.creationDate) >= thirtyDaysAgo);
-
-    return invoicesLast30Days.length;
-  };
-
   const totalAmount = calculateTotalAmount();
-  const invoicesLast30Days = calculateInvoicesCreatedLast30Days();
 
   // Determine color based on total amount
   let totalAmountColor = 'black';
@@ -70,7 +49,7 @@ const SummaryWidget: React.FC = () => {
           </span>
         </p>
         <p>
-          Invoices Created in the Last 30 Days: <strong>{invoicesLast30Days}</strong>
+          Invoices Created in the Last 30 Days: <strong>{receivedData}</strong>
         </p>
       </div>
     </>

@@ -3,7 +3,11 @@ import { fetchInvoices, fetchTransactions } from '../services/mockBackend';
 import { Invoice } from '../types/Invoice';
 import { formatPrice } from '../utils/helpers';
 
-const InvoicesWidget: React.FC = () => {
+interface InvoicesProps {
+  sendDataToSibling: (data: number) => void;
+}
+
+const InvoicesWidget: React.FC<InvoicesProps> = ({ sendDataToSibling }) => {
   const [invoices, setInvoices] = useState<Invoice[]>([]);
   const [showModal, setShowModal] = useState<boolean>(false);
   const [newInvoice, setNewInvoice] = useState<Partial<Invoice>>({
@@ -48,6 +52,18 @@ const InvoicesWidget: React.FC = () => {
     };
 
     fetchData();
+
+    // Fetch mock invoices data
+    const fetchInvoicesData = async () => {
+      try {
+        const data = await fetchInvoices();
+        setInvoices(data);
+      } catch (error) {
+        console.error('Error fetching mock invoices:', error);
+      }
+    };
+
+    fetchInvoicesData();
   }, []);
 
   const handleCreateInvoice = () => {
@@ -60,10 +76,21 @@ const InvoicesWidget: React.FC = () => {
       amount: 0,
       status: 'UNPAID',
     });
-
-    console.dir('invoice widget');
-    console.dir(invoices);
   };
+
+  useEffect(() => {
+    const calculateInvoicesCreatedLast30Days = (): number => {
+      const thirtyDaysAgo = new Date();
+      thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+      // Filter invoices created in the last 30 days
+      const invoicesLast30Days = invoices.filter((invoice) => new Date(invoice.creationDate) >= thirtyDaysAgo);
+      return invoicesLast30Days.length;
+    };
+
+    const invoicesLast30Days = calculateInvoicesCreatedLast30Days();
+    sendDataToSibling(invoicesLast30Days);
+  });
 
   return (
     <div className="p-4 bg-primary-subtle rounded">
