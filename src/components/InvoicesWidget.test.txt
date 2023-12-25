@@ -1,0 +1,17 @@
+Starting notes to incorporate for testing with Jest:
+
+1) Conditional Rendering:
+    - Test situations where conditional rendering occurs based on certain conditions.
+    - make sure the component displays the correct content based on conditions (add and update modal).
+
+2) Props Handling:
+    - Test the component with different types or prop values
+
+3) Component interaction: 
+    - Test user interactions: clicks, input changes, and form submissions
+
+4) Rendering: 
+    - Check if the component renders without throwing any errors
+
+5) State and Data:
+    - Verify if state updates result in the expected data/ui changes
