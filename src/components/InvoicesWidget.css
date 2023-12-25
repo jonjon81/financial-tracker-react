@@ -1,0 +1,12 @@
+.table tr:hover * {
+  background: #000;
+  color: #fff;
+}
+
+.table tr {
+  cursor: pointer;
+}
+
+input {
+  padding: 0.25rem;
+}
