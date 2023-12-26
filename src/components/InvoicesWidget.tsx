@@ -62,18 +62,6 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ sendDataToSibling }) => {
     };
 
     fetchData();
-
-    // Fetch mock invoices data
-    const fetchInvoicesData = async () => {
-      try {
-        const data = await fetchInvoices();
-        setInvoices(data);
-      } catch (error) {
-        console.error('Error fetching mock invoices:', error);
-      }
-    };
-
-    fetchInvoicesData();
   }, []);
 
   const handleCreateInvoice = () => {
