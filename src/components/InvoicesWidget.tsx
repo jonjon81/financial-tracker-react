@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { fetchInvoices, fetchTransactions } from '../services/mockBackend';
+import React, { useEffect, useState } from 'react';
 import { Invoice } from '../types/Invoice';
+import { Transaction } from '../types/Transaction';
 import { formatPrice } from '../utils/helpers';
 import './InvoicesWidget.css';
 
 interface InvoicesProps {
-  sendDataToSibling: (data: number) => void;
+  invoices: Invoice[];
+  setInvoices: React.Dispatch<React.SetStateAction<Invoice[]>>;
+  transactions: Transaction[];
 }
 
-const InvoicesWidget: React.FC<InvoicesProps> = ({ sendDataToSibling }) => {
-  const [invoices, setInvoices] = useState<Invoice[]>([]);
+const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transactions }) => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [newInvoice, setNewInvoice] = useState<Partial<Invoice>>({
     clientName: '',
@@ -19,61 +20,34 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ sendDataToSibling }) => {
     status: 'UNPAID',
   });
 
+  const openEditModal = (invoice: Invoice) => {
+    setEditInvoice(invoice);
+  };
+
   const [editInvoice, setEditInvoice] = useState<Partial<Invoice> | null>(null);
-  ({
-    clientName: '',
-    creationDate: '',
-    referenceNumber: '',
-    amount: 0,
-    status: '',
-  });
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const invoicesData = await fetchInvoices();
-        const transactionsData = await fetchTransactions();
-
-        const updatedInvoices = invoicesData.map((invoice) => {
-          const relatedTransactions = transactionsData.filter(
-            (transaction) =>
-              transaction.referenceNumber === invoice.referenceNumber && transaction.amount === invoice.amount
-          );
-
-          if (relatedTransactions.length > 0) {
-            const latestTransaction = relatedTransactions.reduce((prev, current) => {
-              return new Date(current.transactionDate) > new Date(prev.transactionDate) ? current : prev;
-            });
-
-            if (new Date(latestTransaction.transactionDate) > new Date(invoice.creationDate)) {
-              return { ...invoice, status: 'PAID' };
-            } else {
-              return { ...invoice, status: 'UNPAID' };
-            }
-          } else {
-            return { ...invoice, status: 'UNPAID' };
-          }
-        });
-
-        setInvoices(updatedInvoices);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   const handleCreateInvoice = () => {
-    setInvoices([...invoices, newInvoice as Invoice]);
-    setShowModal(false);
-    setNewInvoice({
-      clientName: '',
-      creationDate: '',
-      referenceNumber: '',
-      amount: 0,
-      status: 'UNPAID',
-    });
+    if (newInvoice.clientName && newInvoice.creationDate && newInvoice.referenceNumber && newInvoice.amount) {
+      const createdInvoice: Invoice = {
+        clientName: newInvoice.clientName,
+        creationDate: newInvoice.creationDate,
+        referenceNumber: newInvoice.referenceNumber,
+        amount: newInvoice.amount,
+        status: 'UNPAID',
+      };
+
+      const updatedInvoices = [...invoices, createdInvoice];
+      setInvoices(updatedInvoices);
+
+      setShowModal(false);
+      setNewInvoice({
+        clientName: '',
+        creationDate: '',
+        referenceNumber: '',
+        amount: 0,
+        status: 'UNPAID',
+      });
+    }
   };
 
   const handleUpdateInvoice = () => {
@@ -81,28 +55,33 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ sendDataToSibling }) => {
       const updatedInvoices = invoices.map((invoice) =>
         invoice.referenceNumber === editInvoice.referenceNumber ? { ...invoice, ...editInvoice } : invoice
       );
+
       setInvoices(updatedInvoices);
       setEditInvoice(null);
     }
   };
 
   useEffect(() => {
-    const calculateInvoicesCreatedLast30Days = (): number => {
-      const thirtyDaysAgo = new Date();
-      thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+    const updatedInvoices = invoices.map((invoice) => {
+      const matchedTransaction = transactions.find(
+        (transaction) =>
+          new Date(transaction.transactionDate) > new Date(invoice.creationDate) &&
+          transaction.amount === invoice.amount &&
+          transaction.referenceNumber === invoice.referenceNumber
+      );
 
-      // Filter invoices created in the last 30 days
-      const invoicesLast30Days = invoices.filter((invoice) => new Date(invoice.creationDate) >= thirtyDaysAgo);
-      return invoicesLast30Days.length;
-    };
+      return {
+        ...invoice,
+        status: matchedTransaction ? 'PAID' : 'UNPAID',
+      };
+    });
 
-    const invoicesLast30Days = calculateInvoicesCreatedLast30Days();
-    sendDataToSibling(invoicesLast30Days);
-  });
+    const statusesChanged = updatedInvoices.some((invoice, index) => invoice.status !== invoices[index].status);
 
-  const openEditModal = (invoice: Invoice) => {
-    setEditInvoice(invoice);
-  };
+    if (statusesChanged) {
+      setInvoices(updatedInvoices);
+    }
+  }, [invoices, transactions, setInvoices]);
 
   return (
     <div className="p-4 bg-primary-subtle rounded">
@@ -112,6 +91,30 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ sendDataToSibling }) => {
           Add New Invoice
         </button>
       </div>
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Client Name</th>
+            <th scope="col">Creation Date</th>
+            <th scope="col">Reference Number</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {invoices.map((invoice, index) => (
+            <tr key={invoice.referenceNumber} onClick={() => openEditModal(invoice)}>
+              <th scope="row">{index + 1}</th>
+              <td>{invoice.clientName}</td>
+              <td>{invoice.creationDate}</td>
+              <td>{invoice.referenceNumber}</td>
+              <td>{formatPrice(invoice.amount)}</td>
+              <td>{invoice.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
       {showModal && (
         <div className="modal bg-dark-subtle d-flex justify-content-center align-items-center">
           <div className="modal-content" style={{ width: '400px', height: 'auto', padding: '1rem' }}>
@@ -174,7 +177,6 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ sendDataToSibling }) => {
           </div>
         </div>
       )}
-
       {editInvoice && (
         <div className="modal bg-dark-subtle d-flex justify-content-center align-items-center">
           <div className="modal-content" style={{ width: '400px', height: 'auto', padding: '1rem' }}>
@@ -227,31 +229,6 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ sendDataToSibling }) => {
           </div>
         </div>
       )}
-
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Client Name</th>
-            <th scope="col">Creation Date</th>
-            <th scope="col">Reference Number</th>
-            <th scope="col">Amount</th>
-            <th scope="col">Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {invoices.map((invoice, index) => (
-            <tr key={invoice.referenceNumber} onClick={() => openEditModal(invoice)}>
-              <th scope="row">{index + 1}</th>
-              <td>{invoice.clientName}</td>
-              <td>{invoice.creationDate}</td>
-              <td>{invoice.referenceNumber}</td>
-              <td>{formatPrice(invoice.amount)}</td>
-              <td>{invoice.status}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
     </div>
   );
 };

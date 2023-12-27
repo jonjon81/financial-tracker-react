@@ -1,31 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { Transaction } from '../types/Transactions';
-import { fetchTransactions } from '../services/mockBackend';
+import React from 'react';
+import { Transaction } from '../types/Transaction';
 import { formatPrice } from '../utils/helpers';
 
 interface SummaryProps {
-  receivedData: number;
+  invoicesLast30Days: number;
+  transactions: Transaction[];
 }
 
-const SummaryWidget: React.FC<SummaryProps> = ({ receivedData }) => {
-  const [transactions, setTransactions] = useState<Transaction[]>([]);
-
-  useEffect(() => {
-    // Fetch mock transactions data
-    const fetchTransactionsData = async () => {
-      try {
-        const data = await fetchTransactions();
-        setTransactions(data);
-      } catch (error) {
-        console.error('Error fetching mock transactions:', error);
-      }
-    };
-
-    fetchTransactionsData();
-  }, []);
-
+const SummaryWidget: React.FC<SummaryProps> = ({ invoicesLast30Days, transactions }) => {
   const calculateTotalAmount = (): number => {
-    // Calculate total amount from transactions
     return transactions.reduce((total, transaction) => total + transaction.amount, 0);
   };
 
@@ -49,7 +32,7 @@ const SummaryWidget: React.FC<SummaryProps> = ({ receivedData }) => {
           </span>
         </p>
         <p>
-          Invoices Created in the Last 30 Days: <strong>{receivedData}</strong>
+          Invoices Created in the Last 30 Days: <strong>{invoicesLast30Days}</strong>
         </p>
       </div>
     </>

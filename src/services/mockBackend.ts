@@ -1,4 +1,4 @@
-import { Transaction } from '../types/Transactions';
+import { Transaction } from '../types/Transaction';
 import { Invoice } from '../types/Invoice';
 
 const transactionsURL = '../mockData/transactions.json';
