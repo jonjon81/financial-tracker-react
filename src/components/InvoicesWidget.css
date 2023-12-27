@@ -1,9 +1,14 @@
-.table tr:hover * {
+.table-row:hover * {
   background: #000;
   color: #fff;
 }
 
-.table tr {
+.table [scope='col']:hover {
+  color: red;
+}
+
+.table-row,
+.table [scope='col'] {
   cursor: pointer;
 }
 

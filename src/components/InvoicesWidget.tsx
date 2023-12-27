@@ -10,6 +10,13 @@ interface InvoicesProps {
   transactions: Transaction[];
 }
 
+enum SortDirection {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+
+type ColumnHeader = keyof Invoice;
+
 const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transactions }) => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [newInvoice, setNewInvoice] = useState<Partial<Invoice>>({
@@ -18,6 +25,11 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
     referenceNumber: '',
     amount: 0,
     status: 'UNPAID',
+  });
+
+  const [sortConfig, setSortConfig] = useState<{ column: ColumnHeader | null; direction: SortDirection }>({
+    column: null,
+    direction: SortDirection.ASC,
   });
 
   const openEditModal = (invoice: Invoice) => {
@@ -83,6 +95,27 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
     }
   }, [invoices, transactions, setInvoices]);
 
+  const sortTable = (column: ColumnHeader) => {
+    const direction =
+      sortConfig.column === column && sortConfig.direction === SortDirection.ASC
+        ? SortDirection.DESC
+        : SortDirection.ASC;
+
+    setSortConfig({ column, direction });
+
+    const sortedInvoices = [...invoices].sort((a, b) => {
+      if (a[column] < b[column]) {
+        return direction === SortDirection.ASC ? -1 : 1;
+      }
+      if (a[column] > b[column]) {
+        return direction === SortDirection.ASC ? 1 : -1;
+      }
+      return 0;
+    });
+
+    setInvoices(sortedInvoices);
+  };
+
   return (
     <div className="p-4 bg-primary-subtle rounded">
       <div className="upper-container d-flex align-content-center justify-content-between">
@@ -94,17 +127,27 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
       <table className="table table-striped">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Client Name</th>
-            <th scope="col">Creation Date</th>
-            <th scope="col">Reference Number</th>
-            <th scope="col">Amount</th>
-            <th scope="col">Status</th>
+            <th>#</th>
+            <th scope="col" onClick={() => sortTable('clientName')}>
+              Client Name
+            </th>
+            <th scope="col" onClick={() => sortTable('creationDate')}>
+              Creation Date
+            </th>
+            <th scope="col" onClick={() => sortTable('referenceNumber')}>
+              Reference Number
+            </th>
+            <th scope="col" onClick={() => sortTable('amount')}>
+              Amount
+            </th>
+            <th scope="col" onClick={() => sortTable('status')}>
+              Status
+            </th>
           </tr>
         </thead>
         <tbody>
           {invoices.map((invoice, index) => (
-            <tr key={invoice.referenceNumber} onClick={() => openEditModal(invoice)}>
+            <tr className="table-row" key={invoice.referenceNumber} onClick={() => openEditModal(invoice)}>
               <th scope="row">{index + 1}</th>
               <td>{invoice.clientName}</td>
               <td>{invoice.creationDate}</td>
