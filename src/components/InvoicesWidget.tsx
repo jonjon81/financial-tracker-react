@@ -194,7 +194,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
         </tbody>
       </table>
       {showModal && (
-        <div className="modal bg-dark-subtle d-flex justify-content-center align-items-center">
+        <div className="modal d-flex justify-content-center align-items-center" onClick={() => setShowModal(false)}>
           <div className="modal-content" style={{ width: '400px', height: 'auto', padding: '1rem' }}>
             <div className="button-container d-flex justify-content-end">
               <button
@@ -256,7 +256,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
         </div>
       )}
       {editInvoice && (
-        <div className="modal bg-dark-subtle d-flex justify-content-center align-items-center">
+        <div className="modal d-flex justify-content-center align-items-center" onClick={() => setEditInvoice(null)}>
           <div className="modal-content" style={{ width: '400px', height: 'auto', padding: '1rem' }}>
             <div className="button-container d-flex justify-content-end">
               <button

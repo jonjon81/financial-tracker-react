@@ -18,3 +18,7 @@ th.active svg {
 input {
   padding: 0.25rem;
 }
+
+.modal {
+  background: rgba(0, 0, 0, 0.7);
+}
