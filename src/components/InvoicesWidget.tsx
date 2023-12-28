@@ -141,38 +141,48 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
         <thead>
           <tr>
             <th>#</th>
-            <th
-              scope="col"
-              onClick={() => sortTable('clientName')}
-              className={activeColumn === 'clientName' ? 'active' : ''}
-            >
-              Client Name {activeColumn === 'clientName' && renderSortIcon('clientName')}
+            <th scope="col" className={activeColumn === 'clientName' ? 'active' : ''}>
+              <button className="btn btn-primary" onClick={() => sortTable('clientName')}>
+                Client Name {activeColumn === 'clientName' && renderSortIcon('clientName')}
+              </button>
             </th>
-            <th
-              scope="col"
-              onClick={() => sortTable('creationDate')}
-              className={activeColumn === 'creationDate' ? 'active' : ''}
-            >
-              Creation Date {activeColumn === 'creationDate' && renderSortIcon('creationDate')}
+            <th scope="col" className={activeColumn === 'creationDate' ? 'active' : ''}>
+              <button className="btn btn-primary" onClick={() => sortTable('creationDate')}>
+                Creation Date {activeColumn === 'creationDate' && renderSortIcon('creationDate')}
+              </button>
             </th>
-            <th
-              scope="col"
-              onClick={() => sortTable('referenceNumber')}
-              className={activeColumn === 'referenceNumber' ? 'active' : ''}
-            >
-              Reference Number {activeColumn === 'referenceNumber' && renderSortIcon('referenceNumber')}
+            <th scope="col" className={activeColumn === 'referenceNumber' ? 'active' : ''}>
+              <button className="btn btn-primary" onClick={() => sortTable('referenceNumber')}>
+                Reference Number {activeColumn === 'referenceNumber' && renderSortIcon('referenceNumber')}
+              </button>
             </th>
-            <th scope="col" onClick={() => sortTable('amount')} className={activeColumn === 'amount' ? 'active' : ''}>
-              Amount {activeColumn === 'amount' && renderSortIcon('amount')}
+            <th scope="col" className={activeColumn === 'amount' ? 'active' : ''}>
+              <button className="btn btn-primary" onClick={() => sortTable('amount')}>
+                Amount {activeColumn === 'amount' && renderSortIcon('amount')}
+              </button>
             </th>
-            <th scope="col" onClick={() => sortTable('status')} className={activeColumn === 'status' ? 'active' : ''}>
-              Status {activeColumn === 'status' && renderSortIcon('status')}
+            <th scope="col" className={activeColumn === 'status' ? 'active' : ''}>
+              <button className="btn btn-primary" onClick={() => sortTable('status')}>
+                Status {activeColumn === 'status' && renderSortIcon('status')}
+              </button>
             </th>
           </tr>
         </thead>
         <tbody>
           {invoices.map((invoice, index) => (
-            <tr className="table-row" key={invoice.referenceNumber} onClick={() => openEditModal(invoice)}>
+            <tr
+              className="table-row"
+              key={invoice.referenceNumber}
+              onClick={() => openEditModal(invoice)}
+              onKeyPress={(event) => {
+                if (event.key === 'Enter') {
+                  openEditModal(invoice);
+                }
+              }}
+              tabIndex={0}
+              aria-label={`Edit invoice ${index + 1}`}
+              role="button"
+            >
               <th scope="row">{index + 1}</th>
               <td>{invoice.clientName}</td>
               <td>{invoice.creationDate}</td>
