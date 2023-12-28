@@ -95,6 +95,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
     }
   }, [invoices, transactions, setInvoices]);
 
+  // Function to handle sorting
   const sortTable = (column: ColumnHeader) => {
     const direction =
       sortConfig.column === column && sortConfig.direction === SortDirection.ASC
@@ -127,7 +128,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
       <table className="table table-striped">
         <thead>
           <tr>
-            <th>#</th>
+            <th scope="col">#</th>
             <th scope="col" onClick={() => sortTable('clientName')}>
               Client Name
             </th>
