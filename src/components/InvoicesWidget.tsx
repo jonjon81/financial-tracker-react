@@ -29,20 +29,35 @@ type ColumnHeader = keyof Invoice;
 
 const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transactions }) => {
   const [showModal, setShowModal] = useState<boolean>(false);
-  // const [newInvoice, setNewInvoice] = useState<Partial<Invoice>>({
-  //   clientName: '',
-  //   creationDate: '',
-  //   referenceNumber: '',
-  //   amount: 0,
-  //   status: 'UNPAID',
-  // });
+  const handleCloseModal = () => {
+    setShowModal(false);
+    reset();
+  };
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormData>();
-  const onSubmit = (data: FieldValues) => console.log(data);
+
+  const onSubmit = (data: FieldValues) => {
+    const { clientName, amount, date, referenceNumber } = data;
+
+    const createdInvoice: Invoice = {
+      clientName,
+      creationDate: date,
+      referenceNumber,
+      amount,
+      status: 'UNPAID',
+    };
+
+    const updatedInvoices = [...invoices, createdInvoice];
+    setInvoices(updatedInvoices);
+
+    setShowModal(false);
+    reset();
+  };
 
   const [sortConfig, setSortConfig] = useState<{ column: ColumnHeader | null; direction: SortDirection }>({
     column: null,
@@ -54,30 +69,6 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
   };
 
   const [editInvoice, setEditInvoice] = useState<Partial<Invoice> | null>(null);
-
-  // const handleCreateInvoice = () => {
-  //   if (newInvoice.clientName && newInvoice.creationDate && newInvoice.referenceNumber && newInvoice.amount) {
-  //     const createdInvoice: Invoice = {
-  //       clientName: newInvoice.clientName,
-  //       creationDate: newInvoice.creationDate,
-  //       referenceNumber: newInvoice.referenceNumber,
-  //       amount: newInvoice.amount,
-  //       status: 'UNPAID',
-  //     };
-
-  //     const updatedInvoices = [...invoices, createdInvoice];
-  //     setInvoices(updatedInvoices);
-
-  //     setShowModal(false);
-  //     setNewInvoice({
-  //       clientName: '',
-  //       creationDate: '',
-  //       referenceNumber: '',
-  //       amount: 0,
-  //       status: 'UNPAID',
-  //     });
-  //   }
-  // };
 
   const handleUpdateInvoice = () => {
     if (editInvoice) {
@@ -209,7 +200,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
         </tbody>
       </table>
       {showModal && (
-        <div className="modal d-flex justify-content-center align-items-center" onClick={() => setShowModal(false)}>
+        <div className="modal d-flex justify-content-center align-items-center" onClick={() => handleCloseModal()}>
           <div className="modal-content" style={{ width: '400px', height: 'auto', padding: '1rem' }}>
             <div className="button-container d-flex justify-content-end">
               <button
@@ -217,7 +208,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
                 className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
-                onClick={() => setShowModal(false)}
+                onClick={() => handleCloseModal()}
               ></button>
             </div>
             <h2 className="mb-4">Add New Invoice</h2>
