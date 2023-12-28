@@ -3,6 +3,10 @@
   color: #fff;
 }
 
+.table tr * {
+  text-align: center;
+}
+
 .table [scope='col']:hover {
   color: red;
 }
@@ -10,6 +14,14 @@
 .table-row,
 .table [scope='col'] {
   cursor: pointer;
+}
+
+.table [scope='col'] {
+  width: 20%;
+}
+
+.table [scope='col'].active {
+  color: red;
 }
 
 input {

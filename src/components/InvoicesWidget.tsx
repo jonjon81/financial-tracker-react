@@ -3,6 +3,8 @@ import { Invoice } from '../types/Invoice';
 import { Transaction } from '../types/Transaction';
 import { formatPrice } from '../utils/helpers';
 import './InvoicesWidget.css';
+import { FaChevronDown } from 'react-icons/fa';
+import { FaChevronUp } from 'react-icons/fa';
 
 interface InvoicesProps {
   invoices: Invoice[];
@@ -95,6 +97,8 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
     }
   }, [invoices, transactions, setInvoices]);
 
+  const [activeColumn, setActiveColumn] = useState<ColumnHeader | null>(null);
+
   // Function to handle sorting
   const sortTable = (column: ColumnHeader) => {
     const direction =
@@ -103,6 +107,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
         : SortDirection.ASC;
 
     setSortConfig({ column, direction });
+    setActiveColumn(column);
 
     const sortedInvoices = [...invoices].sort((a, b) => {
       if (a[column] < b[column]) {
@@ -117,6 +122,13 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
     setInvoices(sortedInvoices);
   };
 
+  const renderSortIcon = (column: ColumnHeader) => {
+    if (activeColumn === column) {
+      return sortConfig.direction === SortDirection.ASC ? <FaChevronUp /> : <FaChevronDown />;
+    }
+    return null;
+  };
+
   return (
     <div className="p-4 bg-primary-subtle rounded">
       <div className="upper-container d-flex align-content-center justify-content-between">
@@ -128,21 +140,33 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
       <table className="table table-striped">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col" onClick={() => sortTable('clientName')}>
-              Client Name
+            <th>#</th>
+            <th
+              scope="col"
+              onClick={() => sortTable('clientName')}
+              className={activeColumn === 'clientName' ? 'active' : ''}
+            >
+              Client Name {activeColumn === 'clientName' && renderSortIcon('clientName')}
             </th>
-            <th scope="col" onClick={() => sortTable('creationDate')}>
-              Creation Date
+            <th
+              scope="col"
+              onClick={() => sortTable('creationDate')}
+              className={activeColumn === 'creationDate' ? 'active' : ''}
+            >
+              Creation Date {activeColumn === 'creationDate' && renderSortIcon('creationDate')}
             </th>
-            <th scope="col" onClick={() => sortTable('referenceNumber')}>
-              Reference Number
+            <th
+              scope="col"
+              onClick={() => sortTable('referenceNumber')}
+              className={activeColumn === 'referenceNumber' ? 'active' : ''}
+            >
+              Reference Number {activeColumn === 'referenceNumber' && renderSortIcon('referenceNumber')}
             </th>
-            <th scope="col" onClick={() => sortTable('amount')}>
-              Amount
+            <th scope="col" onClick={() => sortTable('amount')} className={activeColumn === 'amount' ? 'active' : ''}>
+              Amount {activeColumn === 'amount' && renderSortIcon('amount')}
             </th>
-            <th scope="col" onClick={() => sortTable('status')}>
-              Status
+            <th scope="col" onClick={() => sortTable('status')} className={activeColumn === 'status' ? 'active' : ''}>
+              Status {activeColumn === 'status' && renderSortIcon('status')}
             </th>
           </tr>
         </thead>
