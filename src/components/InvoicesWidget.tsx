@@ -130,9 +130,9 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
   };
 
   return (
-    <div className="p-4 bg-primary-subtle rounded">
+    <div className="p-4 card">
       <div className="upper-container d-flex align-content-center justify-content-between">
-        <h2>Invoices</h2>
+        <h2>Latest Transactions</h2>
         <button className="mb-2 btn btn-primary" onClick={() => setShowModal(true)}>
           Add New Invoice
         </button>
@@ -141,14 +141,14 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
         <thead>
           <tr>
             <th>#</th>
-            <th scope="col" className={activeColumn === 'clientName' ? 'active' : ''}>
-              <button className="btn btn-primary" onClick={() => sortTable('clientName')}>
-                Client Name {activeColumn === 'clientName' && renderSortIcon('clientName')}
-              </button>
-            </th>
             <th scope="col" className={activeColumn === 'creationDate' ? 'active' : ''}>
               <button className="btn btn-primary" onClick={() => sortTable('creationDate')}>
                 Creation Date {activeColumn === 'creationDate' && renderSortIcon('creationDate')}
+              </button>
+            </th>
+            <th scope="col" className={activeColumn === 'clientName' ? 'active' : ''}>
+              <button className="btn btn-primary" onClick={() => sortTable('clientName')}>
+                Client Name {activeColumn === 'clientName' && renderSortIcon('clientName')}
               </button>
             </th>
             <th scope="col" className={activeColumn === 'referenceNumber' ? 'active' : ''}>
@@ -184,8 +184,8 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
               role="button"
             >
               <th scope="row">{index + 1}</th>
-              <td>{invoice.clientName}</td>
               <td>{invoice.creationDate}</td>
+              <td>{invoice.clientName}</td>
               <td>{invoice.referenceNumber}</td>
               <td>{formatPrice(invoice.amount)}</td>
               <td>{invoice.status}</td>

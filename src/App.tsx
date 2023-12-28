@@ -4,11 +4,14 @@ import InvoicesWidget from './components/InvoicesWidget';
 import { fetchInvoices, fetchTransactions } from './services/mockBackend';
 import { Invoice } from './types/Invoice';
 import { Transaction } from './types/Transaction';
+import { Spinner } from 'react-bootstrap';
+import './App.css';
 
 const App: React.FC = () => {
   const [invoices, setInvoices] = useState<Invoice[]>([]);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [invoicesLast30, setInvoicesLast30] = useState<number>(0);
+  const [isLoading, setLoading] = useState(false);
 
   // Calculate invoices created in the last 30 days
   useEffect(() => {
@@ -26,6 +29,7 @@ const App: React.FC = () => {
   }, [invoices]);
 
   useEffect(() => {
+    setLoading(true);
     const fetchData = async () => {
       try {
         const invoicesData = await fetchInvoices();
@@ -50,8 +54,10 @@ const App: React.FC = () => {
         });
 
         setInvoices(updatedInvoices);
+        setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
+        setLoading(false);
       }
     };
 
@@ -60,13 +66,17 @@ const App: React.FC = () => {
 
   return (
     <div className="container">
-      <div className="row">
-        <h1>Financial Dashboard</h1>
+      <h1>Financial Dashboard</h1>
+      {isLoading ? (
+        <div className="spinner-overlay">
+          <Spinner animation="border" variant="primary" className="centered-spinner" />
+        </div>
+      ) : (
         <div className="dashboard">
           <SummaryWidget invoicesLast30Days={invoicesLast30} transactions={transactions} />
           <InvoicesWidget invoices={invoices} setInvoices={setInvoices} transactions={transactions} />
         </div>
-      </div>
+      )}
     </div>
   );
 };
