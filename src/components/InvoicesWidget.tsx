@@ -13,6 +13,13 @@ interface InvoicesProps {
   transactions: Transaction[];
 }
 
+interface FormData {
+  clientName: string;
+  amount: number;
+  date: string;
+  referenceNumber: string;
+}
+
 enum SortDirection {
   ASC = 'ASC',
   DESC = 'DESC',
@@ -34,7 +41,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormData>();
   const onSubmit = (data: FieldValues) => console.log(data);
 
   const [sortConfig, setSortConfig] = useState<{ column: ColumnHeader | null; direction: SortDirection }>({
