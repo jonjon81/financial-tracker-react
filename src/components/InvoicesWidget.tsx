@@ -5,6 +5,7 @@ import { formatPrice } from '../utils/helpers';
 import './InvoicesWidget.css';
 import { FaChevronDown } from 'react-icons/fa';
 import { FaChevronUp } from 'react-icons/fa';
+import { FieldValues, useForm } from 'react-hook-form';
 
 interface InvoicesProps {
   invoices: Invoice[];
@@ -21,13 +22,20 @@ type ColumnHeader = keyof Invoice;
 
 const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transactions }) => {
   const [showModal, setShowModal] = useState<boolean>(false);
-  const [newInvoice, setNewInvoice] = useState<Partial<Invoice>>({
-    clientName: '',
-    creationDate: '',
-    referenceNumber: '',
-    amount: 0,
-    status: 'UNPAID',
-  });
+  // const [newInvoice, setNewInvoice] = useState<Partial<Invoice>>({
+  //   clientName: '',
+  //   creationDate: '',
+  //   referenceNumber: '',
+  //   amount: 0,
+  //   status: 'UNPAID',
+  // });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data: FieldValues) => console.log(data);
 
   const [sortConfig, setSortConfig] = useState<{ column: ColumnHeader | null; direction: SortDirection }>({
     column: null,
@@ -40,29 +48,29 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
 
   const [editInvoice, setEditInvoice] = useState<Partial<Invoice> | null>(null);
 
-  const handleCreateInvoice = () => {
-    if (newInvoice.clientName && newInvoice.creationDate && newInvoice.referenceNumber && newInvoice.amount) {
-      const createdInvoice: Invoice = {
-        clientName: newInvoice.clientName,
-        creationDate: newInvoice.creationDate,
-        referenceNumber: newInvoice.referenceNumber,
-        amount: newInvoice.amount,
-        status: 'UNPAID',
-      };
+  // const handleCreateInvoice = () => {
+  //   if (newInvoice.clientName && newInvoice.creationDate && newInvoice.referenceNumber && newInvoice.amount) {
+  //     const createdInvoice: Invoice = {
+  //       clientName: newInvoice.clientName,
+  //       creationDate: newInvoice.creationDate,
+  //       referenceNumber: newInvoice.referenceNumber,
+  //       amount: newInvoice.amount,
+  //       status: 'UNPAID',
+  //     };
 
-      const updatedInvoices = [...invoices, createdInvoice];
-      setInvoices(updatedInvoices);
+  //     const updatedInvoices = [...invoices, createdInvoice];
+  //     setInvoices(updatedInvoices);
 
-      setShowModal(false);
-      setNewInvoice({
-        clientName: '',
-        creationDate: '',
-        referenceNumber: '',
-        amount: 0,
-        status: 'UNPAID',
-      });
-    }
-  };
+  //     setShowModal(false);
+  //     setNewInvoice({
+  //       clientName: '',
+  //       creationDate: '',
+  //       referenceNumber: '',
+  //       amount: 0,
+  //       status: 'UNPAID',
+  //     });
+  //   }
+  // };
 
   const handleUpdateInvoice = () => {
     if (editInvoice) {
@@ -206,47 +214,57 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
               ></button>
             </div>
             <h2 className="mb-4">Add New Invoice</h2>
-            <form onClick={(e) => e.stopPropagation()} onSubmit={handleCreateInvoice}>
-              <label className="d-flex justify-content-between mb-2">
+            <form onClick={(e) => e.stopPropagation()} onSubmit={handleSubmit(onSubmit)}>
+              <label className="d-flex flex-column justify-content-between mb-2">
                 Client Name:
-                <input
-                  className="w-50"
-                  type="text"
-                  required
-                  value={newInvoice.clientName}
-                  onChange={(e) => setNewInvoice({ ...newInvoice, clientName: e.target.value })}
-                />
+                <div>
+                  <input
+                    className="w-100"
+                    type="text"
+                    id="clientName"
+                    {...register('clientName', { required: true, minLength: 3 })}
+                  />
+                  {errors.clientName?.type === 'required' && (
+                    <p className="text-danger">The client name field is required.</p>
+                  )}
+                  {errors.clientName?.type === 'minLength' && (
+                    <p className="text-danger">The client name must be at least 3 characters.</p>
+                  )}
+                </div>
               </label>
-              <label className="d-flex justify-content-between mb-2">
+              <label className="d-flex flex-column justify-content-between mb-2">
                 Amount
-                <input
-                  className="w-50"
-                  type="number"
-                  required
-                  value={newInvoice.amount}
-                  step="0.01"
-                  onChange={(e) => setNewInvoice({ ...newInvoice, amount: parseFloat(e.target.value) })}
-                />
+                <div>
+                  <input
+                    className="w-100"
+                    type="number"
+                    step="0.01"
+                    id="amount"
+                    {...register('amount', { required: true })}
+                  />
+                  {errors.amount?.type === 'required' && <p className="text-danger">The amount is required.</p>}
+                </div>
               </label>
-              <label className="d-flex justify-content-between mb-2">
+              <label className="d-flex flex-column justify-content-between mb-2">
                 Date
-                <input
-                  className="w-50"
-                  type="date"
-                  required
-                  value={newInvoice.creationDate}
-                  onChange={(e) => setNewInvoice({ ...newInvoice, creationDate: e.target.value })}
-                />
+                <div>
+                  <input className="w-100" type="date" id="date" {...register('date', { required: true })} />
+                  {errors.date?.type === 'required' && <p className="text-danger">The date is required.</p>}
+                </div>
               </label>
-              <label className="d-flex justify-content-between mb-2">
+              <label className="d-flex flex-column justify-content-between mb-2">
                 Reference Number
-                <input
-                  className="w-50"
-                  type="text"
-                  required
-                  value={newInvoice.referenceNumber}
-                  onChange={(e) => setNewInvoice({ ...newInvoice, referenceNumber: e.target.value })}
-                />
+                <div>
+                  <input
+                    className="w-100"
+                    type="text"
+                    id="referenceNumber"
+                    {...register('referenceNumber', { required: true })}
+                  />
+                  {errors.referenceNumber?.type === 'required' && (
+                    <p className="text-danger">The reference number is required.</p>
+                  )}
+                </div>
               </label>
               <button className="mt-2 w-100 btn btn-primary" type="submit">
                 Create Invoice
