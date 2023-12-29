@@ -7,6 +7,11 @@ const invoiceReducer = (state: InvoiceState, action: InvoiceAction): InvoiceStat
         ...state,
         invoices: [...state.invoices, action.payload],
       };
+    case 'SET_INVOICES':
+      return {
+        ...state,
+        invoices: action.payload,
+      };
     default:
       return state;
   }

@@ -4,3 +4,16 @@ export interface Transaction {
   referenceNumber: string;
   amount: number;
 }
+
+export interface TransactionState {
+  transactions: Transaction[];
+}
+
+export enum TransactionActionTypes {
+  SET_TRANSACTIONS = 'SET_TRANSACTIONS',
+}
+
+export type TransactionAction = {
+  type: TransactionActionTypes;
+  payload: Transaction[];
+};

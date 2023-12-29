@@ -1,8 +1,8 @@
 import { Transaction } from '../types/Transaction';
 import { Invoice } from '../types/Invoice';
 
-const transactionsURL = '../mockData/transactions.json';
-const invoicesURL = '../mockData/invoices.json';
+const transactionsURL = '../../mockData/transactions.json';
+const invoicesURL = '../../mockData/invoices.json';
 
 // Simulated delay
 const mockFetchDelay = 500;

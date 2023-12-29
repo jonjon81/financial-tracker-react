@@ -4,32 +4,37 @@ import { InvoiceAction, InvoiceState } from '../types/Invoice';
 import invoiceReducer from '../reducers/invoiceReducer';
 import { setInvoices } from '../actions/invoiceActions';
 
-const initialState: InvoiceState = {
-  invoices: [],
-};
-
 interface InvoiceProviderProps {
   children: ReactNode;
 }
+
+const initialInvoiceState: InvoiceState = {
+  invoices: [],
+};
 
 export const InvoiceContext = createContext<{
   state: InvoiceState;
   dispatch: React.Dispatch<InvoiceAction>;
 }>({
-  state: initialState,
+  state: initialInvoiceState,
   dispatch: () => null,
 });
 
 export const InvoiceProvider: React.FC<InvoiceProviderProps> = ({ children }) => {
-  const [state, dispatch] = useReducer(invoiceReducer, initialState);
+  const [state, dispatch] = useReducer(invoiceReducer, initialInvoiceState);
 
   useEffect(() => {
     const fetchInvoiceData = async () => {
       try {
+        console.log('Fetching invoices...');
         const invoicesData = await fetchInvoices();
+        if (!invoicesData || !Array.isArray(invoicesData)) {
+          throw new Error('Invalid data received from fetchInvoices');
+        }
         dispatch(setInvoices(invoicesData));
+        console.log('invoicesData', invoicesData);
       } catch (error) {
-        console.error('Error fetching invoices:', error);
+        console.error('Error fetching or processing invoices:', error);
       }
     };
 

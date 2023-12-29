@@ -1,44 +1,20 @@
 import React, { createContext, useReducer, useContext, ReactNode, useEffect } from 'react';
-import { Transaction } from '../types/Transaction';
+import { TransactionState } from '../types/Transaction';
 import { fetchTransactions } from '../services/mockBackend';
-
-export interface TransactionState {
-  transactions: Transaction[];
-}
-
-export enum TransactionActionTypes {
-  SET_TRANSACTIONS = 'SET_TRANSACTIONS',
-}
-
-export type TransactionAction = {
-  type: TransactionActionTypes;
-  payload: any;
-};
-
-const transactionReducer = (state: TransactionState, action: TransactionAction): TransactionState => {
-  switch (action.type) {
-    case TransactionActionTypes.SET_TRANSACTIONS:
-      return {
-        ...state,
-        transactions: action.payload,
-      };
-
-    default:
-      return state;
-  }
-};
-
-const initialTransactionState: TransactionState = {
-  transactions: [],
-};
+import transactionReducer from '../reducers/transactionsReducer';
+import { setTransactions } from '../actions/transactionActions';
 
 interface TransactionProviderProps {
   children: ReactNode;
 }
 
+const initialTransactionState: TransactionState = {
+  transactions: [],
+};
+
 export const TransactionContext = createContext<{
   state: TransactionState;
-  dispatch: React.Dispatch<TransactionAction>;
+  dispatch: React.Dispatch<any>;
 }>({
   state: initialTransactionState,
   dispatch: () => null,
@@ -51,7 +27,7 @@ export const TransactionProvider: React.FC<TransactionProviderProps> = ({ childr
     const fetchTransactionsData = async () => {
       try {
         const transactionsData = await fetchTransactions();
-        dispatch({ type: TransactionActionTypes.SET_TRANSACTIONS, payload: transactionsData });
+        dispatch(setTransactions(transactionsData));
       } catch (error) {
         console.error('Error fetching transactions:', error);
       }
