@@ -6,10 +6,10 @@ import './InvoicesWidget.css';
 import { FaChevronDown } from 'react-icons/fa';
 import { FaChevronUp } from 'react-icons/fa';
 import { FieldValues, useForm } from 'react-hook-form';
+import { setInvoices, addInvoice, updateInvoice } from '../actions/invoiceActions';
+import { useInvoice } from '../context/InvoiceContexts';
 
 interface InvoicesProps {
-  invoices: Invoice[];
-  setInvoices: React.Dispatch<React.SetStateAction<Invoice[]>>;
   transactions: Transaction[];
 }
 
@@ -27,7 +27,10 @@ enum SortDirection {
 
 type ColumnHeader = keyof Invoice;
 
-const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transactions }) => {
+const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
+  const { state, dispatch } = useInvoice();
+  const { invoices } = state;
+
   const [showModal, setShowModal] = useState<boolean>(false);
   const handleCloseModal = () => {
     setShowModal(false);
@@ -52,8 +55,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
       status: 'UNPAID',
     };
 
-    const updatedInvoices = [...invoices, createdInvoice];
-    setInvoices(updatedInvoices);
+    dispatch(addInvoice(createdInvoice));
 
     setShowModal(false);
     reset();
@@ -68,16 +70,20 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
     setEditInvoice(invoice);
   };
 
-  const [editInvoice, setEditInvoice] = useState<Partial<Invoice> | null>(null);
+  const [editInvoice, setEditInvoice] = useState<Invoice | null>(null);
 
   const handleUpdateInvoice = () => {
     if (editInvoice) {
-      const updatedInvoices = invoices.map((invoice) =>
-        invoice.referenceNumber === editInvoice.referenceNumber ? { ...invoice, ...editInvoice } : invoice
-      );
-
-      setInvoices(updatedInvoices);
+      console.log('Updated Invoice:', editInvoice);
+      dispatch(updateInvoice(editInvoice));
       setEditInvoice(null);
+      // Refresh invoices state with the updated data
+      const updatedInvoices = state.invoices.map((invoice) =>
+        invoice.referenceNumber === editInvoice.referenceNumber ? editInvoice : invoice
+      );
+      dispatch(setInvoices(updatedInvoices));
+    } else {
+      console.error('Invalid invoice data for update');
     }
   };
 
@@ -99,13 +105,12 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
     const statusesChanged = updatedInvoices.some((invoice, index) => invoice.status !== invoices[index].status);
 
     if (statusesChanged) {
-      setInvoices(updatedInvoices);
+      dispatch(setInvoices(updatedInvoices));
     }
-  }, [invoices, transactions, setInvoices]);
+  }, [invoices, transactions, dispatch]);
 
   const [activeColumn, setActiveColumn] = useState<ColumnHeader | null>(null);
 
-  // Function to handle sorting
   const sortTable = (column: ColumnHeader) => {
     const direction =
       sortConfig.column === column && sortConfig.direction === SortDirection.ASC
@@ -125,7 +130,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
       return 0;
     });
 
-    setInvoices(sortedInvoices);
+    dispatch(setInvoices(sortedInvoices));
   };
 
   const renderSortIcon = (column: ColumnHeader) => {
@@ -284,37 +289,29 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ invoices, setInvoices, transa
               ></button>
             </div>
             <h2 className="mb-4">Update Invoice</h2>
-            <form onClick={(e) => e.stopPropagation()} onSubmit={handleUpdateInvoice}>
-              <label className="d-flex justify-content-between mb-2">
+            <form onClick={(e) => e.stopPropagation()} onSubmit={handleSubmit(handleUpdateInvoice)}>
+              <label className="d-flex flex-column justify-content-between mb-2">
                 Client Name:
-                <input
-                  className="w-50"
-                  type="text"
-                  required
-                  value={editInvoice.clientName}
-                  onChange={(e) => setEditInvoice({ ...editInvoice, clientName: e.target.value })}
-                />
-              </label>
-              <label className="d-flex justify-content-between mb-2">
-                Creation Date:
-                <input
-                  className="w-50"
-                  type="date"
-                  required
-                  value={editInvoice.creationDate}
-                  onChange={(e) => setEditInvoice({ ...editInvoice, creationDate: e.target.value })}
-                />
-              </label>
-              <label className="d-flex justify-content-between mb-2">
-                Amount:
-                <input
-                  className="w-50"
-                  type="number"
-                  required
-                  value={editInvoice.amount}
-                  step="0.01"
-                  onChange={(e) => setEditInvoice({ ...editInvoice, amount: parseFloat(e.target.value) })}
-                />
+                <div>
+                  <input
+                    className="w-100"
+                    type="text"
+                    id="editClientName"
+                    value={editInvoice.clientName}
+                    onChange={(e) =>
+                      setEditInvoice({
+                        ...editInvoice,
+                        clientName: e.target.value,
+                      })
+                    }
+                  />
+                  {errors.clientName?.type === 'required' && (
+                    <p className="text-danger">The client name field is required.</p>
+                  )}
+                  {errors.clientName?.type === 'minLength' && (
+                    <p className="text-danger">The client name must be at least 3 characters.</p>
+                  )}
+                </div>
               </label>
               <button className="mt-2 w-100 btn btn-primary" type="submit">
                 Update Invoice

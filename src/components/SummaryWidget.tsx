@@ -16,9 +16,6 @@ const SummaryWidget: React.FC<SummaryProps> = () => {
   const { invoices } = invoiceState;
   const { transactions } = transactionState;
 
-  console.log('transactions from summary widget: ', transactions);
-  console.log('invoices from summary widget: ', invoices);
-
   const calculateTotalAmount = (): number => {
     return transactions.reduce((total: number, transaction: Transaction) => total + transaction.amount, 0);
   };

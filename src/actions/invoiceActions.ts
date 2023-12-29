@@ -10,7 +10,7 @@ export const addInvoice = (invoice: Invoice) => ({
   payload: invoice,
 });
 
-export const updateInvoice = (invoice: Partial<Invoice>) => ({
+export const updateInvoice = (invoice: Invoice) => ({
   type: UPDATE_INVOICE as typeof UPDATE_INVOICE,
   payload: invoice,
 });

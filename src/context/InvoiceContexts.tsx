@@ -26,13 +26,11 @@ export const InvoiceProvider: React.FC<InvoiceProviderProps> = ({ children }) =>
   useEffect(() => {
     const fetchInvoiceData = async () => {
       try {
-        console.log('Fetching invoices...');
         const invoicesData = await fetchInvoices();
         if (!invoicesData || !Array.isArray(invoicesData)) {
           throw new Error('Invalid data received from fetchInvoices');
         }
         dispatch(setInvoices(invoicesData));
-        console.log('invoicesData', invoicesData);
       } catch (error) {
         console.error('Error fetching or processing invoices:', error);
       }
