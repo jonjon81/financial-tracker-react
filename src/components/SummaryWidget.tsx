@@ -1,15 +1,23 @@
-import React from 'react';
-import { Transaction } from '../types/Transaction';
+import React, { useContext } from 'react';
+import { InvoiceContext } from '../context/InvoiceContexts';
+import { TransactionContext } from '../context/TransactionContexts';
 import { formatPrice } from '../utils/helpers';
+import { Transaction } from '../types/Transaction';
 
 interface SummaryProps {
   invoicesLast30Days: number;
   transactions: Transaction[];
 }
 
-const SummaryWidget: React.FC<SummaryProps> = ({ invoicesLast30Days, transactions }) => {
+const SummaryWidget: React.FC<SummaryProps> = () => {
+  const { state: invoiceState } = useContext(InvoiceContext);
+  const { state: transactionState } = useContext(TransactionContext);
+
+  const { invoices } = invoiceState;
+  const { transactions } = transactionState;
+
   const calculateTotalAmount = (): number => {
-    return transactions.reduce((total, transaction) => total + transaction.amount, 0);
+    return transactions.reduce((total: number, transaction: Transaction) => total + transaction.amount, 0);
   };
 
   const totalAmount = calculateTotalAmount();
@@ -32,7 +40,7 @@ const SummaryWidget: React.FC<SummaryProps> = ({ invoicesLast30Days, transaction
           </span>
         </p>
         <p className="card-text">
-          Invoices Created in the Last 30 Days: <strong>{invoicesLast30Days}</strong>
+          Invoices Count: <strong>{invoices.length}</strong>
         </p>
       </div>
     </div>
