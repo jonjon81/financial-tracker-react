@@ -34,10 +34,12 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [editInvoice, setEditInvoice] = useState<Invoice | null>(null);
   const [isNewInvoice, setIsNewInvoice] = useState<boolean>(false);
+  const [referenceNumberError, setReferenceNumberError] = useState<string>('');
 
   const handleCloseModal = () => {
     setShowModal(false);
     reset();
+    setReferenceNumberError('');
   };
 
   const openEditModal = (invoice: Invoice) => {
@@ -64,6 +66,14 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
 
   const onSubmit = (data: FieldValues) => {
     const { clientName, amount, date, referenceNumber } = data;
+    const isReferenceNumberExists = invoices.some((invoice) => invoice.referenceNumber === referenceNumber);
+
+    if (isReferenceNumberExists) {
+      setReferenceNumberError('The invoice number already exists');
+      return;
+    }
+
+    setReferenceNumberError('');
 
     const createdInvoice: Invoice = {
       clientName,
@@ -77,6 +87,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
 
     setShowModal(false);
     reset();
+    setReferenceNumberError('');
   };
 
   const [sortConfig, setSortConfig] = useState<{ column: ColumnHeader | null; direction: SortDirection }>({
@@ -86,6 +97,18 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
 
   const handleUpdateInvoice = (data: FormData) => {
     if (editInvoice) {
+      const { referenceNumber } = data;
+      const isReferenceNumberExists = invoices.some(
+        (invoice) =>
+          invoice.referenceNumber === referenceNumber && invoice.referenceNumber !== editInvoice.referenceNumber
+      );
+
+      if (isReferenceNumberExists) {
+        setReferenceNumberError('The invoice number already exists');
+        return;
+      }
+
+      setReferenceNumberError('');
       const updatedEditedInvoice: Invoice = {
         ...editInvoice,
         clientName: data.clientName,
@@ -102,6 +125,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
       dispatch(updateInvoice(updatedEditedInvoice));
       setShowModal(false);
       reset();
+      setReferenceNumberError('');
     } else {
       console.error('Invalid invoice data for update');
     }
@@ -274,10 +298,10 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                         {...register('clientName', { required: true, minLength: 3 })}
                       />
                       {errors.clientName?.type === 'required' && (
-                        <p className="text-danger">The client name field is required.</p>
+                        <p className="text-danger m-0">The client name field is required.</p>
                       )}
                       {errors.clientName?.type === 'minLength' && (
-                        <p className="text-danger">The client name must be at least 3 characters.</p>
+                        <p className="text-danger m-0">The client name must be at least 3 characters.</p>
                       )}
                     </div>
                   </label>
@@ -291,28 +315,30 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                         id="amount"
                         {...register('amount', { required: true })}
                       />
-                      {errors.amount?.type === 'required' && <p className="text-danger">The amount is required.</p>}
+                      {errors.amount?.type === 'required' && <p className="text-danger m-0">The amount is required.</p>}
                     </div>
                   </label>
                   <label className="d-flex flex-column justify-content-between mb-2">
                     Date
                     <div>
                       <input className="w-100" type="date" id="date" {...register('date', { required: true })} />
-                      {errors.date?.type === 'required' && <p className="text-danger">The date is required.</p>}
+                      {errors.date?.type === 'required' && <p className="text-danger m-0">The date is required.</p>}
                     </div>
                   </label>
                   <label className="d-flex flex-column justify-content-between mb-2">
                     Reference Number
                     <div>
                       <input
-                        className="w-100"
+                        className="w-100 text-uppercase"
                         type="text"
                         id="referenceNumber"
+                        placeholder="INV-#"
                         {...register('referenceNumber', { required: true })}
                       />
                       {errors.referenceNumber?.type === 'required' && (
-                        <p className="text-danger">The reference number is required.</p>
+                        <p className="text-danger m-0">This reference number is required.</p>
                       )}
+                      {referenceNumberError && <p className="text-danger m-0">{referenceNumberError}</p>}
                     </div>
                   </label>
                 </>
@@ -328,10 +354,10 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                         {...register('clientName', { required: true, minLength: 3 })}
                       />
                       {errors.clientName?.type === 'required' && (
-                        <p className="text-danger">The client name field is required.</p>
+                        <p className="text-danger m-0">The client name field is required.</p>
                       )}
                       {errors.clientName?.type === 'minLength' && (
-                        <p className="text-danger">The client name must be at least 3 characters.</p>
+                        <p className="text-danger m-0">The client name must be at least 3 characters.</p>
                       )}
                     </div>
                   </label>
@@ -345,28 +371,30 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                         id="amount"
                         {...register('amount', { required: true })}
                       />
-                      {errors.amount?.type === 'required' && <p className="text-danger">The amount is required.</p>}
+                      {errors.amount?.type === 'required' && <p className="text-danger m-0">The amount is required.</p>}
                     </div>
                   </label>
                   <label className="d-flex flex-column justify-content-between mb-2">
                     Date
                     <div>
                       <input className="w-100" type="date" id="date" {...register('date', { required: true })} />
-                      {errors.date?.type === 'required' && <p className="text-danger">The date is required.</p>}
+                      {errors.date?.type === 'required' && <p className="text-danger m-0">The date is required.</p>}
                     </div>
                   </label>
                   <label className="d-flex flex-column justify-content-between mb-2">
                     Reference Number
                     <div>
                       <input
-                        className="w-100"
+                        className="w-100 text-uppercase"
                         type="text"
                         id="referenceNumber"
+                        placeholder="INV-#"
                         {...register('referenceNumber', { required: true })}
                       />
                       {errors.referenceNumber?.type === 'required' && (
-                        <p className="text-danger">The reference number is required.</p>
+                        <p className="text-danger m-0">This reference number is required.</p>
                       )}
+                      {referenceNumberError && <p className="text-danger m-0">{referenceNumberError}</p>}
                     </div>
                   </label>
                 </>
