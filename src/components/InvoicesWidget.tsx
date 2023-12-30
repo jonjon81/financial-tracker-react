@@ -8,6 +8,7 @@ import { FaChevronUp } from 'react-icons/fa';
 import { FieldValues, useForm } from 'react-hook-form';
 import { setInvoices, addInvoice, updateInvoice } from '../actions/invoiceActions';
 import { useInvoice } from '../context/InvoiceContexts';
+import TableHeader from './TableHeader';
 
 interface InvoicesProps {
   transactions: Transaction[];
@@ -152,33 +153,49 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
         <thead>
           <tr>
             <th>#</th>
-            <th scope="col" className={activeColumn === 'creationDate' ? 'active' : ''}>
-              <button className="btn btn-primary" onClick={() => sortTable('creationDate')}>
-                Creation Date {activeColumn === 'creationDate' && renderSortIcon('creationDate')}
-              </button>
-            </th>
-            <th scope="col" className={activeColumn === 'clientName' ? 'active' : ''}>
-              <button className="btn btn-primary" onClick={() => sortTable('clientName')}>
-                Client Name {activeColumn === 'clientName' && renderSortIcon('clientName')}
-              </button>
-            </th>
-            <th scope="col" className={activeColumn === 'referenceNumber' ? 'active' : ''}>
-              <button className="btn btn-primary" onClick={() => sortTable('referenceNumber')}>
-                Reference Number {activeColumn === 'referenceNumber' && renderSortIcon('referenceNumber')}
-              </button>
-            </th>
-            <th scope="col" className={activeColumn === 'amount' ? 'active' : ''}>
-              <button className="btn btn-primary" onClick={() => sortTable('amount')}>
-                Amount {activeColumn === 'amount' && renderSortIcon('amount')}
-              </button>
-            </th>
-            <th scope="col" className={activeColumn === 'status' ? 'active' : ''}>
-              <button className="btn btn-primary" onClick={() => sortTable('status')}>
-                Status {activeColumn === 'status' && renderSortIcon('status')}
-              </button>
-            </th>
+            <TableHeader
+              column="creationDate"
+              activeColumn={activeColumn}
+              sortTable={sortTable}
+              renderSortIcon={renderSortIcon}
+            >
+              Creation Date
+            </TableHeader>
+            <TableHeader
+              column="clientName"
+              activeColumn={activeColumn}
+              sortTable={sortTable}
+              renderSortIcon={renderSortIcon}
+            >
+              Client Name
+            </TableHeader>
+            <TableHeader
+              column="referenceNumber"
+              activeColumn={activeColumn}
+              sortTable={sortTable}
+              renderSortIcon={renderSortIcon}
+            >
+              Reference Number
+            </TableHeader>
+            <TableHeader
+              column="amount"
+              activeColumn={activeColumn}
+              sortTable={sortTable}
+              renderSortIcon={renderSortIcon}
+            >
+              Amount
+            </TableHeader>
+            <TableHeader
+              column="status"
+              activeColumn={activeColumn}
+              sortTable={sortTable}
+              renderSortIcon={renderSortIcon}
+            >
+              Status
+            </TableHeader>
           </tr>
         </thead>
+
         <tbody>
           {invoices.map((invoice, index) => (
             <tr

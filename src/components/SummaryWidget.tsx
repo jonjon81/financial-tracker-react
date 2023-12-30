@@ -34,7 +34,7 @@ const SummaryWidget: React.FC<SummaryProps> = () => {
       <div className="card-body">
         <h2 className="card-title">Financial Summary</h2>
         <p className="card-text">
-          Total Amount:{' '}
+          Total Amount:
           <span style={{ color: totalAmountColor }}>
             <strong>{formatPrice(totalAmount)}</strong>
           </span>
