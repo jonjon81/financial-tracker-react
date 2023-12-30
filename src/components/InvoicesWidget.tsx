@@ -31,17 +31,34 @@ type ColumnHeader = keyof Invoice;
 const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   const { state, dispatch } = useInvoice();
   const { invoices } = state;
-
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [editInvoice, setEditInvoice] = useState<Invoice | null>(null);
+  const [isNewInvoice, setIsNewInvoice] = useState<boolean>(false);
+
   const handleCloseModal = () => {
     setShowModal(false);
     reset();
+  };
+
+  const openEditModal = (invoice: Invoice) => {
+    setEditInvoice(invoice);
+    setIsNewInvoice(false);
+
+    if (invoice) {
+      setValue('clientName', invoice.clientName);
+      setValue('amount', invoice.amount);
+      setValue('date', invoice.creationDate);
+      setValue('referenceNumber', invoice.referenceNumber);
+    }
+
+    setShowModal(true);
   };
 
   const {
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors },
   } = useForm<FormData>();
 
@@ -67,22 +84,24 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     direction: SortDirection.ASC,
   });
 
-  const openEditModal = (invoice: Invoice) => {
-    setEditInvoice(invoice);
-  };
-
-  const [editInvoice, setEditInvoice] = useState<Invoice | null>(null);
-
-  const handleUpdateInvoice = () => {
+  const handleUpdateInvoice = (data: FormData) => {
     if (editInvoice) {
-      console.log('Updated Invoice:', editInvoice);
-      dispatch(updateInvoice(editInvoice));
-      setEditInvoice(null);
-      // Refresh invoices state with the updated data
-      const updatedInvoices = state.invoices.map((invoice) =>
-        invoice.referenceNumber === editInvoice.referenceNumber ? editInvoice : invoice
+      const updatedEditedInvoice: Invoice = {
+        ...editInvoice,
+        clientName: data.clientName,
+        amount: data.amount,
+        creationDate: data.date,
+        referenceNumber: data.referenceNumber,
+      };
+
+      const updatedInvoices = invoices.map((invoice) =>
+        invoice.referenceNumber === editInvoice.referenceNumber ? updatedEditedInvoice : invoice
       );
+
       dispatch(setInvoices(updatedInvoices));
+      dispatch(updateInvoice(updatedEditedInvoice));
+      setShowModal(false);
+      reset();
     } else {
       console.error('Invalid invoice data for update');
     }
@@ -145,7 +164,13 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     <div className="p-4 card">
       <div className="upper-container d-flex align-content-center justify-content-between">
         <h2>Latest Transactions</h2>
-        <button className="mb-2 btn btn-primary" onClick={() => setShowModal(true)}>
+        <button
+          className="mb-2 btn btn-primary"
+          onClick={() => {
+            setIsNewInvoice(true);
+            setShowModal(true);
+          }}
+        >
           Add New Invoice
         </button>
       </div>
@@ -195,7 +220,6 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
             </TableHeader>
           </tr>
         </thead>
-
         <tbody>
           {invoices.map((invoice, index) => (
             <tr
@@ -233,105 +257,122 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                 onClick={() => handleCloseModal()}
               ></button>
             </div>
-            <h2 className="mb-4">Add New Invoice</h2>
-            <form onClick={(e) => e.stopPropagation()} onSubmit={handleSubmit(onSubmit)}>
-              <label className="d-flex flex-column justify-content-between mb-2">
-                Client Name:
-                <div>
-                  <input
-                    className="w-100"
-                    type="text"
-                    id="clientName"
-                    {...register('clientName', { required: true, minLength: 3 })}
-                  />
-                  {errors.clientName?.type === 'required' && (
-                    <p className="text-danger">The client name field is required.</p>
-                  )}
-                  {errors.clientName?.type === 'minLength' && (
-                    <p className="text-danger">The client name must be at least 3 characters.</p>
-                  )}
-                </div>
-              </label>
-              <label className="d-flex flex-column justify-content-between mb-2">
-                Amount
-                <div>
-                  <input
-                    className="w-100"
-                    type="number"
-                    step="0.01"
-                    id="amount"
-                    {...register('amount', { required: true })}
-                  />
-                  {errors.amount?.type === 'required' && <p className="text-danger">The amount is required.</p>}
-                </div>
-              </label>
-              <label className="d-flex flex-column justify-content-between mb-2">
-                Date
-                <div>
-                  <input className="w-100" type="date" id="date" {...register('date', { required: true })} />
-                  {errors.date?.type === 'required' && <p className="text-danger">The date is required.</p>}
-                </div>
-              </label>
-              <label className="d-flex flex-column justify-content-between mb-2">
-                Reference Number
-                <div>
-                  <input
-                    className="w-100"
-                    type="text"
-                    id="referenceNumber"
-                    {...register('referenceNumber', { required: true })}
-                  />
-                  {errors.referenceNumber?.type === 'required' && (
-                    <p className="text-danger">The reference number is required.</p>
-                  )}
-                </div>
-              </label>
+            <h2 className="mb-4">{isNewInvoice ? 'Add New Invoice' : 'Update Invoice'}</h2>
+            <form
+              onClick={(e) => e.stopPropagation()}
+              onSubmit={isNewInvoice ? handleSubmit(onSubmit) : handleSubmit(handleUpdateInvoice)}
+            >
+              {isNewInvoice ? (
+                <>
+                  <label className="d-flex flex-column justify-content-between mb-2">
+                    Client Name:
+                    <div>
+                      <input
+                        className="w-100"
+                        type="text"
+                        id="clientName"
+                        {...register('clientName', { required: true, minLength: 3 })}
+                      />
+                      {errors.clientName?.type === 'required' && (
+                        <p className="text-danger">The client name field is required.</p>
+                      )}
+                      {errors.clientName?.type === 'minLength' && (
+                        <p className="text-danger">The client name must be at least 3 characters.</p>
+                      )}
+                    </div>
+                  </label>
+                  <label className="d-flex flex-column justify-content-between mb-2">
+                    Amount
+                    <div>
+                      <input
+                        className="w-100"
+                        type="number"
+                        step="0.01"
+                        id="amount"
+                        {...register('amount', { required: true })}
+                      />
+                      {errors.amount?.type === 'required' && <p className="text-danger">The amount is required.</p>}
+                    </div>
+                  </label>
+                  <label className="d-flex flex-column justify-content-between mb-2">
+                    Date
+                    <div>
+                      <input className="w-100" type="date" id="date" {...register('date', { required: true })} />
+                      {errors.date?.type === 'required' && <p className="text-danger">The date is required.</p>}
+                    </div>
+                  </label>
+                  <label className="d-flex flex-column justify-content-between mb-2">
+                    Reference Number
+                    <div>
+                      <input
+                        className="w-100"
+                        type="text"
+                        id="referenceNumber"
+                        {...register('referenceNumber', { required: true })}
+                      />
+                      {errors.referenceNumber?.type === 'required' && (
+                        <p className="text-danger">The reference number is required.</p>
+                      )}
+                    </div>
+                  </label>
+                </>
+              ) : (
+                <>
+                  <label className="d-flex flex-column justify-content-between mb-2">
+                    Client Name:
+                    <div>
+                      <input
+                        className="w-100"
+                        type="text"
+                        id="editClientName"
+                        {...register('clientName', { required: true, minLength: 3 })}
+                      />
+                      {errors.clientName?.type === 'required' && (
+                        <p className="text-danger">The client name field is required.</p>
+                      )}
+                      {errors.clientName?.type === 'minLength' && (
+                        <p className="text-danger">The client name must be at least 3 characters.</p>
+                      )}
+                    </div>
+                  </label>
+                  <label className="d-flex flex-column justify-content-between mb-2">
+                    Amount
+                    <div>
+                      <input
+                        className="w-100"
+                        type="number"
+                        step="0.01"
+                        id="amount"
+                        {...register('amount', { required: true })}
+                      />
+                      {errors.amount?.type === 'required' && <p className="text-danger">The amount is required.</p>}
+                    </div>
+                  </label>
+                  <label className="d-flex flex-column justify-content-between mb-2">
+                    Date
+                    <div>
+                      <input className="w-100" type="date" id="date" {...register('date', { required: true })} />
+                      {errors.date?.type === 'required' && <p className="text-danger">The date is required.</p>}
+                    </div>
+                  </label>
+                  <label className="d-flex flex-column justify-content-between mb-2">
+                    Reference Number
+                    <div>
+                      <input
+                        className="w-100"
+                        type="text"
+                        id="referenceNumber"
+                        {...register('referenceNumber', { required: true })}
+                      />
+                      {errors.referenceNumber?.type === 'required' && (
+                        <p className="text-danger">The reference number is required.</p>
+                      )}
+                    </div>
+                  </label>
+                </>
+              )}
               <button className="mt-2 w-100 btn btn-primary" type="submit">
-                Create Invoice
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
-      {editInvoice && (
-        <div className="modal d-flex justify-content-center align-items-center" onClick={() => setEditInvoice(null)}>
-          <div className="modal-content" style={{ width: '400px', height: 'auto', padding: '1rem' }}>
-            <div className="button-container d-flex justify-content-end">
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-                onClick={() => setEditInvoice(null)}
-              ></button>
-            </div>
-            <h2 className="mb-4">Update Invoice</h2>
-            <form onClick={(e) => e.stopPropagation()} onSubmit={handleSubmit(handleUpdateInvoice)}>
-              <label className="d-flex flex-column justify-content-between mb-2">
-                Client Name:
-                <div>
-                  <input
-                    className="w-100"
-                    type="text"
-                    id="editClientName"
-                    value={editInvoice.clientName}
-                    onChange={(e) =>
-                      setEditInvoice({
-                        ...editInvoice,
-                        clientName: e.target.value,
-                      })
-                    }
-                  />
-                  {errors.clientName?.type === 'required' && (
-                    <p className="text-danger">The client name field is required.</p>
-                  )}
-                  {errors.clientName?.type === 'minLength' && (
-                    <p className="text-danger">The client name must be at least 3 characters.</p>
-                  )}
-                </div>
-              </label>
-              <button className="mt-2 w-100 btn btn-primary" type="submit">
-                Update Invoice
+                {isNewInvoice ? 'Create Invoice' : 'Update Invoice'}
               </button>
             </form>
           </div>

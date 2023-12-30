@@ -12,6 +12,17 @@ const invoiceReducer = (state: InvoiceState, action: InvoiceAction): InvoiceStat
         ...state,
         invoices: action.payload,
       };
+    case 'UPDATE_INVOICE':
+      const updatedInvoices = state.invoices.map((invoice) => {
+        if (invoice.referenceNumber === action.payload.referenceNumber) {
+          return action.payload;
+        }
+        return invoice;
+      });
+      return {
+        ...state,
+        invoices: updatedInvoices,
+      };
     default:
       return state;
   }
