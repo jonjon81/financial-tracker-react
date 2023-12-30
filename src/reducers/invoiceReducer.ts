@@ -23,6 +23,14 @@ const invoiceReducer = (state: InvoiceState, action: InvoiceAction): InvoiceStat
         ...state,
         invoices: updatedInvoices,
       };
+    case 'DELETE_INVOICE':
+      const filteredInvoices = state.invoices.filter(
+        (invoice) => invoice.referenceNumber !== action.payload.toString()
+      );
+      return {
+        ...state,
+        invoices: filteredInvoices,
+      };
     default:
       return state;
   }

@@ -3,10 +3,9 @@ import { Invoice } from '../types/Invoice';
 import { Transaction } from '../types/Transaction';
 import { formatPrice } from '../utils/helpers';
 import './InvoicesWidget.css';
-import { FaChevronDown } from 'react-icons/fa';
-import { FaChevronUp } from 'react-icons/fa';
+import { FaChevronDown, FaChevronUp, FaPlus } from 'react-icons/fa';
 import { FieldValues, useForm } from 'react-hook-form';
-import { setInvoices, addInvoice, updateInvoice } from '../actions/invoiceActions';
+import { setInvoices, addInvoice, updateInvoice, deleteInvoice } from '../actions/invoiceActions';
 import { useInvoice } from '../context/InvoiceContexts';
 import TableHeader from './TableHeader';
 
@@ -131,6 +130,15 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     }
   };
 
+  const handleDeleteInvoice = (referenceNumberToDelete: string) => {
+    dispatch(deleteInvoice(Number(referenceNumberToDelete)));
+    const updatedInvoices = invoices.filter((invoice) => invoice.referenceNumber !== referenceNumberToDelete);
+    dispatch(setInvoices(updatedInvoices));
+    setShowModal(false);
+    reset();
+    setReferenceNumberError('');
+  };
+
   useEffect(() => {
     const updatedInvoices = invoices.map((invoice) => {
       const matchedTransaction = transactions.find(
@@ -166,10 +174,10 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
 
     const sortedInvoices = [...invoices].sort((a, b) => {
       if (a[column] < b[column]) {
-        return direction === SortDirection.ASC ? -1 : 1;
+        return direction === SortDirection.DESC ? -1 : 1;
       }
       if (a[column] > b[column]) {
-        return direction === SortDirection.ASC ? 1 : -1;
+        return direction === SortDirection.DESC ? 1 : -1;
       }
       return 0;
     });
@@ -189,13 +197,14 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
       <div className="upper-container d-flex align-content-center justify-content-between">
         <h2>Latest Transactions</h2>
         <button
-          className="mb-2 btn btn-primary"
+          className="mb-2 btn btn-primary d-flex align-items-center"
           onClick={() => {
             setIsNewInvoice(true);
             setShowModal(true);
           }}
         >
           Add New Invoice
+          <FaPlus className="icon ms-2" />
         </button>
       </div>
       <table className="table table-striped">
@@ -265,6 +274,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
               <td>{invoice.referenceNumber}</td>
               <td>{formatPrice(invoice.amount)}</td>
               <td>{invoice.status}</td>
+              <td></td>
             </tr>
           ))}
         </tbody>
@@ -399,9 +409,18 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                   </label>
                 </>
               )}
+
               <button className="mt-2 w-100 btn btn-primary" type="submit">
                 {isNewInvoice ? 'Create Invoice' : 'Update Invoice'}
               </button>
+              {!isNewInvoice && editInvoice && (
+                <button
+                  className="btn btn-danger mt-2 w-100"
+                  onClick={() => handleDeleteInvoice(editInvoice.referenceNumber)}
+                >
+                  Delete Invoice
+                </button>
+              )}
             </form>
           </div>
         </div>
