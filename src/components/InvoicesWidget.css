@@ -22,3 +22,8 @@ input {
 .modal {
   background: rgba(0, 0, 0, 0.7);
 }
+
+.table-body {
+  max-height: 200px;
+  overflow-y: auto;
+}
