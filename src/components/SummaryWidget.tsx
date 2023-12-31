@@ -40,7 +40,7 @@ const SummaryWidget: React.FC<SummaryProps> = () => {
           </span>
         </p>
         <p className="card-text">
-          Invoices Count: <strong>{invoices.length}</strong>
+          Invoices in the last 30 days: <strong>{invoices.length}</strong>
         </p>
       </div>
     </div>

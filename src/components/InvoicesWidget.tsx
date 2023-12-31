@@ -195,7 +195,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   return (
     <div className="p-4 card">
       <div className="upper-container d-flex align-content-center justify-content-between">
-        <h2>Latest Transactions</h2>
+        <h2>Invoices</h2>
         <button
           className="mb-2 btn btn-primary d-flex align-items-center"
           onClick={() => {
