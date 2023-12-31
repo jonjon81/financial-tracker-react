@@ -34,6 +34,11 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   const [editInvoice, setEditInvoice] = useState<Invoice | null>(null);
   const [isNewInvoice, setIsNewInvoice] = useState<boolean>(false);
   const [referenceNumberError, setReferenceNumberError] = useState<string>('');
+  const [searchText, setSearchText] = useState<string>('');
+
+  const handleSearchTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchText(e.target.value);
+  };
 
   const handleCloseModal = () => {
     setShowModal(false);
@@ -196,18 +201,33 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   const [endDate, setEndDate] = useState<string>('');
 
   const filteredInvoices = invoices.filter((invoice) => {
-    if (startDate && endDate) {
-      return (
-        new Date(invoice.creationDate) >= new Date(startDate) && new Date(invoice.creationDate) <= new Date(endDate)
-      );
+    const matchesSearchText =
+      invoice.clientName.toLowerCase().includes(searchText.toLowerCase()) ||
+      invoice.referenceNumber.toLowerCase().includes(searchText.toLowerCase());
+
+    const isInDateRange =
+      (!startDate || new Date(invoice.creationDate) >= new Date(startDate)) &&
+      (!endDate || new Date(invoice.creationDate) <= new Date(endDate));
+
+    if (searchText) {
+      return matchesSearchText && isInDateRange;
+    } else {
+      return isInDateRange;
     }
-    return true;
   });
 
   return (
     <div className="p-4 card">
       <div className="upper-container d-flex align-content-center justify-content-between">
         <h2>Invoices</h2>
+        <div>
+          <input
+            type="text"
+            placeholder="Search by Client Name or Reference Number"
+            value={searchText}
+            onChange={handleSearchTextChange}
+          />
+        </div>
         <div>
           <label>Start Date:</label>
           <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
@@ -362,7 +382,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                         className="w-100 text-uppercase"
                         type="text"
                         id="referenceNumber"
-                        placeholder="INV-#"
+                        placeholder="INV-####"
                         {...register('referenceNumber', { required: true })}
                       />
                       {errors.referenceNumber?.type === 'required' && (
@@ -418,7 +438,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                         className="w-100 text-uppercase"
                         type="text"
                         id="referenceNumber"
-                        placeholder="INV-#"
+                        placeholder="INV-####"
                         {...register('referenceNumber', { required: true })}
                       />
                       {errors.referenceNumber?.type === 'required' && (
