@@ -40,6 +40,12 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     setSearchText(e.target.value);
   };
 
+  const handleResetFilters = () => {
+    setSearchText('');
+    setStartDate('');
+    setEndDate('');
+  };
+
   const handleCloseModal = () => {
     setShowModal(false);
     reset();
@@ -236,6 +242,9 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
           <label>End Date:</label>
           <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
         </div>
+        <button className="btn btn-secondary me-2" onClick={handleResetFilters}>
+          Reset Filters
+        </button>
         <button
           className="mb-2 btn btn-primary d-flex align-items-center"
           onClick={() => {
