@@ -5,7 +5,6 @@ import { formatPrice } from '../utils/helpers';
 import { Transaction } from '../types/Transaction';
 
 interface SummaryProps {
-  invoicesLast30Days: number;
   transactions: Transaction[];
 }
 
@@ -21,6 +20,12 @@ const SummaryWidget: React.FC<SummaryProps> = () => {
   };
 
   const totalAmount = calculateTotalAmount();
+
+  // Filter invoices within the last 30 days
+  const thirtyDaysAgo = new Date();
+  thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+
+  const invoicesLast30Days = invoices.filter((invoice) => new Date(invoice.creationDate) > thirtyDaysAgo).length;
 
   // Determine color based on total amount
   let totalAmountColor = 'black';
@@ -40,7 +45,7 @@ const SummaryWidget: React.FC<SummaryProps> = () => {
           </span>
         </p>
         <p className="card-text">
-          Invoices in the last 30 days: <strong>{invoices.length}</strong>
+          Invoices in the last 30 days: <strong>{invoicesLast30Days}</strong>
         </p>
       </div>
     </div>
