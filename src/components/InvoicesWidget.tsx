@@ -298,33 +298,37 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
       </div>
 
       <div className="table-body">
-        <table className="table table-striped">
-          <tbody>
-            {filteredInvoices.map((invoice, index) => (
-              <tr
-                className="table-row"
-                key={invoice.referenceNumber}
-                onClick={() => openEditModal(invoice)}
-                onKeyPress={(event) => {
-                  if (event.key === 'Enter') {
-                    openEditModal(invoice);
-                  }
-                }}
-                tabIndex={0}
-                aria-label={`Edit invoice ${index + 1}`}
-                role="button"
-              >
-                <th scope="row">{index + 1}</th>
-                <td>{invoice.creationDate}</td>
-                <td>{invoice.clientName}</td>
-                <td>{invoice.referenceNumber}</td>
-                <td>{formatPrice(invoice.amount)}</td>
-                <td>{invoice.status}</td>
-                <td></td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        {filteredInvoices.length > 0 ? (
+          <table className="table table-striped">
+            <tbody>
+              {filteredInvoices.map((invoice, index) => (
+                <tr
+                  className="table-row"
+                  key={invoice.referenceNumber}
+                  onClick={() => openEditModal(invoice)}
+                  onKeyPress={(event) => {
+                    if (event.key === 'Enter') {
+                      openEditModal(invoice);
+                    }
+                  }}
+                  tabIndex={0}
+                  aria-label={`Edit invoice ${index + 1}`}
+                  role="button"
+                >
+                  <th scope="row">{index + 1}</th>
+                  <td>{invoice.creationDate}</td>
+                  <td>{invoice.clientName}</td>
+                  <td>{invoice.referenceNumber}</td>
+                  <td>{formatPrice(invoice.amount)}</td>
+                  <td>{invoice.status}</td>
+                  <td></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <div className="no-search-results">No search results found.</div>
+        )}
       </div>
       {showModal && (
         <div className="modal d-flex justify-content-center align-items-center" onClick={() => handleCloseModal()}>
