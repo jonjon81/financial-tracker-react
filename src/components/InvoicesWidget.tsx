@@ -35,6 +35,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   const [isNewInvoice, setIsNewInvoice] = useState<boolean>(false);
   const [referenceNumberError, setReferenceNumberError] = useState<string>('');
   const [searchText, setSearchText] = useState<string>('');
+  const [filteredResultsLength, setFilteredResultsLength] = useState<number>(0);
 
   const handleSearchTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
@@ -110,7 +111,8 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
       const { referenceNumber } = data;
       const isReferenceNumberExists = invoices.some(
         (invoice) =>
-          invoice.referenceNumber === referenceNumber && invoice.referenceNumber !== editInvoice.referenceNumber
+          invoice.referenceNumber.toLowerCase() === referenceNumber.toLowerCase() &&
+          invoice.referenceNumber.toLowerCase() !== editInvoice.referenceNumber.toLowerCase()
       );
 
       if (isReferenceNumberExists) {
@@ -222,6 +224,10 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     }
   });
 
+  useEffect(() => {
+    setFilteredResultsLength(filteredInvoices.length);
+  }, [filteredInvoices]);
+
   return (
     <div className="p-4 card">
       <div className="upper-container d-flex align-content-center justify-content-between">
@@ -260,7 +266,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>#</th>
+              <th># of {filteredResultsLength}</th>
               <TableHeader
                 column="creationDate"
                 activeColumn={activeColumn}
@@ -310,29 +316,32 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
         {filteredInvoices.length > 0 ? (
           <table className="table table-striped">
             <tbody>
-              {filteredInvoices.map((invoice, index) => (
-                <tr
-                  className="table-row"
-                  key={invoice.referenceNumber}
-                  onClick={() => openEditModal(invoice)}
-                  onKeyPress={(event) => {
-                    if (event.key === 'Enter') {
-                      openEditModal(invoice);
-                    }
-                  }}
-                  tabIndex={0}
-                  aria-label={`Edit invoice ${index + 1}`}
-                  role="button"
-                >
-                  <th scope="row">{index + 1}</th>
-                  <td>{invoice.creationDate}</td>
-                  <td>{invoice.clientName}</td>
-                  <td>{invoice.referenceNumber}</td>
-                  <td>{formatPrice(invoice.amount)}</td>
-                  <td>{invoice.status}</td>
-                  <td></td>
-                </tr>
-              ))}
+              {filteredInvoices
+                .slice()
+                .reverse()
+                .map((invoice, index) => (
+                  <tr
+                    className="table-row"
+                    key={invoice.referenceNumber}
+                    onClick={() => openEditModal(invoice)}
+                    onKeyPress={(event) => {
+                      if (event.key === 'Enter') {
+                        openEditModal(invoice);
+                      }
+                    }}
+                    tabIndex={0}
+                    aria-label={`Edit invoice ${index + 1}`}
+                    role="button"
+                  >
+                    <th scope="row">{index + 1}</th>
+                    <td>{invoice.creationDate}</td>
+                    <td className="text-capitalize">{invoice.clientName}</td>
+                    <td className="text-uppercase">{invoice.referenceNumber}</td>
+                    <td>{formatPrice(invoice.amount)}</td>
+                    <td>{invoice.status}</td>
+                    <td></td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         ) : (

@@ -29,6 +29,10 @@ input {
   overflow-y: auto;
 }
 
+th {
+  min-width: 90px;
+}
+
 tr.table-row td {
   width: 20%;
 }
