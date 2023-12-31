@@ -192,10 +192,30 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     return null;
   };
 
+  const [startDate, setStartDate] = useState<string>('');
+  const [endDate, setEndDate] = useState<string>('');
+
+  const filteredInvoices = invoices.filter((invoice) => {
+    if (startDate && endDate) {
+      return (
+        new Date(invoice.creationDate) >= new Date(startDate) && new Date(invoice.creationDate) <= new Date(endDate)
+      );
+    }
+    return true;
+  });
+
   return (
     <div className="p-4 card">
       <div className="upper-container d-flex align-content-center justify-content-between">
         <h2>Invoices</h2>
+        <div>
+          <label>Start Date:</label>
+          <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
+        </div>
+        <div>
+          <label>End Date:</label>
+          <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
+        </div>
         <button
           className="mb-2 btn btn-primary d-flex align-items-center"
           onClick={() => {
@@ -254,7 +274,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
           </tr>
         </thead>
         <tbody>
-          {invoices.map((invoice, index) => (
+          {filteredInvoices.map((invoice, index) => (
             <tr
               className="table-row"
               key={invoice.referenceNumber}
