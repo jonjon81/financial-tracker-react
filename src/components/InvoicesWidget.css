@@ -39,6 +39,18 @@ tr.table-row td {
   width: 20%;
 }
 
+@media (max-width: 600px) {
+  tr.table-row td,
+  .table [scope='col'] button {
+    font-size: 0.875rem;
+  }
+
+  .table [scope='col'] {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
 .table [scope='col'] button {
   width: 100%;
 }

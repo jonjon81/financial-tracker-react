@@ -284,11 +284,11 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
             </div>
           </div>
           <div className="form-button-controls d-flex align-items-end">
-            <button className="btn btn-outline-secondary" onClick={handleResetFilters}>
+            <button className="btn btn-outline-secondary mb-2" onClick={handleResetFilters}>
               <RxReset className="fs-2" />
             </button>
             <button
-              className="btn btn-outline-danger ms-2"
+              className="btn btn-outline-danger ms-2 mb-2"
               onClick={() => {
                 setIsNewInvoice(true);
                 setShowModal(true);
