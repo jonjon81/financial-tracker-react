@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import SummaryWidget from './components/SummaryWidget';
 import InvoicesWidget from './components/InvoicesWidget';
 import BarChart from './components/InvoicesBarChart';
 import { useInvoice } from './context/InvoiceContexts';
 import { useTransaction } from './context/TransactionContexts';
 import './App.css';
+import MainSummaryWidget from './components/MainSummaryWidget';
 
 const App: React.FC = () => {
   const { state: invoiceState } = useInvoice();
@@ -27,7 +27,7 @@ const App: React.FC = () => {
         </div>
       ) : (
         <div className="dashboard">
-          <SummaryWidget transactions={transactionState.transactions} />
+          <MainSummaryWidget />
           <BarChart />
           <InvoicesWidget transactions={transactionState.transactions} />
         </div>
