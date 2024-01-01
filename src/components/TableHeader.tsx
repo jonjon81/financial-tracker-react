@@ -4,7 +4,7 @@ import { Invoice } from '../types/Invoice';
 type ColumnHeader = keyof Invoice;
 
 interface TableHeaderProps {
-  children: React.ReactNode; // Accept children as a prop
+  children: React.ReactNode;
   column: ColumnHeader;
   activeColumn: ColumnHeader | null;
   sortTable: (column: ColumnHeader) => void;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SummaryWidget from './components/SummaryWidget';
 import InvoicesWidget from './components/InvoicesWidget';
+import BarChart from './components/InvoicesBarChart';
 import { useInvoice } from './context/InvoiceContexts';
 import { useTransaction } from './context/TransactionContexts';
 import './App.css';
@@ -17,9 +18,7 @@ const App: React.FC = () => {
   }, [invoiceState.invoices]);
 
   return (
-    <div className="container">
-      <h1 className="fs-5 p-4 text-center">Financial Dashboard</h1>
-
+    <div className="container py-2">
       {isLoading ? (
         <div className="d-flex justify-content-center spinner-overlay">
           <div className="spinner-border" role="status">
@@ -29,6 +28,7 @@ const App: React.FC = () => {
       ) : (
         <div className="dashboard">
           <SummaryWidget transactions={transactionState.transactions} />
+          <BarChart />
           <InvoicesWidget transactions={transactionState.transactions} />
         </div>
       )}

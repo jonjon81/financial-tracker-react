@@ -35,7 +35,7 @@ const SummaryWidget: React.FC<SummaryProps> = () => {
   else if (totalAmount < 0) totalAmountColor = 'red';
 
   return (
-    <div className="card d-inline-block bg-light mb-4">
+    <div className="card d-inline-block bg-light mb-2">
       <div className="card-body">
         <h2 className="card-title fs-5">Financial Summary</h2>
         <p className="card-text">
