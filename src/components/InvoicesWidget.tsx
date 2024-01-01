@@ -3,7 +3,9 @@ import { Invoice } from '../types/Invoice';
 import { Transaction } from '../types/Transaction';
 import { formatPrice } from '../utils/helpers';
 import './InvoicesWidget.css';
-import { FaChevronDown, FaChevronUp, FaPlus } from 'react-icons/fa';
+import { FaChevronDown, FaChevronUp, FaSearch } from 'react-icons/fa';
+import { IoAddCircle } from 'react-icons/io5';
+import { RxReset } from 'react-icons/rx';
 import { FieldValues, useForm } from 'react-hook-form';
 import { setInvoices, addInvoice, updateInvoice, deleteInvoice } from '../actions/invoiceActions';
 import { useInvoice } from '../context/InvoiceContexts';
@@ -232,7 +234,8 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     <div className="p-4 card">
       <div className="upper-container d-flex align-content-center justify-content-between">
         <h2 className="mb-2 d-flex align-items-end">Invoices</h2>
-        <div className="mb-2 d-flex align-items-end">
+        <div className="mb-2 d-flex position-relative search-bar">
+          <FaSearch className="fa-search position-absolute top-50 translate-middle fs-4" />
           <input
             className="form-control"
             type="text"
@@ -241,32 +244,35 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
             onChange={handleSearchTextChange}
           />
         </div>
-        <div className="mb-2">
-          <label>Start Date:</label>
-          <input
-            className="form-control"
-            type="date"
-            value={startDate}
-            onChange={(e) => setStartDate(e.target.value)}
-          />
+        <div className="form-date-controls d-flex">
+          <div className="mb-2">
+            <label>Start Date:</label>
+            <input
+              className="form-control"
+              type="date"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+            />
+          </div>
+          <div className="mb-2 mx-2">
+            <label>End Date:</label>
+            <input className="form-control" type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
+          </div>
         </div>
-        <div className="mb-2">
-          <label>End Date:</label>
-          <input className="form-control" type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
+        <div className="form-button-controls">
+          <button className="btn btn-outline-secondary mb-2" onClick={handleResetFilters}>
+            <RxReset className="fs-2" />
+          </button>
+          <button
+            className="mb-2 btn btn-outline-danger mx-2"
+            onClick={() => {
+              setIsNewInvoice(true);
+              setShowModal(true);
+            }}
+          >
+            <IoAddCircle className="fs-2" />
+          </button>
         </div>
-        <button className="btn btn-outline-secondary mb-2" onClick={handleResetFilters}>
-          Reset Filters
-        </button>
-        <button
-          className="mb-2 btn btn-outline-danger d-flex align-items-center"
-          onClick={() => {
-            setIsNewInvoice(true);
-            setShowModal(true);
-          }}
-        >
-          Add New Invoice
-          <FaPlus className="icon ms-2" />
-        </button>
       </div>
       <div className="table-container">
         <table className="table table-striped">

@@ -54,3 +54,11 @@ tr.table-row td {
   background: grey;
   border-radius: 25px;
 }
+
+.search-bar input {
+  padding-left: 3.5rem;
+}
+
+.search-bar svg {
+  left: 2rem;
+}
