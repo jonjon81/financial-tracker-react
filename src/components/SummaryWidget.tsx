@@ -37,10 +37,10 @@ const SummaryWidget: React.FC<SummaryProps> = () => {
   return (
     <div className="card d-inline-block bg-light mb-4">
       <div className="card-body">
-        <h2 className="card-title">Financial Summary</h2>
+        <h2 className="card-title fs-5">Financial Summary</h2>
         <p className="card-text">
           Total Amount:
-          <span style={{ color: totalAmountColor }}>
+          <span className="ms-1" style={{ color: totalAmountColor }}>
             <strong>{formatPrice(totalAmount)}</strong>
           </span>
         </p>

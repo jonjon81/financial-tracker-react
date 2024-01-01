@@ -18,7 +18,7 @@ const App: React.FC = () => {
 
   return (
     <div className="container">
-      <h1>Financial Dashboard</h1>
+      <h1 className="fs-5 p-4 text-center">Financial Dashboard</h1>
 
       {isLoading ? (
         <div className="d-flex justify-content-center spinner-overlay">

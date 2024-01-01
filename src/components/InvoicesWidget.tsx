@@ -231,28 +231,34 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   return (
     <div className="p-4 card">
       <div className="upper-container d-flex align-content-center justify-content-between">
-        <h2>Invoices</h2>
-        <div>
+        <h2 className="mb-2 d-flex align-items-end">Invoices</h2>
+        <div className="mb-2 d-flex align-items-end">
           <input
+            className="form-control"
             type="text"
-            placeholder="Search by Client Name or Reference Number"
+            placeholder="Search by Client or ID"
             value={searchText}
             onChange={handleSearchTextChange}
           />
         </div>
-        <div>
+        <div className="mb-2">
           <label>Start Date:</label>
-          <input type="date" value={startDate} onChange={(e) => setStartDate(e.target.value)} />
+          <input
+            className="form-control"
+            type="date"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+          />
         </div>
-        <div>
+        <div className="mb-2">
           <label>End Date:</label>
-          <input type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
+          <input className="form-control" type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
         </div>
-        <button className="btn btn-secondary me-2" onClick={handleResetFilters}>
+        <button className="btn btn-outline-secondary mb-2" onClick={handleResetFilters}>
           Reset Filters
         </button>
         <button
-          className="mb-2 btn btn-primary d-flex align-items-center"
+          className="mb-2 btn btn-outline-danger d-flex align-items-center"
           onClick={() => {
             setIsNewInvoice(true);
             setShowModal(true);
@@ -273,7 +279,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                 sortTable={sortTable}
                 renderSortIcon={renderSortIcon}
               >
-                Creation Date
+                Date
               </TableHeader>
               <TableHeader
                 column="clientName"
@@ -281,7 +287,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                 sortTable={sortTable}
                 renderSortIcon={renderSortIcon}
               >
-                Client Name
+                Client
               </TableHeader>
               <TableHeader
                 column="referenceNumber"
@@ -289,7 +295,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                 sortTable={sortTable}
                 renderSortIcon={renderSortIcon}
               >
-                Reference Number
+                ID
               </TableHeader>
               <TableHeader
                 column="amount"
@@ -339,7 +345,6 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                     <td className="text-uppercase">{invoice.referenceNumber}</td>
                     <td>{formatPrice(invoice.amount)}</td>
                     <td>{invoice.status}</td>
-                    <td></td>
                   </tr>
                 ))}
             </tbody>
@@ -371,7 +376,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                     Client Name:
                     <div>
                       <input
-                        className="w-100"
+                        className="w-100 form-control"
                         type="text"
                         id="clientName"
                         {...register('clientName', { required: true, minLength: 3 })}
@@ -388,7 +393,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                     Amount
                     <div>
                       <input
-                        className="w-100"
+                        className="w-100 form-control"
                         type="number"
                         step="0.01"
                         id="amount"
@@ -400,7 +405,12 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                   <label className="d-flex flex-column justify-content-between mb-2">
                     Date
                     <div>
-                      <input className="w-100" type="date" id="date" {...register('date', { required: true })} />
+                      <input
+                        className="w-100 form-control"
+                        type="date"
+                        id="date"
+                        {...register('date', { required: true })}
+                      />
                       {errors.date?.type === 'required' && <p className="text-danger m-0">The date is required.</p>}
                     </div>
                   </label>
@@ -408,7 +418,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                     Reference Number
                     <div>
                       <input
-                        className="w-100 text-uppercase"
+                        className="w-100 form-control text-uppercase"
                         type="text"
                         id="referenceNumber"
                         placeholder="INV-####"
@@ -427,7 +437,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                     Client Name:
                     <div>
                       <input
-                        className="w-100"
+                        className="w-100 form-control"
                         type="text"
                         id="editClientName"
                         {...register('clientName', { required: true, minLength: 3 })}
@@ -444,7 +454,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                     Amount
                     <div>
                       <input
-                        className="w-100"
+                        className="w-100 form-control"
                         type="number"
                         step="0.01"
                         id="amount"
@@ -456,7 +466,12 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                   <label className="d-flex flex-column justify-content-between mb-2">
                     Date
                     <div>
-                      <input className="w-100" type="date" id="date" {...register('date', { required: true })} />
+                      <input
+                        className="w-100 form-control"
+                        type="date"
+                        id="date"
+                        {...register('date', { required: true })}
+                      />
                       {errors.date?.type === 'required' && <p className="text-danger m-0">The date is required.</p>}
                     </div>
                   </label>
@@ -464,7 +479,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                     Reference Number
                     <div>
                       <input
-                        className="w-100 text-uppercase"
+                        className="w-100 text-uppercase form-control"
                         type="text"
                         id="referenceNumber"
                         placeholder="INV-####"

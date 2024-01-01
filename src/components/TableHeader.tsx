@@ -14,7 +14,7 @@ interface TableHeaderProps {
 const TableHeader: React.FC<TableHeaderProps> = ({ children, column, activeColumn, sortTable, renderSortIcon }) => {
   return (
     <th scope="col" className={activeColumn === column ? 'active' : ''}>
-      <button className="btn btn-primary" onClick={() => sortTable(column)}>
+      <button className="btn btn-outline-primary" onClick={() => sortTable(column)}>
         {children} {activeColumn === column && renderSortIcon(column)}
       </button>
     </th>
