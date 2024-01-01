@@ -249,10 +249,10 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   }, [filteredInvoices]);
 
   return (
-    <div className="p-4 card">
-      <div className="upper-container d-flex align-content-center justify-content-between">
+    <div className="p-2 p-md-4 card">
+      <div className="upper-container d-flex align-content-center justify-content-between flex-column flex-lg-row">
         <h2 className="mb-2 d-flex align-items-end">Invoices</h2>
-        <div className="mb-2 d-flex align-items-end position-relative search-bar">
+        <div className="mb-2 d-flex align-items-end position-relative search-bar w-100 mx-lg-2">
           <FaSearch className="fa-search position-absolute fs-5" />
           <input
             className="form-control"
@@ -262,37 +262,44 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
             onChange={handleSearchTextChange}
           />
         </div>
-        <div className="form-date-controls d-flex">
-          <div className="mb-2">
-            <label>Start Date:</label>
-            <input
-              className="form-control"
-              type="date"
-              value={startDate}
-              onChange={(e) => setStartDate(e.target.value)}
-            />
+        <div className="form-filter-container d-flex justify-content-between flex-wrap flex-md-nowrap">
+          <div className="form-date-controls d-flex">
+            <div className="mb-2">
+              <label>Start Date:</label>
+              <input
+                className="form-control"
+                type="date"
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+              />
+            </div>
+            <div className="mb-2 mx-2">
+              <label>End Date:</label>
+              <input
+                className="form-control"
+                type="date"
+                value={endDate}
+                onChange={(e) => setEndDate(e.target.value)}
+              />
+            </div>
           </div>
-          <div className="mb-2 mx-2">
-            <label>End Date:</label>
-            <input className="form-control" type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
+          <div className="form-button-controls d-flex align-items-end">
+            <button className="btn btn-outline-secondary" onClick={handleResetFilters}>
+              <RxReset className="fs-2" />
+            </button>
+            <button
+              className="btn btn-outline-danger ms-2"
+              onClick={() => {
+                setIsNewInvoice(true);
+                setShowModal(true);
+              }}
+            >
+              <IoAddCircle className="fs-2" />
+            </button>
           </div>
-        </div>
-        <div className="form-button-controls d-flex align-items-end mb-2">
-          <button className="btn btn-outline-secondary" onClick={handleResetFilters}>
-            <RxReset className="fs-2" />
-          </button>
-          <button
-            className="btn btn-outline-danger mx-2"
-            onClick={() => {
-              setIsNewInvoice(true);
-              setShowModal(true);
-            }}
-          >
-            <IoAddCircle className="fs-2" />
-          </button>
         </div>
       </div>
-      <div className="table-container">
+      <div className="table-container overflow-scroll">
         <table className="table table-striped">
           <thead>
             <tr>
