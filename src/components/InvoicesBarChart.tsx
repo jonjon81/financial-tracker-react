@@ -51,10 +51,12 @@ const BarChart = () => {
         const months = monthlyRevenueData.map(({ month }) => month);
         const revenues = monthlyRevenueData.map(({ revenue }) => revenue);
 
+        const currentYear = new Date().getFullYear();
+
         chartInstance.current = new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: months,
+            labels: months.map((month) => `${month} ${currentYear}`),
             datasets: [
               {
                 label: 'Monthly Revenue',

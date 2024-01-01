@@ -503,5 +503,6 @@
   { "clientName": "Bruen Group", "creationDate": "2023-12-05", "referenceNumber": "INV-0177", "amount": 460.9 },
   { "clientName": "Hand Group", "creationDate": "2023-12-09", "referenceNumber": "INV-0178", "amount": 1301.08 },
   { "clientName": "Block Group", "creationDate": "2023-12-11", "referenceNumber": "INV-0179", "amount": 2251.74 },
-  { "clientName": "Schoen-Vandervort", "creationDate": "2023-12-20", "referenceNumber": "INV-0180", "amount": 2044.99 }
+  { "clientName": "Schoen-Vandervort", "creationDate": "2023-12-20", "referenceNumber": "INV-0180", "amount": 2044.99 },
+  { "clientName": "Google", "creationDate": "2024-01-01", "referenceNumber": "INV-0181", "amount": 10000.5 }
 ]
