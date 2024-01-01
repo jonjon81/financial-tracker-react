@@ -17,7 +17,7 @@ interface InvoicesProps {
 
 interface FormData {
   clientName: string;
-  amount: number;
+  amount: string;
   date: string;
   referenceNumber: string;
 }
@@ -66,7 +66,9 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
 
     if (invoice) {
       setValue('clientName', invoice.clientName);
-      setValue('amount', invoice.amount);
+      const amountAsString = invoice.amount.toFixed(2);
+      setValue('amount', amountAsString);
+
       setValue('date', invoice.creationDate);
       setValue('referenceNumber', invoice.referenceNumber);
     }
@@ -85,6 +87,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   const onSubmit = (data: FieldValues) => {
     const { clientName, amount, date, referenceNumber } = data;
     const isReferenceNumberExists = invoices.some((invoice) => invoice.referenceNumber === referenceNumber);
+    const parsedAmount = parseFloat(amount);
 
     if (isReferenceNumberExists) {
       setReferenceNumberError('The invoice number already exists');
@@ -97,7 +100,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
       clientName,
       creationDate: date,
       referenceNumber,
-      amount,
+      amount: parsedAmount,
       status: 'UNPAID',
     };
 
@@ -110,7 +113,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
 
   const handleUpdateInvoice = (data: FormData) => {
     if (editInvoice) {
-      const { referenceNumber } = data;
+      const { referenceNumber, amount } = data;
       const isReferenceNumberExists = invoices.some(
         (invoice) =>
           invoice.referenceNumber.toLowerCase() === referenceNumber.toLowerCase() &&
@@ -123,10 +126,18 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
       }
 
       setReferenceNumberError('');
+
+      const parsedAmount = parseFloat(String(amount));
+
+      if (isNaN(parsedAmount)) {
+        console.error('Invalid amount');
+        return;
+      }
+
       const updatedEditedInvoice: Invoice = {
         ...editInvoice,
         clientName: data.clientName,
-        amount: data.amount,
+        amount: parsedAmount,
         creationDate: data.date,
         referenceNumber: data.referenceNumber,
       };
