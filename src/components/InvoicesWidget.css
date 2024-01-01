@@ -45,7 +45,8 @@ tr.table-row td {
     font-size: 0.875rem;
   }
 
-  .table [scope='col'] {
+  .table [scope='col'],
+  tr.table-row td {
     padding-left: 4px;
     padding-right: 4px;
   }
