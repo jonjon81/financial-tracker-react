@@ -10,9 +10,7 @@ const BarChart = () => {
   } = useInvoice();
 
   useEffect(() => {
-    console.log('Invoices changed:', invoices);
-    if (chartRef && chartRef.current && invoices.length > 0) {
-      // Confirm invoices exist
+    if (chartRef.current && invoices.length > 0) {
       const ctx = chartRef.current.getContext('2d');
 
       if (ctx) {
@@ -20,43 +18,55 @@ const BarChart = () => {
           chartInstance.current.destroy();
         }
 
-        // Calculate monthly revenue from invoices data
-        const monthlyRevenueData = Array.from({ length: 12 }, (_, monthIndex) => {
-          return { month: getMonthName(monthIndex), revenue: 0 };
+        const today = new Date();
+        const currentYear = today.getFullYear();
+        const currentMonth = today.getMonth();
+
+        const last12Months = Array.from({ length: 12 }, (_, index) => {
+          const month = currentMonth - index;
+          const year = currentYear - (month < 0 ? 1 : 0);
+          const adjustedMonth = ((month % 12) + 12) % 12;
+          return { month: adjustedMonth, year };
+        }).reverse();
+
+        const monthNames = [
+          'January',
+          'February',
+          'March',
+          'April',
+          'May',
+          'June',
+          'July',
+          'August',
+          'September',
+          'October',
+          'November',
+          'December',
+        ];
+
+        const monthlyRevenueData = last12Months.map(({ month, year }) => {
+          const filteredInvoices = invoices.filter(
+            (invoice) =>
+              new Date(invoice.creationDate).getFullYear() === year &&
+              new Date(invoice.creationDate).getMonth() === month
+          );
+
+          const revenue = filteredInvoices.reduce((total, invoice) => total + invoice.amount, 0);
+
+          return {
+            month: monthNames[month],
+            year,
+            revenue,
+          };
         });
 
-        function getMonthName(index: number): string {
-          const monthNames = [
-            'January',
-            'February',
-            'March',
-            'April',
-            'May',
-            'June',
-            'July',
-            'August',
-            'September',
-            'October',
-            'November',
-            'December',
-          ];
-          return monthNames[index];
-        }
-
-        invoices.forEach((invoice) => {
-          const monthIndex = new Date(invoice.creationDate).getMonth();
-          monthlyRevenueData[monthIndex].revenue += invoice.amount;
-        });
-
-        const months = monthlyRevenueData.map(({ month }) => month);
+        const months = monthlyRevenueData.map(({ month, year }) => `${month} ${year}`);
         const revenues = monthlyRevenueData.map(({ revenue }) => revenue);
-
-        const currentYear = new Date().getFullYear();
 
         chartInstance.current = new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: months.map((month) => `${month} ${currentYear}`),
+            labels: months,
             datasets: [
               {
                 label: 'Monthly Revenue',

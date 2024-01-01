@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { Invoice } from '../types/Invoice';
 import { Transaction } from '../types/Transaction';
 import { formatPrice } from '../utils/helpers';
@@ -38,6 +38,11 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   const [referenceNumberError, setReferenceNumberError] = useState<string>('');
   const [searchText, setSearchText] = useState<string>('');
   const [filteredResultsLength, setFilteredResultsLength] = useState<number>(0);
+  const [tableUpdateCounter, setTableUpdateCounter] = useState<number>(0);
+  const [sortConfig, setSortConfig] = useState<{ column: ColumnHeader | null; direction: SortDirection }>({
+    column: null,
+    direction: SortDirection.ASC,
+  });
 
   const handleSearchTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
@@ -103,11 +108,6 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     setReferenceNumberError('');
   };
 
-  const [sortConfig, setSortConfig] = useState<{ column: ColumnHeader | null; direction: SortDirection }>({
-    column: null,
-    direction: SortDirection.ASC,
-  });
-
   const handleUpdateInvoice = (data: FormData) => {
     if (editInvoice) {
       const { referenceNumber } = data;
@@ -140,6 +140,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
       setShowModal(false);
       reset();
       setReferenceNumberError('');
+      setTableUpdateCounter((prevCounter) => prevCounter + 1);
     } else {
       console.error('Invalid invoice data for update');
     }
@@ -152,6 +153,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     setShowModal(false);
     reset();
     setReferenceNumberError('');
+    setTableUpdateCounter((prevCounter) => prevCounter + 1);
   };
 
   useEffect(() => {
@@ -174,7 +176,8 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     if (statusesChanged) {
       dispatch(setInvoices(updatedInvoices));
     }
-  }, [invoices, transactions, dispatch]);
+    console.log('Invoices or transactions updated');
+  }, [invoices, transactions, dispatch, tableUpdateCounter]);
 
   const [activeColumn, setActiveColumn] = useState<ColumnHeader | null>(null);
 
@@ -186,18 +189,6 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
 
     setSortConfig({ column, direction });
     setActiveColumn(column);
-
-    const sortedInvoices = [...invoices].sort((a, b) => {
-      if (a[column] < b[column]) {
-        return direction === SortDirection.DESC ? -1 : 1;
-      }
-      if (a[column] > b[column]) {
-        return direction === SortDirection.DESC ? 1 : -1;
-      }
-      return 0;
-    });
-
-    dispatch(setInvoices(sortedInvoices));
   };
 
   const renderSortIcon = (column: ColumnHeader) => {
@@ -210,7 +201,22 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   const [startDate, setStartDate] = useState<string>('');
   const [endDate, setEndDate] = useState<string>('');
 
-  const filteredInvoices = invoices.filter((invoice) => {
+  const sortedInvoices = useMemo(() => {
+    if (sortConfig.column !== null) {
+      return [...invoices].sort((a, b) => {
+        if (a[sortConfig.column!] < b[sortConfig.column!]) {
+          return sortConfig.direction === SortDirection.DESC ? -1 : 1;
+        }
+        if (a[sortConfig.column!] > b[sortConfig.column!]) {
+          return sortConfig.direction === SortDirection.DESC ? 1 : -1;
+        }
+        return 0;
+      });
+    }
+    return invoices;
+  }, [invoices, sortConfig]);
+
+  const filteredInvoices = sortedInvoices.filter((invoice) => {
     const matchesSearchText =
       invoice.clientName.toLowerCase().includes(searchText.toLowerCase()) ||
       invoice.referenceNumber.toLowerCase().includes(searchText.toLowerCase());
@@ -228,6 +234,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
 
   useEffect(() => {
     setFilteredResultsLength(filteredInvoices.length);
+    console.log('Filtered invoices updated');
   }, [filteredInvoices]);
 
   return (
