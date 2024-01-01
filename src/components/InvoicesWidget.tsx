@@ -234,8 +234,8 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     <div className="p-4 card">
       <div className="upper-container d-flex align-content-center justify-content-between">
         <h2 className="mb-2 d-flex align-items-end">Invoices</h2>
-        <div className="mb-2 d-flex position-relative search-bar">
-          <FaSearch className="fa-search position-absolute top-50 translate-middle fs-4" />
+        <div className="mb-2 d-flex align-items-end position-relative search-bar">
+          <FaSearch className="fa-search position-absolute fs-5" />
           <input
             className="form-control"
             type="text"
@@ -259,12 +259,12 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
             <input className="form-control" type="date" value={endDate} onChange={(e) => setEndDate(e.target.value)} />
           </div>
         </div>
-        <div className="form-button-controls">
-          <button className="btn btn-outline-secondary mb-2" onClick={handleResetFilters}>
+        <div className="form-button-controls d-flex align-items-end mb-2">
+          <button className="btn btn-outline-secondary" onClick={handleResetFilters}>
             <RxReset className="fs-2" />
           </button>
           <button
-            className="mb-2 btn btn-outline-danger mx-2"
+            className="btn btn-outline-danger mx-2"
             onClick={() => {
               setIsNewInvoice(true);
               setShowModal(true);
