@@ -303,7 +303,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th># of {filteredResultsLength}</th>
+              <th>Total: {filteredResultsLength}</th>
               <TableHeader
                 column="creationDate"
                 activeColumn={activeColumn}
