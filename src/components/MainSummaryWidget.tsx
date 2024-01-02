@@ -1,18 +1,18 @@
-import NetIncomeSummaryWidget from './NetIncomeSummaryWidget';
-import ExpenseSummaryWidget from './ExpenseSummaryWidget';
-import IncomeSummaryWidget from './IncomeSummaryWidget';
-import SummaryWidget from './SummaryWidget';
+import CashBalance from './CashBalance';
+import TotalIncomeSummary from './TotalIncomeSummary';
+import TotalExpensesSummary from './TotalExpensesSummary';
+import Last30Days from './Last30Days';
 import { useTransaction } from '../context/TransactionContexts';
 import './MainSummaryWidget.css';
 
 const MainSummaryWidget = () => {
   const { state: transactionState } = useTransaction();
   return (
-    <div className="summary-main-container d-flex">
-      <SummaryWidget transactions={transactionState.transactions} />
-      <NetIncomeSummaryWidget />
-      <ExpenseSummaryWidget />
-      <IncomeSummaryWidget />
+    <div className="summary-main-container d-flex justify-content-between">
+      <CashBalance transactions={[]} />
+      <Last30Days transactions={transactionState.transactions} />
+      <TotalIncomeSummary transactions={[]} />
+      <TotalExpensesSummary transactions={[]} />
     </div>
   );
 };

@@ -8,7 +8,7 @@
 
 @media (max-width: 768px) {
   .summary-main-container.d-flex .card {
-    width: 50%;
+    width: calc(50% - 4px);
     margin-right: 0 !important;
   }
   .summary-main-container.d-flex {

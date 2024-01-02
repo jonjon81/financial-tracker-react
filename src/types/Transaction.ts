@@ -3,6 +3,7 @@ export interface Transaction {
   description: string;
   referenceNumber: string;
   amount: number;
+  category: string;
 }
 
 export interface TransactionState {

@@ -1,18 +1,15 @@
 import React, { useContext } from 'react';
-import { InvoiceContext } from '../context/InvoiceContexts';
 import { TransactionContext } from '../context/TransactionContexts';
-import { formatPrice } from '../utils/helpers';
+import { formatPriceWholeNumber } from '../utils/helpers';
 import { Transaction } from '../types/Transaction';
 
 interface SummaryProps {
   transactions: Transaction[];
 }
 
-const SummaryWidget: React.FC<SummaryProps> = () => {
-  const { state: invoiceState } = useContext(InvoiceContext);
+const CashBalance: React.FC<SummaryProps> = () => {
   const { state: transactionState } = useContext(TransactionContext);
 
-  const { invoices } = invoiceState;
   const { transactions } = transactionState;
 
   const calculateTotalAmount = (): number => {
@@ -20,12 +17,6 @@ const SummaryWidget: React.FC<SummaryProps> = () => {
   };
 
   const totalAmount = calculateTotalAmount();
-
-  // Filter invoices within the last 30 days
-  const thirtyDaysAgo = new Date();
-  thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-
-  const invoicesLast30Days = invoices.filter((invoice) => new Date(invoice.creationDate) > thirtyDaysAgo).length;
 
   // Determine color based on total amount
   let totalAmountColor = 'black';
@@ -37,19 +28,15 @@ const SummaryWidget: React.FC<SummaryProps> = () => {
   return (
     <div className="card d-inline-block bg-light mb-2 me-2">
       <div className="card-body">
-        <h2 className="card-title fs-5">Financial Summary</h2>
-        <p className="card-text">
-          Total Amount:
+        <h2 className="card-title fs-6 text-center">Cash Balance</h2>
+        <p className="card-text text-center fs-2">
           <span className="ms-1" style={{ color: totalAmountColor }}>
-            <strong>{formatPrice(totalAmount)}</strong>
+            <strong>{formatPriceWholeNumber(totalAmount)}</strong>
           </span>
-        </p>
-        <p className="card-text">
-          Invoices in the last 30 days: <strong>{invoicesLast30Days}</strong>
         </p>
       </div>
     </div>
   );
 };
 
-export default SummaryWidget;
+export default CashBalance;
