@@ -299,7 +299,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
           </div>
         </div>
       </div>
-      <div className="table-container overflow-scroll">
+      <div className="table-container overflow-auto">
         <table className="table table-striped">
           <thead>
             <tr>
