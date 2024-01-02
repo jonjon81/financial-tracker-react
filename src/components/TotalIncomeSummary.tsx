@@ -12,6 +12,10 @@ const TotalIncomeSummary: React.FC<SummaryProps> = ({ incomeTotalPrevious12Month
   const differencePercentage =
     incomeTotalPrevious24Months !== 0 ? ((difference / incomeTotalPrevious24Months) * 100).toFixed(2) : 'N/A';
 
+  console.log('___________________________');
+  console.log('incomeTotalPrevious24Months', incomeTotalPrevious24Months);
+  console.log('incomeTotalPrevious12Months', incomeTotalPrevious12Months);
+
   return (
     <div className="card d-inline-block bg-light mb-2 me-2">
       <div className="card-body">
