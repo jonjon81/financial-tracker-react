@@ -68,8 +68,16 @@ const SummaryWidget = () => {
   return (
     <div className="summary-main-container d-flex justify-content-between">
       <CashBalance transactions={[]} />
-      <TotalIncomeSummary transactions={[]} />
-      <TotalExpensesSummary transactions={[]} />
+      <TotalIncomeSummary
+        incomeTotalPrevious12Months={incomeTotalPrevious12Months}
+        incomeTotalPrevious24Months={incomeTotalPrevious24Months}
+        transactions={[]}
+      />
+      <TotalExpensesSummary
+        expenseTotalPrevious12Months={expensesTotalPrevious12Months}
+        expenseTotalPrevious24Months={expensesTotalPrevious24Months}
+        transactions={[]}
+      />
       <NetIncomeSummary
         incomeTotalPrevious12Months={incomeTotalPrevious12Months}
         incomeTotalPrevious24Months={incomeTotalPrevious24Months}
