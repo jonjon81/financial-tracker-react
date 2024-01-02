@@ -6,12 +6,16 @@
   margin-right: 0 !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .summary-main-container.d-flex .card {
     width: calc(50% - 4px);
     margin-right: 0 !important;
   }
   .summary-main-container.d-flex {
     flex-wrap: wrap;
+  }
+
+  .summary-main-container.d-flex .card.last-30-days {
+    width: 100%;
   }
 }

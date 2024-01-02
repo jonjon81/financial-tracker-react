@@ -187,7 +187,6 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     if (statusesChanged) {
       dispatch(setInvoices(updatedInvoices));
     }
-    console.log('Invoices or transactions updated');
   }, [invoices, transactions, dispatch, tableUpdateCounter]);
 
   const [activeColumn, setActiveColumn] = useState<ColumnHeader | null>(null);
@@ -245,7 +244,6 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
 
   useEffect(() => {
     setFilteredResultsLength(filteredInvoices.length);
-    console.log('Filtered invoices updated');
   }, [filteredInvoices]);
 
   return (
