@@ -1,0 +1,17 @@
+.summary-main-container.d-flex .card {
+  width: 25%;
+}
+
+.summary-main-container.d-flex .me-2:last-child {
+  margin-right: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .summary-main-container.d-flex .card {
+    width: 50%;
+    margin-right: 0 !important;
+  }
+  .summary-main-container.d-flex {
+    flex-wrap: wrap;
+  }
+}

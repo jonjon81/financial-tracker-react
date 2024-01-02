@@ -3,6 +3,7 @@ import ExpenseSummaryWidget from './ExpenseSummaryWidget';
 import IncomeSummaryWidget from './IncomeSummaryWidget';
 import SummaryWidget from './SummaryWidget';
 import { useTransaction } from '../context/TransactionContexts';
+import './MainSummaryWidget.css';
 
 const MainSummaryWidget = () => {
   const { state: transactionState } = useTransaction();
