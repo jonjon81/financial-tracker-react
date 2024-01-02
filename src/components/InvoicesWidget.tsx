@@ -253,7 +253,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
         <div className="mb-2 d-flex align-items-end position-relative search-bar w-100 mx-lg-2">
           <FaSearch className="fa-search position-absolute fs-5" />
           <input
-            className="form-control"
+            className="form-control bg-body-secondary"
             type="text"
             placeholder="Search by Client or ID"
             value={searchText}
@@ -265,7 +265,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
             <div className="mb-2">
               <label>Start Date:</label>
               <input
-                className="form-control"
+                className="form-control bg-body-secondary"
                 type="date"
                 value={startDate}
                 onChange={(e) => setStartDate(e.target.value)}
@@ -274,7 +274,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
             <div className="mb-2 mx-2">
               <label>End Date:</label>
               <input
-                className="form-control"
+                className="form-control bg-body-secondary"
                 type="date"
                 value={endDate}
                 onChange={(e) => setEndDate(e.target.value)}
