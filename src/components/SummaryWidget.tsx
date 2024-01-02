@@ -65,12 +65,6 @@ const SummaryWidget = () => {
     0
   );
 
-  const difference = expensesTotalPrevious12Months - expensesTotalPrevious24Months;
-  const differencePercentageExpense =
-    expensesTotalPrevious24Months !== 0 ? ((difference / expensesTotalPrevious24Months) * 100).toFixed(2) : 'N/A';
-
-  const absoluteTotalExpense = Math.abs(expensesTotalPrevious12Months);
-
   return (
     <div className="summary-main-container d-flex justify-content-between">
       <CashBalance transactions={[]} />
