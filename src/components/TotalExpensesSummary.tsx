@@ -26,10 +26,8 @@ const TotalExpenseSummary: React.FC<SummaryProps> = ({
           </span>
           <br />
           <span className="ms-1 d-flex flex-column" style={{ fontSize: '12px' }}>
-            <span className={difference < 0 ? 'text-success' : 'text-danger'}>
-              {Math.abs(Number(differencePercentage))}%
-            </span>
-            previous 12 months
+            <span className={difference < 0 ? 'text-success' : 'text-danger'}>{Number(differencePercentage)}%</span>
+            from previous 12 months
           </span>
         </p>
       </div>

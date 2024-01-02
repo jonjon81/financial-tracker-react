@@ -21,12 +21,14 @@ const NetIncomeSummary: React.FC<SummaryProps> = ({
   const difference = currentNetIncome - previousNetIncome;
   const differencePercentage = previousNetIncome !== 0 ? ((difference / previousNetIncome) * 100).toFixed(2) : 'N/A';
 
+  const netIncomeClass = currentNetIncome >= 0 ? 'text-success' : 'text-danger';
+
   return (
     <div className="card d-inline-block bg-light mb-2 me-2">
       <div className="card-body">
         <h2 className="card-title fs-6 text-center">Net Income</h2>
         <p className="card-text text-center fs-2">
-          <span className="ms-1">
+          <span className={`ms-1 ${netIncomeClass}`}>
             <strong>{formatPriceWholeNumber(currentNetIncome)}</strong>
           </span>
           <br />
@@ -36,7 +38,7 @@ const NetIncomeSummary: React.FC<SummaryProps> = ({
             ) : (
               <span className="text-success">+{Number(differencePercentage)}%</span>
             )}{' '}
-            previous 12 months
+            from previous 12 months
           </span>
         </p>
       </div>

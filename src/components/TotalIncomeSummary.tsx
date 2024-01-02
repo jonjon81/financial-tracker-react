@@ -27,7 +27,7 @@ const TotalIncomeSummary: React.FC<SummaryProps> = ({ incomeTotalPrevious12Month
             ) : (
               <span className="text-success">+{Number(differencePercentage)}%</span>
             )}{' '}
-            previous 12 months
+            from previous 12 months
           </span>
         </p>
       </div>
