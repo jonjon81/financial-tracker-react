@@ -4,7 +4,7 @@
     "category": "income",
     "transactionDate": "2021-02-01",
     "referenceNumber": "INV-0001",
-    "amount": 564.63
+    "amount": 2564.63
   },
   {
     "clientName": "Rodriguez Group",
@@ -32,7 +32,7 @@
     "category": "income",
     "transactionDate": "2021-02-22",
     "referenceNumber": "INV-0005",
-    "amount": 809.41
+    "amount": 2809.41
   },
   {
     "clientName": "Christiansen, VonRueden and Fisher",
@@ -46,7 +46,7 @@
     "category": "income",
     "transactionDate": "2021-03-05",
     "referenceNumber": "INV-0007",
-    "amount": 2359.16
+    "amount": 22359.16
   },
   {
     "clientName": "Anderson, Gleason and Waelchi",
@@ -67,7 +67,7 @@
     "category": "income",
     "transactionDate": "2021-03-21",
     "referenceNumber": "INV-0010",
-    "amount": 904.3
+    "amount": 2904.3
   },
   {
     "clientName": "Davis LLC",
@@ -144,7 +144,7 @@
     "category": "income",
     "transactionDate": "2021-06-01",
     "referenceNumber": "INV-0021",
-    "amount": 705.18
+    "amount": 2705.18
   },
   {
     "clientName": "Kuhlman, Zulauf and Stehr",
@@ -200,7 +200,7 @@
     "category": "income",
     "transactionDate": "2021-07-21",
     "referenceNumber": "INV-0029",
-    "amount": 1457.18
+    "amount": 11457.18
   },
   {
     "clientName": "Homenick-Nikolaus",
@@ -249,7 +249,7 @@
     "category": "income",
     "transactionDate": "2021-09-01",
     "referenceNumber": "INV-0036",
-    "amount": 2185.39
+    "amount": 21185.39
   },
   {
     "clientName": "Emmerich-Pagac",
@@ -410,7 +410,7 @@
     "category": "income",
     "transactionDate": "2022-01-09",
     "referenceNumber": "INV-0059",
-    "amount": 1590.96
+    "amount": 11590.96
   },
   {
     "clientName": "O'Kon-Huels",
@@ -445,7 +445,7 @@
     "category": "income",
     "transactionDate": "2022-02-06",
     "referenceNumber": "INV-0064",
-    "amount": 2156.22
+    "amount": 21156.22
   },
   {
     "clientName": "Goodwin-Johns",
@@ -459,7 +459,7 @@
     "category": "income",
     "transactionDate": "2022-03-11",
     "referenceNumber": "INV-0066",
-    "amount": 2352.63
+    "amount": 12352.63
   },
   {
     "clientName": "Bogan, Beahan and Steuber",
@@ -480,7 +480,7 @@
     "category": "income",
     "transactionDate": "2022-03-09",
     "referenceNumber": "INV-0069",
-    "amount": 2427.11
+    "amount": 21427.11
   },
   {
     "clientName": "Lehner, McCullough and Cummings",
@@ -522,7 +522,7 @@
     "category": "income",
     "transactionDate": "2022-04-29",
     "referenceNumber": "INV-0075",
-    "amount": 1884.43
+    "amount": 11884.43
   },
   {
     "clientName": "Treutel Inc",
@@ -536,7 +536,7 @@
     "category": "income",
     "transactionDate": "2022-05-03",
     "referenceNumber": "INV-0077",
-    "amount": 1599.46
+    "amount": 11599.46
   },
   {
     "clientName": "Erdman Inc",
@@ -557,7 +557,7 @@
     "category": "income",
     "transactionDate": "2022-05-18",
     "referenceNumber": "INV-0080",
-    "amount": 1875.13
+    "amount": 11875.13
   },
   {
     "clientName": "Dietrich-Crona",
@@ -578,7 +578,7 @@
     "category": "income",
     "transactionDate": "2022-06-07",
     "referenceNumber": "INV-0083",
-    "amount": 598.7
+    "amount": 5198.7
   },
   {
     "clientName": "Nikolaus-Brakus",
@@ -592,7 +592,7 @@
     "category": "income",
     "transactionDate": "2022-06-11",
     "referenceNumber": "INV-0085",
-    "amount": 374.1
+    "amount": 1374.1
   },
   {
     "clientName": "Lakin and Sons",
@@ -620,7 +620,7 @@
     "category": "income",
     "transactionDate": "2022-07-24",
     "referenceNumber": "INV-0089",
-    "amount": 1854.19
+    "amount": 11854.19
   },
   {
     "clientName": "Klocko Inc",
@@ -634,7 +634,7 @@
     "category": "income",
     "transactionDate": "2022-08-03",
     "referenceNumber": "INV-0091",
-    "amount": 1958.64
+    "amount": 11958.64
   },
   {
     "clientName": "Strosin-Hansen",
@@ -662,7 +662,7 @@
     "category": "income",
     "transactionDate": "2022-08-21",
     "referenceNumber": "INV-0095",
-    "amount": 1657.3
+    "amount": 11657.3
   },
   {
     "clientName": "Ebert-Osinski",
@@ -711,7 +711,7 @@
     "category": "income",
     "transactionDate": "2022-10-02",
     "referenceNumber": "INV-0102",
-    "amount": 454.86
+    "amount": 11454.86
   },
   {
     "clientName": "Reichert and Sons",
@@ -725,7 +725,7 @@
     "category": "income",
     "transactionDate": "2022-10-09",
     "referenceNumber": "INV-0104",
-    "amount": 993.84
+    "amount": 9193.84
   },
   {
     "clientName": "Heaney-King",
@@ -753,7 +753,7 @@
     "category": "income",
     "transactionDate": "2022-11-04",
     "referenceNumber": "INV-0108",
-    "amount": 2198.95
+    "amount": 12198.95
   },
   {
     "clientName": "Leffler and Sons",
@@ -788,7 +788,7 @@
     "category": "income",
     "transactionDate": "2022-12-04",
     "referenceNumber": "INV-0113",
-    "amount": 1146.8
+    "amount": 11146.8
   },
   {
     "clientName": "Hackett LLC",
@@ -830,7 +830,7 @@
     "category": "income",
     "transactionDate": "2023-01-12",
     "referenceNumber": "INV-0119",
-    "amount": 53.89
+    "amount": 153.89
   },
   {
     "clientName": "D'Amore, Wyman and Mann",
@@ -844,14 +844,14 @@
     "category": "income",
     "transactionDate": "2023-02-03",
     "referenceNumber": "INV-0121",
-    "amount": 1693.47
+    "amount": 11693.47
   },
   {
     "clientName": "Corkery Group",
     "category": "income",
     "transactionDate": "2023-02-07",
     "referenceNumber": "INV-0122",
-    "amount": 1352.73
+    "amount": 13152.73
   },
   {
     "clientName": "Conroy, Kling and Gleichner",
@@ -865,7 +865,7 @@
     "category": "income",
     "transactionDate": "2023-02-09",
     "referenceNumber": "INV-0124",
-    "amount": 2202.3
+    "amount": 12202.3
   },
   {
     "clientName": "White LLC",
@@ -879,7 +879,7 @@
     "category": "income",
     "transactionDate": "2023-03-01",
     "referenceNumber": "INV-0126",
-    "amount": 1638.78
+    "amount": 11638.78
   },
   {
     "clientName": "Witting-Vandervort",
@@ -893,7 +893,7 @@
     "category": "income",
     "transactionDate": "2023-03-06",
     "referenceNumber": "INV-0128",
-    "amount": 904.5
+    "amount": 1904.5
   },
   {
     "clientName": "Beier Inc",
@@ -907,21 +907,21 @@
     "category": "income",
     "transactionDate": "2023-03-10",
     "referenceNumber": "INV-0130",
-    "amount": 1059.43
+    "amount": 11059.43
   },
   {
     "clientName": "O'Connell, Luettgen and Weber",
     "category": "income",
     "transactionDate": "2023-04-02",
     "referenceNumber": "INV-0131",
-    "amount": 1052.57
+    "amount": 11052.57
   },
   {
     "clientName": "Kshlerin LLC",
     "category": "income",
     "transactionDate": "2023-04-05",
     "referenceNumber": "INV-0132",
-    "amount": 2073.63
+    "amount": 12073.63
   },
   {
     "clientName": "Conn, Murphy and Turcotte",
@@ -956,14 +956,14 @@
     "category": "income",
     "transactionDate": "2023-05-02",
     "referenceNumber": "INV-0137",
-    "amount": 918.86
+    "amount": 11918.86
   },
   {
     "clientName": "Spencer-Simonis",
     "category": "income",
     "transactionDate": "2023-05-05",
     "referenceNumber": "INV-0138",
-    "amount": 2490.0
+    "amount": 12490.0
   },
   {
     "clientName": "Harber Inc",
@@ -977,7 +977,7 @@
     "category": "income",
     "transactionDate": "2023-05-08",
     "referenceNumber": "INV-0140",
-    "amount": 172.43
+    "amount": 1172.43
   },
   {
     "clientName": "Auer-Jakubowski",
@@ -991,21 +991,21 @@
     "category": "income",
     "transactionDate": "2023-06-10",
     "referenceNumber": "INV-0142",
-    "amount": 2399.72
+    "amount": 12399.72
   },
   {
     "clientName": "Kunde-Tillman",
     "category": "income",
     "transactionDate": "2023-06-11",
     "referenceNumber": "INV-0143",
-    "amount": 1597.04
+    "amount": 11597.04
   },
   {
     "clientName": "Simonis and Sons",
     "category": "income",
     "transactionDate": "2023-06-12",
     "referenceNumber": "INV-0144",
-    "amount": 1781.51
+    "amount": 11781.51
   },
   {
     "clientName": "Emard-Funk",
@@ -1026,21 +1026,21 @@
     "category": "income",
     "transactionDate": "2023-07-23",
     "referenceNumber": "INV-0147",
-    "amount": 40.18
+    "amount": 1140.18
   },
   {
     "clientName": "Hartmann Group",
     "category": "income",
     "transactionDate": "2023-07-25",
     "referenceNumber": "INV-0148",
-    "amount": 736.42
+    "amount": 12736.42
   },
   {
     "clientName": "Wisoky, Bechtelar and Beahan",
     "category": "income",
     "transactionDate": "2023-07-28",
     "referenceNumber": "INV-0149",
-    "amount": 2290.54
+    "amount": 12290.54
   },
   {
     "clientName": "Zieme, Doyle and Streich",
@@ -1061,7 +1061,7 @@
     "category": "income",
     "transactionDate": "2023-08-03",
     "referenceNumber": "INV-0152",
-    "amount": 876.46
+    "amount": 11876.46
   },
   {
     "clientName": "Harvey, Padberg and Williamson",
@@ -1075,14 +1075,14 @@
     "category": "income",
     "transactionDate": "2023-08-11",
     "referenceNumber": "INV-0154",
-    "amount": 2338.38
+    "amount": 12338.38
   },
   {
     "clientName": "Doyle Inc",
     "category": "income",
     "transactionDate": "2023-08-12",
     "referenceNumber": "INV-0155",
-    "amount": 857.6
+    "amount": 121857.6
   },
   {
     "clientName": "Block LLC",
@@ -1117,14 +1117,14 @@
     "category": "income",
     "transactionDate": "2023-09-02",
     "referenceNumber": "INV-0160",
-    "amount": 1856.07
+    "amount": 11856.07
   },
   {
     "clientName": "Gusikowski-Welch",
     "category": "income",
     "transactionDate": "2023-10-01",
     "referenceNumber": "INV-0161",
-    "amount": 1908.58
+    "amount": 11908.58
   },
   {
     "clientName": "Swift-Baumbach",
@@ -1152,21 +1152,21 @@
     "category": "income",
     "transactionDate": "2023-10-10",
     "referenceNumber": "INV-0165",
-    "amount": 733.58
+    "amount": 1733.58
   },
   {
     "clientName": "Steuber, Schaefer and Bartell",
     "category": "income",
     "transactionDate": "2023-11-01",
     "referenceNumber": "INV-0166",
-    "amount": 1981.07
+    "amount": 11981.07
   },
   {
     "clientName": "Hermann, Keeling and Corkery",
     "category": "income",
     "transactionDate": "2023-11-02",
     "referenceNumber": "INV-0167",
-    "amount": 2009.55
+    "amount": 12009.55
   },
   {
     "clientName": "Sporer, Marquardt and Kreiger",
@@ -1187,7 +1187,7 @@
     "category": "income",
     "transactionDate": "2023-11-09",
     "referenceNumber": "INV-0170",
-    "amount": 1604.17
+    "amount": 11604.17
   },
   {
     "clientName": "Stoltenberg, Waelchi and Kozey",
@@ -1201,7 +1201,7 @@
     "category": "income",
     "transactionDate": "2023-12-03",
     "referenceNumber": "INV-0172",
-    "amount": 780.56
+    "amount": 21780.56
   },
   {
     "clientName": "Bartoletti, Jacobs and Crist",
@@ -1229,7 +1229,319 @@
     "category": "income",
     "transactionDate": "2023-12-01",
     "referenceNumber": "INV-0176",
-    "amount": 13.24
+    "amount": 1113.24
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-01-01",
+    "amount": -2279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-02-01",
+    "amount": -1279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-03-01",
+    "amount": -11279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-04-01",
+    "amount": -279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-05-01",
+    "amount": -175.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-06-01",
+    "amount": -275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-07-01",
+    "amount": -375.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-08-01",
+    "amount": -475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-09-01",
+    "amount": -1275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-10-01",
+    "amount": -1875.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-11-01",
+    "amount": -675.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-12-01",
+    "amount": -1475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2024-01-01",
+    "amount": -1000
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-01-01",
+    "amount": -2279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-02-01",
+    "amount": -1279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-03-01",
+    "amount": -11279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-04-01",
+    "amount": -279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-05-01",
+    "amount": -175.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-06-01",
+    "amount": -275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-07-01",
+    "amount": -375.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2021-08-01",
+    "amount": -475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-09-01",
+    "amount": -1275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-10-01",
+    "amount": -1875.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-11-01",
+    "amount": -675.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-12-01",
+    "amount": -1475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2024-01-01",
+    "amount": -1000
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-01-01",
+    "amount": -2279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-02-01",
+    "amount": -1279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-03-01",
+    "amount": -11279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-04-01",
+    "amount": -279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-05-01",
+    "amount": -175.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-06-01",
+    "amount": -275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-07-01",
+    "amount": -375.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-08-01",
+    "amount": -475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-09-01",
+    "amount": -1275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-10-01",
+    "amount": -1875.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-11-01",
+    "amount": -675.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-12-01",
+    "amount": -1475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2024-01-01",
+    "amount": -1000
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-01-01",
+    "amount": -2279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-02-01",
+    "amount": -1279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-03-01",
+    "amount": -11279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-04-01",
+    "amount": -279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2022-05-01",
+    "amount": -175.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-06-01",
+    "amount": -275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-07-01",
+    "amount": -375.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-08-01",
+    "amount": -475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-09-01",
+    "amount": -1275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-10-01",
+    "amount": -1875.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-11-01",
+    "amount": -675.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-12-01",
+    "amount": -1475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2024-01-01",
+    "amount": -11000
   },
   {
     "clientName": "Staples",
@@ -1247,7 +1559,7 @@
     "clientName": "Staples",
     "category": "expense",
     "transactionDate": "2023-03-01",
-    "amount": -279.25
+    "amount": -11279.25
   },
   {
     "clientName": "Staples",
@@ -1301,6 +1613,558 @@
     "clientName": "Staples",
     "category": "expense",
     "transactionDate": "2023-12-01",
+    "amount": -1475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2024-01-01",
+    "amount": -1000
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-01-01",
+    "amount": -2279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-02-01",
+    "amount": -1279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-03-01",
+    "amount": -1279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-04-01",
+    "amount": -279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-05-01",
+    "amount": -175.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-06-01",
+    "amount": -275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-07-01",
+    "amount": -375.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-08-01",
     "amount": -475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-09-01",
+    "amount": -1275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-10-01",
+    "amount": -1875.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-11-01",
+    "amount": -675.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-12-01",
+    "amount": -1475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2024-01-01",
+    "amount": -1000
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-01-01",
+    "amount": -2279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-02-01",
+    "amount": -1279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-03-01",
+    "amount": -1279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-04-01",
+    "amount": -279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-05-01",
+    "amount": -175.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-06-01",
+    "amount": -275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-07-01",
+    "amount": -375.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-08-01",
+    "amount": -475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-09-01",
+    "amount": -1275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-10-01",
+    "amount": -1875.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-11-01",
+    "amount": -675.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-12-01",
+    "amount": -1475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2024-01-01",
+    "amount": -1000
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-01-01",
+    "amount": -2279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-02-01",
+    "amount": -1279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-03-01",
+    "amount": -1279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-04-01",
+    "amount": -279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-05-01",
+    "amount": -175.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-06-01",
+    "amount": -275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-07-01",
+    "amount": -375.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-08-01",
+    "amount": -475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-09-01",
+    "amount": -1275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-10-01",
+    "amount": -1875.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-11-01",
+    "amount": -675.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-12-01",
+    "amount": -1475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2024-01-01",
+    "amount": -1000
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-01-01",
+    "amount": -2279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-02-01",
+    "amount": -1279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-03-01",
+    "amount": -11279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-04-01",
+    "amount": -279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-05-01",
+    "amount": -175.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-06-01",
+    "amount": -275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-07-01",
+    "amount": -375.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-08-01",
+    "amount": -475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-09-01",
+    "amount": -1275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-10-01",
+    "amount": -1875.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-11-01",
+    "amount": -675.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-12-01",
+    "amount": -1475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2024-01-01",
+    "amount": -1000
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-01-01",
+    "amount": -2279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-02-01",
+    "amount": -1279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-03-01",
+    "amount": -1279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-04-01",
+    "amount": -279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-05-01",
+    "amount": -175.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-06-01",
+    "amount": -275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-07-01",
+    "amount": -375.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-08-01",
+    "amount": -475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-09-01",
+    "amount": -1275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-10-01",
+    "amount": -1875.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-11-01",
+    "amount": -675.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-12-01",
+    "amount": -1475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2024-01-01",
+    "amount": -1000
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-01-01",
+    "amount": -2279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-02-01",
+    "amount": -1279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-03-01",
+    "amount": -1279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-04-01",
+    "amount": -279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-05-01",
+    "amount": -175.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-06-01",
+    "amount": -275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-07-01",
+    "amount": -375.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-08-01",
+    "amount": -475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-09-01",
+    "amount": -1275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-10-01",
+    "amount": -1875.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-11-01",
+    "amount": -675.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-12-01",
+    "amount": -1475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2024-01-01",
+    "amount": -1000
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-01-01",
+    "amount": -2279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-02-01",
+    "amount": -1279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-03-01",
+    "amount": -1279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-04-01",
+    "amount": -279.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-05-01",
+    "amount": -175.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-06-01",
+    "amount": -275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-07-01",
+    "amount": -375.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-08-01",
+    "amount": -475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-09-01",
+    "amount": -1275.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-10-01",
+    "amount": -1875.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-11-01",
+    "amount": -675.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2023-12-01",
+    "amount": -1475.25
+  },
+  {
+    "clientName": "Staples",
+    "category": "expense",
+    "transactionDate": "2024-01-01",
+    "amount": -1000
   }
 ]

@@ -9,29 +9,81 @@ interface SummaryProps {
 
 const CashBalance: React.FC<SummaryProps> = () => {
   const { state: transactionState } = useContext(TransactionContext);
-
   const { transactions } = transactionState;
 
-  const calculateTotalAmount = (): number => {
-    return transactions.reduce((total: number, transaction: Transaction) => total + transaction.amount, 0);
+  const calculateTotalAmount = (filteredTransactions: Transaction[]): number => {
+    return filteredTransactions.reduce((total: number, transaction: Transaction) => total + transaction.amount, 0);
   };
 
-  const totalAmount = calculateTotalAmount();
+  const filterTransactionsByDynamicMonths = (monthsAgo: number): Transaction[] => {
+    const currentDate = new Date();
+    const endDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+    const startDate = new Date(endDate.getFullYear(), endDate.getMonth() - monthsAgo, 1);
 
-  // Determine color based on total amount
-  let totalAmountColor = 'black';
-  let threshold = 5000;
-  if (totalAmount > threshold) totalAmountColor = 'green';
-  else if (totalAmount > 0) totalAmountColor = 'yellow';
-  else if (totalAmount < 0) totalAmountColor = 'red';
+    return transactions.filter((transaction: Transaction) => {
+      const transactionDate = new Date(transaction.transactionDate);
+      return transactionDate >= startDate && transactionDate <= endDate;
+    });
+  };
+
+  const previous12MonthsTransactions = filterTransactionsByDynamicMonths(12);
+  const previous24MonthsTransactions = filterTransactionsByDynamicMonths(24);
+
+  const totalPrevious12Months = calculateTotalAmount(previous12MonthsTransactions);
+  const totalPrevious24Months = calculateTotalAmount(previous24MonthsTransactions);
+
+  const difference = totalPrevious12Months - totalPrevious24Months;
+  const differencePercentage =
+    totalPrevious24Months !== 0 ? ((difference / totalPrevious24Months) * 100).toFixed(2) : 'N/A';
+
+  let totalAmountColor = 'text-dark';
+  let differenceColor = 'text-dark';
+
+  if (totalPrevious12Months > 5000) totalAmountColor = 'text-success';
+  else if (totalPrevious12Months > 0) totalAmountColor = 'text-warning';
+  else if (totalPrevious12Months < 0) totalAmountColor = 'text-danger';
+
+  if (difference < 0) {
+    differenceColor = 'text-danger';
+  } else if (difference > 0) {
+    differenceColor = 'text-success';
+  }
+
+  let differenceText: React.ReactNode = '';
+
+  if (differenceColor === 'text-danger') {
+    differenceText = (
+      <>
+        <span className="d-flex justify-content-center">
+          <span className={differenceColor}>-{Math.abs(Number(differencePercentage))}%</span>
+        </span>
+        <span> from previous 12 months</span>
+      </>
+    );
+  } else if (differenceColor === 'text-success') {
+    differenceText = (
+      <>
+        <span className="d-flex justify-content-center">
+          <span className={differenceColor}>+{Number(differencePercentage)}%</span>
+        </span>
+        <span> from previous 12 months</span>
+      </>
+    );
+  } else {
+    differenceText = 'No change from previous 12 months';
+  }
 
   return (
     <div className="card d-inline-block bg-light mb-2 me-2">
       <div className="card-body">
         <h2 className="card-title fs-6 text-center">Cash Balance</h2>
         <p className="card-text text-center fs-2">
-          <span className="ms-1" style={{ color: totalAmountColor }}>
-            <strong>{formatPriceWholeNumber(totalAmount)}</strong>
+          <span className={`ms-1 ${totalAmountColor}`}>
+            <strong>{formatPriceWholeNumber(totalPrevious12Months)}</strong>
+          </span>
+          <br />
+          <span className="ms-1 d-flex flex-column" style={{ fontSize: '12px' }}>
+            {differenceText}
           </span>
         </p>
       </div>

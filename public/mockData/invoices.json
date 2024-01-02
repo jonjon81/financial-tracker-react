@@ -300,7 +300,7 @@
     "clientName": "Torphy, VonRueden and McClure",
     "creationDate": "2022-11-04",
     "referenceNumber": "INV-0113",
-    "amount": 1146.8
+    "amount": 221146.8
   },
   { "clientName": "Hackett LLC", "creationDate": "2022-11-08", "referenceNumber": "INV-0114", "amount": 1870.99 },
   { "clientName": "Gerhold-Witting", "creationDate": "2022-11-11", "referenceNumber": "INV-0115", "amount": 252.07 },
@@ -366,7 +366,7 @@
     "clientName": "Blanda, Kuvalis and Beatty",
     "creationDate": "2023-03-10",
     "referenceNumber": "INV-0134",
-    "amount": 828.57
+    "amount": 44828.57
   },
   { "clientName": "Cummings-Hagenes", "creationDate": "2023-03-11", "referenceNumber": "INV-0135", "amount": 417.47 },
   { "clientName": "Koelpin and Sons", "creationDate": "2023-04-01", "referenceNumber": "INV-0136", "amount": 1118.52 },
@@ -389,7 +389,7 @@
     "clientName": "DuBuque, Herman and Dare",
     "creationDate": "2023-05-10",
     "referenceNumber": "INV-0142",
-    "amount": 2399.72
+    "amount": 33399.72
   },
   { "clientName": "Kunde-Tillman", "creationDate": "2023-05-11", "referenceNumber": "INV-0143", "amount": 1597.04 },
   { "clientName": "Simonis and Sons", "creationDate": "2023-05-12", "referenceNumber": "INV-0144", "amount": 1781.51 },
@@ -412,7 +412,7 @@
     "clientName": "Zieme, Doyle and Streich",
     "creationDate": "2023-06-30",
     "referenceNumber": "INV-0150",
-    "amount": 2151.69
+    "amount": 32151.69
   },
   { "clientName": "Hamill LLC", "creationDate": "2023-07-01", "referenceNumber": "INV-0151", "amount": 539.61 },
   {
@@ -445,7 +445,7 @@
     "clientName": "King, Kunze and Pagac",
     "creationDate": "2023-09-08",
     "referenceNumber": "INV-0163",
-    "amount": 1565.37
+    "amount": 41565.37
   },
   { "clientName": "Osinski-Harber", "creationDate": "2023-09-09", "referenceNumber": "INV-0164", "amount": 850.02 },
   { "clientName": "Lowe-Armstrong", "creationDate": "2023-09-10", "referenceNumber": "INV-0165", "amount": 733.58 },
@@ -471,7 +471,7 @@
     "clientName": "Steuber, Ruecker and Rippin",
     "creationDate": "2023-10-08",
     "referenceNumber": "INV-0169",
-    "amount": 763.73
+    "amount": 21763.73
   },
   { "clientName": "Daugherty Inc", "creationDate": "2023-10-09", "referenceNumber": "INV-0170", "amount": 1604.17 },
   {
@@ -490,7 +490,7 @@
     "clientName": "Bartoletti, Jacobs and Crist",
     "creationDate": "2023-11-04",
     "referenceNumber": "INV-0173",
-    "amount": 696.77
+    "amount": 22696.77
   },
   { "clientName": "King Group", "creationDate": "2023-11-05", "referenceNumber": "INV-0174", "amount": 2219.72 },
   {
