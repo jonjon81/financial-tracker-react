@@ -25,18 +25,18 @@ const TotalIncomeSummary: React.FC<SummaryProps> = () => {
   const previous12MonthsInvoices = filterInvoicesByDynamicMonths(12);
   const previous24MonthsInvoices = filterInvoicesByDynamicMonths(24);
 
-  const totalPrevious12Months = previous12MonthsInvoices.reduce(
+  const incomeTotalPrevious12Months = previous12MonthsInvoices.reduce(
     (total: number, invoice: Invoice) => total + invoice.amount,
     0
   );
-  const totalPrevious24Months = previous24MonthsInvoices.reduce(
+  const incomeTotalPrevious24Months = previous24MonthsInvoices.reduce(
     (total: number, invoice: Invoice) => total + invoice.amount,
     0
   );
 
-  const difference = totalPrevious12Months - totalPrevious24Months;
+  const difference = incomeTotalPrevious12Months - incomeTotalPrevious24Months;
   const differencePercentage =
-    totalPrevious24Months !== 0 ? ((difference / totalPrevious24Months) * 100).toFixed(2) : 'N/A';
+    incomeTotalPrevious24Months !== 0 ? ((difference / incomeTotalPrevious24Months) * 100).toFixed(2) : 'N/A';
 
   return (
     <div className="card d-inline-block bg-light mb-2 me-2">
@@ -44,7 +44,7 @@ const TotalIncomeSummary: React.FC<SummaryProps> = () => {
         <h2 className="card-title fs-6 text-center">Total Income</h2>
         <p className="card-text text-center fs-2">
           <span className="ms-1">
-            <strong>{formatPriceWholeNumber(totalPrevious12Months)}</strong>
+            <strong>{formatPriceWholeNumber(incomeTotalPrevious12Months)}</strong>
           </span>
           <br />
           <span className="ms-1 d-flex flex-column" style={{ fontSize: '12px' }}>

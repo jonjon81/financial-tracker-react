@@ -22,23 +22,27 @@ const TotalExpenseSummary: React.FC<SummaryProps> = () => {
     });
   };
 
-  const previous12MonthsTransactions = filterTransactionsByDynamicMonths(12);
-  const previous24MonthsTransactions = filterTransactionsByDynamicMonths(24);
+  // Add explicit type annotation for filterTransactionsByDynamicMonths
+  const filterTransactions: (monthsAgo: number) => Transaction[] = (monthsAgo) =>
+    filterTransactionsByDynamicMonths(monthsAgo);
 
-  const totalPrevious12Months = previous12MonthsTransactions.reduce(
+  const previous12MonthsTransactions = filterTransactions(12);
+  const previous24MonthsTransactions = filterTransactions(24);
+
+  const expensesTotalPrevious12Months = previous12MonthsTransactions.reduce(
     (total: number, transaction: Transaction) => total + transaction.amount,
     0
   );
-  const totalPrevious24Months = previous24MonthsTransactions.reduce(
+  const incomeTotalPrevious24Months = previous24MonthsTransactions.reduce(
     (total: number, transaction: Transaction) => total + transaction.amount,
     0
   );
 
-  const difference = totalPrevious12Months - totalPrevious24Months;
+  const difference = expensesTotalPrevious12Months - incomeTotalPrevious24Months;
   const differencePercentage =
-    totalPrevious24Months !== 0 ? ((difference / totalPrevious24Months) * 100).toFixed(2) : 'N/A';
+    incomeTotalPrevious24Months !== 0 ? ((difference / incomeTotalPrevious24Months) * 100).toFixed(2) : 'N/A';
 
-  const absoluteTotal = Math.abs(totalPrevious12Months);
+  const absoluteTotal = Math.abs(expensesTotalPrevious12Months);
 
   return (
     <div className="card d-inline-block bg-light mb-2 me-2">
