@@ -15,13 +15,12 @@ const NetIncomeSummary: React.FC<SummaryProps> = ({
   expenseTotalPrevious12Months,
   expenseTotalPrevious24Months,
 }) => {
-  const currentNetIncome = incomeTotalPrevious12Months + expenseTotalPrevious12Months;
-  const previousNetIncome = incomeTotalPrevious24Months + expenseTotalPrevious24Months;
+  const lastYear = incomeTotalPrevious12Months + expenseTotalPrevious12Months;
+  const secondLastYear = incomeTotalPrevious24Months + expenseTotalPrevious24Months;
+  const difference = lastYear - secondLastYear;
+  const differencePercentage = lastYear !== 0 ? ((difference / secondLastYear) * 100).toFixed(2) : 'N/A';
 
-  const difference = currentNetIncome - previousNetIncome;
-  const differencePercentage = previousNetIncome !== 0 ? ((difference / previousNetIncome) * 100).toFixed(2) : 'N/A';
-
-  const netIncomeClass = currentNetIncome >= 0 ? 'text-success' : 'text-danger';
+  const netIncomeClass = lastYear >= 0 ? 'text-success' : 'text-danger';
 
   return (
     <div className="card d-inline-block bg-light mb-2 me-2">
@@ -29,7 +28,7 @@ const NetIncomeSummary: React.FC<SummaryProps> = ({
         <h2 className="card-title fs-6 text-center">Net Income</h2>
         <p className="card-text text-center fs-2">
           <span className={`ms-1 ${netIncomeClass}`}>
-            <strong>{formatPriceWholeNumber(currentNetIncome)}</strong>
+            <strong>{formatPriceWholeNumber(lastYear)}</strong>
           </span>
           <br />
           <span className="ms-1 d-flex flex-column" style={{ fontSize: '12px' }}>

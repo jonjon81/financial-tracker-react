@@ -11,10 +11,14 @@ const TotalExpenseSummary: React.FC<SummaryProps> = ({
   expenseTotalPrevious12Months,
   expenseTotalPrevious24Months,
 }) => {
-  const absoluteTotal = Math.abs(expenseTotalPrevious12Months);
-  const difference = Math.abs(expenseTotalPrevious12Months - expenseTotalPrevious24Months);
-  const differencePercentage =
-    expenseTotalPrevious24Months !== 0 ? ((difference / expenseTotalPrevious24Months) * 100).toFixed(2) : 'N/A';
+  const lastYear = expenseTotalPrevious12Months;
+  const secondLastYear = expenseTotalPrevious24Months - expenseTotalPrevious12Months;
+  const difference = lastYear - secondLastYear;
+  const differencePercentage = lastYear !== 0 ? ((difference / secondLastYear) * 100).toFixed(2) : 'N/A';
+
+  if (expenseTotalPrevious12Months < 0) {
+    expenseTotalPrevious12Months = Math.abs(expenseTotalPrevious12Months);
+  }
 
   return (
     <div className="card d-inline-block bg-light mb-2 me-2">
@@ -22,7 +26,7 @@ const TotalExpenseSummary: React.FC<SummaryProps> = ({
         <h2 className="card-title fs-6 text-center">Total Expenses</h2>
         <p className="card-text text-center fs-2">
           <span className="ms-1">
-            <strong>{formatPriceWholeNumber(absoluteTotal)}</strong>
+            <strong>{formatPriceWholeNumber(expenseTotalPrevious12Months)}</strong>
           </span>
           <br />
           <span className="ms-1 d-flex flex-column" style={{ fontSize: '12px' }}>
