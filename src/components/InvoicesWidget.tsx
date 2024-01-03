@@ -44,7 +44,6 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     direction: SortDirection.ASC,
   });
 
-  const [filteredSearchText, setFilteredSearchText] = useState<string>('');
   const MIN_SEARCH_LENGTH = 3;
 
   const handleResetFilters = () => {
@@ -101,6 +100,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
       referenceNumber,
       amount: parsedAmount,
       status: 'UNPAID',
+      category: 'invoice',
     };
 
     dispatch(addInvoice(createdInvoice));

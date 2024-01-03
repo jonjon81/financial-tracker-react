@@ -2,9 +2,9 @@ import { Invoice } from '../types/Invoice';
 import { formatPriceWholeNumber } from '../utils/helpers';
 
 interface SummaryProps {
-  transactions: Invoice[];
   incomeTotalPrevious12Months: number;
   incomeTotalPrevious24Months: number;
+  invoices: Invoice[];
 }
 
 const TotalIncomeSummary: React.FC<SummaryProps> = ({ incomeTotalPrevious12Months, incomeTotalPrevious24Months }) => {

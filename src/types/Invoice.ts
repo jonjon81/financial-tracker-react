@@ -4,6 +4,7 @@ export interface Invoice {
   referenceNumber: string;
   amount: number;
   status: string;
+  category: string;
 }
 
 export interface InvoiceState {

@@ -1,8 +1,10 @@
 import { Transaction } from '../types/Transaction';
 import { Invoice } from '../types/Invoice';
+import { Bill } from '../types/Bill';
 
 const transactionsURL = '../../mockData/transactions.json';
 const invoicesURL = '../../mockData/invoices.json';
+const billsURL = '../../mockData/bills.json';
 
 // Simulated delay
 const mockFetchDelay = 500;
@@ -40,5 +42,22 @@ export const fetchInvoices = async (): Promise<Invoice[]> => {
     });
   } catch (error) {
     throw new Error(`Error fetching invoices:`);
+  }
+};
+
+export const fetchBills = async (): Promise<Bill[]> => {
+  try {
+    const response = await fetch(billsURL);
+    if (!response.ok) {
+      throw new Error('Failed to fetch bills');
+    }
+    const billsData: Bill[] = await response.json();
+    return new Promise<Bill[]>((resolve) => {
+      setTimeout(() => {
+        resolve(billsData);
+      }, mockFetchDelay);
+    });
+  } catch (error) {
+    throw new Error(`Error fetching bills:`);
   }
 };

@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useContext, ReactNode, useEffect } from 'react';
 import { fetchInvoices } from '../services/mockBackend';
-import { InvoiceAction, InvoiceState } from '../types/Invoice';
+import { InvoiceAction, InvoiceState, Invoice } from '../types/Invoice';
 import invoiceReducer from '../reducers/invoiceReducer';
 import { setInvoices } from '../actions/invoiceActions';
 
@@ -30,7 +30,10 @@ export const InvoiceProvider: React.FC<InvoiceProviderProps> = ({ children }) =>
         if (!invoicesData || !Array.isArray(invoicesData)) {
           throw new Error('Invalid data received from fetchInvoices');
         }
-        dispatch(setInvoices(invoicesData));
+
+        const filteredInvoices = invoicesData.filter((invoice: Invoice) => invoice.category === 'invoice');
+
+        dispatch(setInvoices(filteredInvoices));
       } catch (error) {
         console.error('Error fetching or processing invoices:', error);
       }

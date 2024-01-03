@@ -1,2170 +1,2263 @@
 [
   {
     "clientName": "Mueller LLC",
-    "category": "income",
-    "transactionDate": "2021-02-01",
+    "category": "invoice",
+    "transactionDate": "2021-02-02",
     "referenceNumber": "INV-0001",
-    "amount": 2564.63
+    "amount": 564.63
   },
   {
     "clientName": "Rodriguez Group",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-02-04",
     "referenceNumber": "INV-0002",
     "amount": 1091.26
   },
   {
     "clientName": "Kovacek-Carter",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-02-06",
     "referenceNumber": "INV-0003",
     "amount": 2263.6
   },
   {
     "clientName": "Crist, Gutmann and Skiles",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-02-15",
     "referenceNumber": "INV-0004",
     "amount": 897.74
   },
   {
     "clientName": "Wyman and Sons",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-02-22",
     "referenceNumber": "INV-0005",
-    "amount": 2809.41
+    "amount": 809.41
   },
   {
     "clientName": "Christiansen, VonRueden and Fisher",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-03-01",
     "referenceNumber": "INV-0006",
     "amount": 1231.8
   },
   {
     "clientName": "Schowalter-Zulauf",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-03-05",
     "referenceNumber": "INV-0007",
-    "amount": 22359.16
+    "amount": 2359.16
   },
   {
     "clientName": "Anderson, Gleason and Waelchi",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-03-08",
     "referenceNumber": "INV-0008",
     "amount": 1509.13
   },
   {
     "clientName": "Larson, Torp and Hintz",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-03-11",
     "referenceNumber": "INV-0009",
     "amount": 45.67
   },
   {
     "clientName": "Satterfield, Zboncak and Zieme",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-03-21",
     "referenceNumber": "INV-0010",
-    "amount": 2904.3
+    "amount": 904.3
   },
   {
     "clientName": "Davis LLC",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-04-01",
     "referenceNumber": "INV-0011",
     "amount": 702.86
   },
   {
     "clientName": "Murazik-Upton",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-04-05",
     "referenceNumber": "INV-0012",
     "amount": 1488.22
   },
   {
     "clientName": "Rath-Wehner",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-04-08",
     "referenceNumber": "INV-0013",
     "amount": 529.83
   },
   {
     "clientName": "Bosco Group",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-04-11",
     "referenceNumber": "INV-0014",
     "amount": 1111.37
   },
   {
     "clientName": "Weimann Inc",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-04-21",
     "referenceNumber": "INV-0015",
     "amount": 189.23
   },
   {
     "clientName": "Hane-Koch",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-05-11",
     "referenceNumber": "INV-0016",
     "amount": 2249.65
   },
   {
     "clientName": "Rau-Hickle",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-05-21",
     "referenceNumber": "INV-0017",
     "amount": 557.81
   },
   {
     "clientName": "D'Amore, Gerlach and Bailey",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-05-22",
     "referenceNumber": "INV-0018",
     "amount": 371.88
   },
   {
     "clientName": "Gutmann LLC",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-05-24",
     "referenceNumber": "INV-0019",
     "amount": 691.3
   },
   {
     "clientName": "Hartmann-Moen",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-05-26",
     "referenceNumber": "INV-0020",
     "amount": 620.34
   },
   {
     "clientName": "Bosco, O'Connell and Langworth",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-06-01",
     "referenceNumber": "INV-0021",
-    "amount": 2705.18
+    "amount": 705.18
   },
   {
     "clientName": "Kuhlman, Zulauf and Stehr",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-06-11",
     "referenceNumber": "INV-0022",
     "amount": 2152.44
   },
   {
     "clientName": "Nitzsche, Weissnat and Gislason",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-06-21",
     "referenceNumber": "INV-0023",
     "amount": 580.54
   },
   {
     "clientName": "Harris-Hirthe",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-06-24",
     "referenceNumber": "INV-0024",
     "amount": 1975.1
   },
   {
     "clientName": "Keebler, Bernier and Fritsch",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-06-25",
     "referenceNumber": "INV-0025",
     "amount": 82.7
   },
   {
     "clientName": "Wuckert, O'Reilly and Cremin",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-07-01",
     "referenceNumber": "INV-0026",
     "amount": 1041.46
   },
   {
     "clientName": "Wehner LLC",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-07-11",
     "referenceNumber": "INV-0027",
     "amount": 491.39
   },
   {
     "clientName": "Leannon, Bahringer and Abbott",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-07-21",
     "referenceNumber": "INV-0028",
     "amount": 532.42
   },
   {
     "clientName": "McClure, Kertzmann and Heathcote",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-07-21",
     "referenceNumber": "INV-0029",
-    "amount": 11457.18
+    "amount": 1457.18
   },
   {
     "clientName": "Homenick-Nikolaus",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-07-27",
     "referenceNumber": "INV-0030",
     "amount": 731.03
   },
   {
     "clientName": "Bogan, Schmeler and Hintz",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-08-11",
     "referenceNumber": "INV-0031",
     "amount": 1703.19
   },
   {
     "clientName": "Christiansen, Reinger and Towne",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-08-11",
     "referenceNumber": "INV-0032",
     "amount": 1757.64
   },
   {
     "clientName": "Schmeler LLC",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-08-16",
     "referenceNumber": "INV-0033",
     "amount": 1207.44
   },
   {
     "clientName": "Koelpin, Schuppe and Ziemann",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-08-19",
     "referenceNumber": "INV-0034",
     "amount": 1042.22
   },
   {
     "clientName": "Reilly LLC",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-08-21",
     "referenceNumber": "INV-0035",
     "amount": 1794.34
   },
   {
     "clientName": "Graham, Zemlak and Lueilwitz",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-09-01",
     "referenceNumber": "INV-0036",
-    "amount": 21185.39
+    "amount": 2185.39
   },
   {
     "clientName": "Emmerich-Pagac",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-09-04",
     "referenceNumber": "INV-0037",
     "amount": 1388.42
   },
   {
     "clientName": "Mayert-Balistreri",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-09-09",
     "referenceNumber": "INV-0038",
     "amount": 773.57
   },
   {
     "clientName": "Feeney-Shanahan",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-09-11",
     "referenceNumber": "INV-0039",
     "amount": 47.57
   },
   {
     "clientName": "Hyatt, Mosciski and Veum",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-09-21",
     "referenceNumber": "INV-0040",
     "amount": 2067.87
   },
   {
     "clientName": "Bauch LLC",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-10-01",
     "referenceNumber": "INV-0041",
     "amount": 983.43
   },
   {
     "clientName": "Keeling-Luettgen",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-10-05",
     "referenceNumber": "INV-0042",
     "amount": 2349.77
   },
   {
     "clientName": "Daniel-Wunsch",
-    "category": "income",
-    "transactionDate": "2021-10-09",
+    "category": "invoice",
+    "transactionDate": "2021-10-10",
     "referenceNumber": "INV-0043",
     "amount": 2149.87
   },
   {
     "clientName": "Harvey-Koch",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-10-11",
     "referenceNumber": "INV-0044",
     "amount": 979.5
   },
   {
     "clientName": "Reinger and Sons",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-10-21",
     "referenceNumber": "INV-0045",
     "amount": 921.08
   },
   {
     "clientName": "Harvey-Abbott",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-11-11",
     "referenceNumber": "INV-0046",
     "amount": 462.26
   },
   {
     "clientName": "Mann, Feil and Armstrong",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-11-21",
     "referenceNumber": "INV-0047",
     "amount": 2415.57
   },
   {
     "clientName": "Green Group",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-11-21",
     "referenceNumber": "INV-0048",
     "amount": 1103.12
   },
   {
     "clientName": "Mayert, Cole and Funk",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-11-27",
     "referenceNumber": "INV-0049",
     "amount": 325.85
   },
   {
     "clientName": "Roberts Group",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-11-28",
     "referenceNumber": "INV-0050",
     "amount": 2001.08
   },
   {
     "clientName": "Goyette, Treutel and Aufderhar",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-12-06",
     "referenceNumber": "INV-0051",
     "amount": 1978.67
   },
   {
     "clientName": "Rippin, Monahan and Heaney",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-12-07",
     "referenceNumber": "INV-0052",
     "amount": 485.63
   },
   {
     "clientName": "Bailey, Greenfelder and Fahey",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-12-08",
     "referenceNumber": "INV-0053",
     "amount": 742.81
   },
   {
     "clientName": "Gutkowski, Collier and Howell",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-12-21",
     "referenceNumber": "INV-0054",
     "amount": 2276.45
   },
   {
     "clientName": "Quigley and Sons",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2021-12-27",
     "referenceNumber": "INV-0055",
     "amount": 380.67
   },
   {
     "clientName": "Feil-Parker",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-01-01",
     "referenceNumber": "INV-0056",
     "amount": 2297.98
   },
   {
     "clientName": "Beahan-Hintz",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-01-04",
     "referenceNumber": "INV-0057",
     "amount": 1066.49
   },
   {
     "clientName": "Goodwin and Sons",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-01-05",
     "referenceNumber": "INV-0058",
     "amount": 569.0
   },
   {
     "clientName": "Hansen and Sons",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-01-09",
     "referenceNumber": "INV-0059",
-    "amount": 11590.96
+    "amount": 1590.96
   },
   {
     "clientName": "O'Kon-Huels",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-01-11",
     "referenceNumber": "INV-0060",
     "amount": 1064.28
   },
   {
     "clientName": "Stracke, Davis and White",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-02-01",
     "referenceNumber": "INV-0061",
     "amount": 977.26
   },
   {
     "clientName": "Bashirian-Cummings",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-02-01",
     "referenceNumber": "INV-0062",
     "amount": 635.42
   },
   {
     "clientName": "Harris-Kozey",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-02-04",
     "referenceNumber": "INV-0063",
     "amount": 1396.54
   },
   {
     "clientName": "O'Reilly Group",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-02-06",
     "referenceNumber": "INV-0064",
-    "amount": 21156.22
+    "amount": 2156.22
   },
   {
     "clientName": "Goodwin-Johns",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-02-09",
     "referenceNumber": "INV-0065",
     "amount": 1558.24
   },
   {
     "clientName": "Upton-Gerhold",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-03-11",
     "referenceNumber": "INV-0066",
-    "amount": 12352.63
+    "amount": 2352.63
   },
   {
     "clientName": "Bogan, Beahan and Steuber",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-03-03",
     "referenceNumber": "INV-0067",
     "amount": 1616.83
   },
   {
     "clientName": "O'Reilly, Corwin and Wiza",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-03-08",
     "referenceNumber": "INV-0068",
     "amount": 2408.41
   },
   {
     "clientName": "Aufderhar and Sons",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-03-09",
     "referenceNumber": "INV-0069",
-    "amount": 21427.11
+    "amount": 2427.11
   },
   {
     "clientName": "Lehner, McCullough and Cummings",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-03-11",
     "referenceNumber": "INV-0070",
     "amount": 1810.06
   },
   {
     "clientName": "Halvorson-Schamberger",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-04-21",
     "referenceNumber": "INV-0071",
     "amount": 671.41
   },
   {
     "clientName": "Mante, Bergnaum and Waelchi",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-04-22",
     "referenceNumber": "INV-0072",
     "amount": 2116.48
   },
   {
     "clientName": "Rowe-Larson",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-04-27",
     "referenceNumber": "INV-0073",
     "amount": 1060.03
   },
   {
     "clientName": "Leffler-Bruen",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-04-28",
     "referenceNumber": "INV-0074",
     "amount": 2488.34
   },
   {
     "clientName": "Kunde LLC",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-04-29",
     "referenceNumber": "INV-0075",
-    "amount": 11884.43
+    "amount": 1884.43
   },
   {
     "clientName": "Treutel Inc",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-05-01",
     "referenceNumber": "INV-0076",
     "amount": 615.91
   },
   {
     "clientName": "Murray-Olson",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-05-03",
     "referenceNumber": "INV-0077",
-    "amount": 11599.46
+    "amount": 1599.46
   },
   {
     "clientName": "Erdman Inc",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-05-06",
     "referenceNumber": "INV-0078",
     "amount": 2409.63
   },
   {
     "clientName": "Predovic-Christiansen",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-05-09",
     "referenceNumber": "INV-0079",
     "amount": 1725.4
   },
   {
     "clientName": "Rolfson-Hilpert",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-05-18",
     "referenceNumber": "INV-0080",
-    "amount": 11875.13
+    "amount": 1875.13
   },
   {
     "clientName": "Dietrich-Crona",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-06-01",
     "referenceNumber": "INV-0081",
     "amount": 1315.71
   },
   {
     "clientName": "Pfannerstill Inc",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-06-03",
     "referenceNumber": "INV-0082",
     "amount": 1653.15
   },
   {
     "clientName": "Bartell-Bernhard",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-06-07",
     "referenceNumber": "INV-0083",
-    "amount": 5198.7
+    "amount": 598.7
   },
   {
     "clientName": "Nikolaus-Brakus",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-06-09",
     "referenceNumber": "INV-0084",
     "amount": 214.36
   },
   {
     "clientName": "Rolfson Group",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-06-11",
     "referenceNumber": "INV-0085",
-    "amount": 1374.1
+    "amount": 374.1
   },
   {
     "clientName": "Lakin and Sons",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-07-11",
     "referenceNumber": "INV-0086",
     "amount": 715.27
   },
   {
     "clientName": "Roberts-Johnston",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-07-21",
     "referenceNumber": "INV-0087",
     "amount": 684.57
   },
   {
     "clientName": "Ward-Gislason",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-07-22",
     "referenceNumber": "INV-0088",
     "amount": 135.52
   },
   {
     "clientName": "Konopelski, Howe and Pfeffer",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-07-24",
     "referenceNumber": "INV-0089",
-    "amount": 11854.19
+    "amount": 1854.19
   },
   {
     "clientName": "Klocko Inc",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-07-25",
     "referenceNumber": "INV-0090",
     "amount": 934.09
   },
   {
     "clientName": "Vandervort-Borer",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-08-03",
     "referenceNumber": "INV-0091",
-    "amount": 11958.64
+    "amount": 1958.64
   },
   {
     "clientName": "Strosin-Hansen",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-08-05",
     "referenceNumber": "INV-0092",
     "amount": 2334.32
   },
   {
     "clientName": "Quitzon and Sons",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-08-07",
     "referenceNumber": "INV-0093",
     "amount": 857.47
   },
   {
     "clientName": "Wilderman-Ryan",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-08-09",
     "referenceNumber": "INV-0094",
     "amount": 675.56
   },
   {
     "clientName": "Durgan, Kuphal and Kiehn",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-08-21",
     "referenceNumber": "INV-0095",
-    "amount": 11657.3
+    "amount": 1657.3
   },
   {
     "clientName": "Ebert-Osinski",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-09-21",
     "referenceNumber": "INV-0096",
     "amount": 1372.14
   },
   {
     "clientName": "Lehner-West",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-09-22",
     "referenceNumber": "INV-0097",
     "amount": 1131.16
   },
   {
     "clientName": "Rodriguez, Sporer and Gerlach",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-09-24",
     "referenceNumber": "INV-0098",
     "amount": 116.24
   },
   {
     "clientName": "Metz-Jast",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-09-26",
     "referenceNumber": "INV-0099",
     "amount": 1495.88
   },
   {
     "clientName": "Tremblay, Champlin and Howe",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-09-28",
     "referenceNumber": "INV-0100",
     "amount": 299.38
   },
   {
     "clientName": "Dach Group",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-10-01",
     "referenceNumber": "INV-0101",
     "amount": 1024.74
   },
   {
     "clientName": "Dickens-Schuster",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-10-02",
     "referenceNumber": "INV-0102",
-    "amount": 11454.86
+    "amount": 454.86
   },
   {
     "clientName": "Reichert and Sons",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-10-06",
     "referenceNumber": "INV-0103",
     "amount": 707.82
   },
   {
     "clientName": "Bednar-Barton",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-10-09",
     "referenceNumber": "INV-0104",
-    "amount": 9193.84
+    "amount": 993.84
   },
   {
     "clientName": "Heaney-King",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-10-11",
     "referenceNumber": "INV-0105",
     "amount": 112.86
   },
   {
     "clientName": "Walter, Heller and Ernser",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-11-01",
     "referenceNumber": "INV-0106",
     "amount": 1787.78
   },
   {
     "clientName": "Pouros Group",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-11-03",
     "referenceNumber": "INV-0107",
     "amount": 130.7
   },
   {
     "clientName": "Will-Heathcote",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-11-04",
     "referenceNumber": "INV-0108",
-    "amount": 12198.95
+    "amount": 2198.95
   },
   {
     "clientName": "Leffler and Sons",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-11-06",
     "referenceNumber": "INV-0109",
     "amount": 1996.96
   },
   {
     "clientName": "Murray and Sons",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-11-09",
     "referenceNumber": "INV-0110",
     "amount": 429.97
   },
   {
     "clientName": "Murray LLC",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-12-01",
     "referenceNumber": "INV-0111",
     "amount": 996.62
   },
   {
     "clientName": "Pollich Inc",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-12-02",
     "referenceNumber": "INV-0112",
     "amount": 1917.14
   },
   {
     "clientName": "Torphy, VonRueden and McClure",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-12-04",
     "referenceNumber": "INV-0113",
-    "amount": 11146.8
+    "amount": 221146.8
   },
   {
     "clientName": "Hackett LLC",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-12-08",
     "referenceNumber": "INV-0114",
     "amount": 1870.99
   },
   {
     "clientName": "Gerhold-Witting",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2022-12-11",
     "referenceNumber": "INV-0115",
     "amount": 252.07
   },
   {
     "clientName": "Terry-Quigley",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-01-01",
     "referenceNumber": "INV-0116",
     "amount": 2058.94
   },
   {
     "clientName": "Abshire and Sons",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-01-06",
     "referenceNumber": "INV-0117",
     "amount": 857.74
   },
   {
     "clientName": "Haag, Goldner and Armstrong",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-01-11",
     "referenceNumber": "INV-0118",
     "amount": 344.22
   },
   {
     "clientName": "Wuckert-Konopelski",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-01-12",
     "referenceNumber": "INV-0119",
-    "amount": 153.89
+    "amount": 53.89
   },
   {
     "clientName": "D'Amore, Wyman and Mann",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-01-13",
     "referenceNumber": "INV-0120",
     "amount": 2222.62
   },
   {
     "clientName": "Medhurst Group",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-02-03",
     "referenceNumber": "INV-0121",
-    "amount": 11693.47
+    "amount": 1693.47
   },
   {
     "clientName": "Corkery Group",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-02-07",
     "referenceNumber": "INV-0122",
-    "amount": 13152.73
+    "amount": 1352.73
   },
   {
     "clientName": "Conroy, Kling and Gleichner",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-02-08",
     "referenceNumber": "INV-0123",
     "amount": 275.27
   },
   {
     "clientName": "Murray Group",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-02-09",
     "referenceNumber": "INV-0124",
-    "amount": 12202.3
+    "amount": 2202.3
   },
   {
     "clientName": "White LLC",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-02-11",
     "referenceNumber": "INV-0125",
     "amount": 1782.52
   },
   {
     "clientName": "Yundt-Christiansen",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-03-01",
     "referenceNumber": "INV-0126",
-    "amount": 11638.78
+    "amount": 1638.78
   },
   {
     "clientName": "Witting-Vandervort",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-03-03",
     "referenceNumber": "INV-0127",
     "amount": 1450.62
   },
   {
     "clientName": "Brekke, Wisozk and Hahn",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-03-06",
     "referenceNumber": "INV-0128",
-    "amount": 1904.5
+    "amount": 904.5
   },
   {
     "clientName": "Beier Inc",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-03-09",
     "referenceNumber": "INV-0129",
     "amount": 180.24
   },
   {
     "clientName": "Strosin LLC",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-03-10",
     "referenceNumber": "INV-0130",
-    "amount": 11059.43
+    "amount": 1059.43
   },
   {
     "clientName": "O'Connell, Luettgen and Weber",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-04-02",
     "referenceNumber": "INV-0131",
-    "amount": 11052.57
+    "amount": 1052.57
   },
   {
     "clientName": "Kshlerin LLC",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-04-05",
     "referenceNumber": "INV-0132",
-    "amount": 12073.63
+    "amount": 2073.63
   },
   {
     "clientName": "Conn, Murphy and Turcotte",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-04-07",
     "referenceNumber": "INV-0133",
     "amount": 1595.44
   },
   {
     "clientName": "Blanda, Kuvalis and Beatty",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-04-10",
     "referenceNumber": "INV-0134",
-    "amount": 828.57
+    "amount": 44828.57
   },
   {
     "clientName": "Cummings-Hagenes",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-04-11",
     "referenceNumber": "INV-0135",
     "amount": 417.47
   },
   {
     "clientName": "Koelpin and Sons",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-05-01",
     "referenceNumber": "INV-0136",
     "amount": 1118.52
   },
   {
     "clientName": "Weber, Green and Bradtke",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-05-02",
     "referenceNumber": "INV-0137",
-    "amount": 11918.86
+    "amount": 918.86
   },
   {
     "clientName": "Spencer-Simonis",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-05-05",
     "referenceNumber": "INV-0138",
-    "amount": 12490.0
+    "amount": 2490.0
   },
   {
     "clientName": "Harber Inc",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-05-07",
     "referenceNumber": "INV-0139",
     "amount": 1523.92
   },
   {
     "clientName": "Stiedemann-Cruickshank",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-05-08",
     "referenceNumber": "INV-0140",
-    "amount": 1172.43
+    "amount": 172.43
   },
   {
     "clientName": "Auer-Jakubowski",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-06-09",
     "referenceNumber": "INV-0141",
     "amount": 209.01
   },
   {
     "clientName": "DuBuque, Herman and Dare",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-06-10",
     "referenceNumber": "INV-0142",
-    "amount": 12399.72
+    "amount": 33399.72
   },
   {
     "clientName": "Kunde-Tillman",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-06-11",
     "referenceNumber": "INV-0143",
-    "amount": 11597.04
+    "amount": 1597.04
   },
   {
     "clientName": "Simonis and Sons",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-06-12",
     "referenceNumber": "INV-0144",
-    "amount": 11781.51
+    "amount": 1781.51
   },
   {
     "clientName": "Emard-Funk",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-06-21",
     "referenceNumber": "INV-0145",
     "amount": 1297.67
   },
   {
     "clientName": "Okuneva, Connelly and Kreiger",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-07-22",
     "referenceNumber": "INV-0146",
     "amount": 1998.6
   },
   {
     "clientName": "Bashirian-Pfeffer",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-07-23",
     "referenceNumber": "INV-0147",
-    "amount": 1140.18
+    "amount": 40.18
   },
   {
     "clientName": "Hartmann Group",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-07-25",
     "referenceNumber": "INV-0148",
-    "amount": 12736.42
+    "amount": 736.42
   },
   {
     "clientName": "Wisoky, Bechtelar and Beahan",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-07-28",
     "referenceNumber": "INV-0149",
-    "amount": 12290.54
+    "amount": 2290.54
   },
   {
     "clientName": "Zieme, Doyle and Streich",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-07-30",
     "referenceNumber": "INV-0150",
-    "amount": 2151.69
+    "amount": 32151.69
   },
   {
     "clientName": "Hamill LLC",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-08-01",
     "referenceNumber": "INV-0151",
     "amount": 539.61
   },
   {
     "clientName": "Pfannerstill, Thiel and Spencer",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-08-03",
     "referenceNumber": "INV-0152",
-    "amount": 11876.46
+    "amount": 876.46
   },
   {
     "clientName": "Harvey, Padberg and Williamson",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-08-09",
     "referenceNumber": "INV-0153",
     "amount": 89.89
   },
   {
     "clientName": "Reynolds Group",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-08-11",
     "referenceNumber": "INV-0154",
-    "amount": 12338.38
+    "amount": 2338.38
   },
   {
     "clientName": "Doyle Inc",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-08-12",
     "referenceNumber": "INV-0155",
-    "amount": 121857.6
+    "amount": 857.6
   },
   {
     "clientName": "Block LLC",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-09-05",
     "referenceNumber": "INV-0156",
     "amount": 1587.7
   },
   {
     "clientName": "Wilkinson, Baumbach and Schaefer",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-09-08",
     "referenceNumber": "INV-0157",
     "amount": 279.08
   },
   {
     "clientName": "Hoppe LLC",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-09-09",
     "referenceNumber": "INV-0158",
     "amount": 2453.9
   },
   {
     "clientName": "Hamill Inc",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-09-11",
     "referenceNumber": "INV-0159",
     "amount": 866.25
   },
   {
     "clientName": "Greenfelder LLC",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-09-02",
     "referenceNumber": "INV-0160",
-    "amount": 11856.07
+    "amount": 1856.07
   },
   {
     "clientName": "Gusikowski-Welch",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-10-01",
     "referenceNumber": "INV-0161",
-    "amount": 11908.58
+    "amount": 1908.58
   },
   {
     "clientName": "Swift-Baumbach",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-10-06",
     "referenceNumber": "INV-0162",
     "amount": 543.16
   },
   {
     "clientName": "King, Kunze and Pagac",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-10-08",
     "referenceNumber": "INV-0163",
-    "amount": 1565.37
+    "amount": 41565.37
   },
   {
     "clientName": "Osinski-Harber",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-10-09",
     "referenceNumber": "INV-0164",
     "amount": 850.02
   },
   {
     "clientName": "Lowe-Armstrong",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-10-10",
     "referenceNumber": "INV-0165",
-    "amount": 1733.58
+    "amount": 733.58
   },
   {
     "clientName": "Steuber, Schaefer and Bartell",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-11-01",
     "referenceNumber": "INV-0166",
-    "amount": 11981.07
+    "amount": 1981.07
   },
   {
     "clientName": "Hermann, Keeling and Corkery",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-11-02",
     "referenceNumber": "INV-0167",
-    "amount": 12009.55
+    "amount": 2009.55
   },
   {
     "clientName": "Sporer, Marquardt and Kreiger",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-11-03",
     "referenceNumber": "INV-0168",
     "amount": 750.43
   },
   {
     "clientName": "Steuber, Ruecker and Rippin",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-11-08",
     "referenceNumber": "INV-0169",
-    "amount": 763.73
+    "amount": 21763.73
   },
   {
     "clientName": "Daugherty Inc",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-11-09",
     "referenceNumber": "INV-0170",
-    "amount": 11604.17
+    "amount": 1604.17
   },
   {
     "clientName": "Stoltenberg, Waelchi and Kozey",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-12-01",
     "referenceNumber": "INV-0171",
     "amount": 375.21
   },
   {
     "clientName": "Kunze, Schmitt and Roob",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-12-03",
     "referenceNumber": "INV-0172",
-    "amount": 21780.56
+    "amount": 780.56
   },
   {
     "clientName": "Bartoletti, Jacobs and Crist",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-12-04",
     "referenceNumber": "INV-0173",
-    "amount": 696.77
+    "amount": 22696.77
   },
   {
     "clientName": "King Group",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-12-05",
     "referenceNumber": "INV-0174",
     "amount": 2219.72
   },
   {
     "clientName": "Satterfield-Goldner",
-    "category": "income",
+    "category": "invoice",
     "transactionDate": "2023-12-08",
     "referenceNumber": "INV-0175",
     "amount": 1750.26
   },
   {
-    "clientName": "Vandervort Group",
-    "category": "income",
-    "transactionDate": "2023-12-01",
-    "referenceNumber": "INV-0176",
-    "amount": 1113.24
+    "clientName": "Google",
+    "category": "invoice",
+    "transactionDate": "2024-01-02",
+    "referenceNumber": "INV-0181",
+    "amount": 10000.5
   },
   {
     "clientName": "Staples",
-    "category": "expense",
-    "transactionDate": "2021-01-01",
-    "amount": -2279.25
-  },
-  {
-    "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0002",
     "transactionDate": "2021-02-01",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0003",
     "transactionDate": "2021-03-01",
     "amount": -11279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0004",
     "transactionDate": "2021-04-01",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0005",
     "transactionDate": "2021-05-01",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0006",
     "transactionDate": "2021-06-01",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0007",
     "transactionDate": "2021-07-01",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0008",
     "transactionDate": "2021-08-01",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0009",
     "transactionDate": "2021-09-01",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0010",
     "transactionDate": "2021-10-01",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0011",
     "transactionDate": "2021-11-01",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0012",
     "transactionDate": "2021-12-01",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0013",
     "transactionDate": "2024-01-01",
     "amount": -1000
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0014",
     "transactionDate": "2021-01-01",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0015",
     "transactionDate": "2021-02-01",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0016",
     "transactionDate": "2021-03-01",
     "amount": -11279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0017",
     "transactionDate": "2021-04-01",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0018",
     "transactionDate": "2021-05-01",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0019",
     "transactionDate": "2021-06-01",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0020",
     "transactionDate": "2021-07-01",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0021",
     "transactionDate": "2021-08-01",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0022",
     "transactionDate": "2022-09-01",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0023",
     "transactionDate": "2022-10-01",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0024",
     "transactionDate": "2022-11-01",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0025",
     "transactionDate": "2022-12-01",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0026",
     "transactionDate": "2024-01-01",
     "amount": -1000
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0027",
     "transactionDate": "2022-01-01",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0028",
     "transactionDate": "2022-02-01",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0029",
     "transactionDate": "2022-03-01",
     "amount": -11279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0030",
     "transactionDate": "2022-04-01",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0032",
     "transactionDate": "2022-05-01",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0033",
     "transactionDate": "2022-06-01",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0034",
     "transactionDate": "2022-07-01",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0035",
     "transactionDate": "2022-08-01",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0036",
     "transactionDate": "2022-09-01",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0037",
     "transactionDate": "2022-10-01",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0038",
     "transactionDate": "2022-11-01",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0039",
     "transactionDate": "2022-12-01",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0040",
     "transactionDate": "2024-01-01",
     "amount": -1000
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0041",
     "transactionDate": "2022-01-01",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0042",
     "transactionDate": "2022-02-01",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0043",
     "transactionDate": "2022-03-01",
     "amount": -11279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0044",
     "transactionDate": "2022-04-01",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0045",
     "transactionDate": "2022-05-01",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0046",
     "transactionDate": "2023-06-01",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0047",
     "transactionDate": "2023-07-01",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0048",
     "transactionDate": "2023-08-01",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0049",
     "transactionDate": "2023-09-01",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0050",
     "transactionDate": "2023-10-01",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0051",
     "transactionDate": "2023-11-01",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0052",
     "transactionDate": "2023-12-01",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0053",
     "transactionDate": "2024-01-01",
     "amount": -11000
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0054",
     "transactionDate": "2023-01-01",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0055",
     "transactionDate": "2023-02-01",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0056",
     "transactionDate": "2023-03-01",
     "amount": -11279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0057",
     "transactionDate": "2023-04-01",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0058",
     "transactionDate": "2023-05-01",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0059",
     "transactionDate": "2023-06-01",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0060",
     "transactionDate": "2023-07-01",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0061",
     "transactionDate": "2023-08-01",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0062",
     "transactionDate": "2023-09-01",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0063",
     "transactionDate": "2023-10-01",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0064",
     "transactionDate": "2023-11-01",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0065",
     "transactionDate": "2023-12-01",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0066",
     "transactionDate": "2024-01-01",
     "amount": -1000
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0067",
     "transactionDate": "2023-01-01",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0068",
     "transactionDate": "2023-02-01",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0069",
     "transactionDate": "2023-03-01",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0070",
     "transactionDate": "2023-04-01",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0071",
     "transactionDate": "2023-05-01",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0072",
     "transactionDate": "2023-06-01",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0073",
     "transactionDate": "2023-07-01",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0074",
     "transactionDate": "2023-08-01",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0075",
     "transactionDate": "2023-09-01",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0076",
     "transactionDate": "2023-10-01",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
-    "transactionDate": "2023-11-01",
-    "amount": -675.25
-  },
-  {
-    "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0077",
     "transactionDate": "2023-12-01",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0078",
     "transactionDate": "2024-01-01",
     "amount": -1000
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0079",
     "transactionDate": "2023-01-01",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0080",
     "transactionDate": "2023-02-01",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0081",
     "transactionDate": "2023-03-01",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0082",
     "transactionDate": "2023-04-01",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0083",
     "transactionDate": "2023-05-01",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0084",
     "transactionDate": "2023-06-01",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0085",
     "transactionDate": "2023-07-01",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0086",
     "transactionDate": "2023-08-01",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0087",
     "transactionDate": "2023-09-01",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0088",
     "transactionDate": "2023-10-01",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0089",
     "transactionDate": "2023-11-01",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0090",
     "transactionDate": "2023-12-01",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0091",
     "transactionDate": "2024-01-01",
     "amount": -1000
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0092",
     "transactionDate": "2023-01-01",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0093",
     "transactionDate": "2023-02-01",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0094",
     "transactionDate": "2023-03-01",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0095",
     "transactionDate": "2023-04-01",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0096",
     "transactionDate": "2023-05-01",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0097",
     "transactionDate": "2023-06-01",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0098",
     "transactionDate": "2023-07-01",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0099",
     "transactionDate": "2023-08-01",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0100",
     "transactionDate": "2023-09-01",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0101",
     "transactionDate": "2023-10-01",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0102",
     "transactionDate": "2023-11-01",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0103",
     "transactionDate": "2023-12-01",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0104",
     "transactionDate": "2024-01-01",
     "amount": -1000
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0105",
     "transactionDate": "2023-01-01",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0106",
     "transactionDate": "2023-02-01",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0107",
     "transactionDate": "2023-03-01",
     "amount": -11279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0108",
     "transactionDate": "2023-04-01",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0109",
     "transactionDate": "2023-05-01",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0110",
     "transactionDate": "2023-06-01",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0111",
     "transactionDate": "2023-07-01",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0112",
     "transactionDate": "2023-08-01",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0113",
     "transactionDate": "2023-09-01",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0114",
     "transactionDate": "2023-10-01",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0115",
     "transactionDate": "2023-11-01",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0116",
     "transactionDate": "2023-12-01",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0117",
     "transactionDate": "2024-01-01",
     "amount": -1000
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0118",
     "transactionDate": "2023-01-01",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0119",
     "transactionDate": "2023-02-01",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0120",
     "transactionDate": "2023-03-01",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0121",
     "transactionDate": "2023-04-01",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0122",
     "transactionDate": "2023-05-01",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0123",
     "transactionDate": "2023-06-01",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0124",
     "transactionDate": "2023-07-01",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0125",
     "transactionDate": "2023-08-01",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0126",
     "transactionDate": "2023-09-01",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0127",
     "transactionDate": "2023-10-01",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0128",
     "transactionDate": "2023-11-01",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0129",
     "transactionDate": "2023-12-01",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0130",
     "transactionDate": "2024-01-01",
     "amount": -1000
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0131",
     "transactionDate": "2023-01-01",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0132",
     "transactionDate": "2023-02-01",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0133",
     "transactionDate": "2023-03-01",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0134",
     "transactionDate": "2023-04-01",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0135",
     "transactionDate": "2023-05-01",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0136",
     "transactionDate": "2023-06-01",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0137",
     "transactionDate": "2023-07-01",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0138",
     "transactionDate": "2023-08-01",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0139",
     "transactionDate": "2023-09-01",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0140",
     "transactionDate": "2023-10-01",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0141",
     "transactionDate": "2023-11-01",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0142",
     "transactionDate": "2023-12-01",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
-    "transactionDate": "2024-01-01",
-    "amount": -1000
-  },
-  {
-    "clientName": "Staples",
-    "category": "expense",
-    "transactionDate": "2023-01-01",
-    "amount": -2279.25
-  },
-  {
-    "clientName": "Staples",
-    "category": "expense",
-    "transactionDate": "2023-02-01",
-    "amount": -1279.25
-  },
-  {
-    "clientName": "Staples",
-    "category": "expense",
-    "transactionDate": "2023-03-01",
-    "amount": -1279.25
-  },
-  {
-    "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0147",
     "transactionDate": "2023-04-01",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0148",
     "transactionDate": "2023-05-01",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0149",
     "transactionDate": "2023-06-01",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0150",
     "transactionDate": "2023-07-01",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0151",
     "transactionDate": "2023-08-01",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0152",
     "transactionDate": "2023-09-01",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
-    "category": "expense",
+    "category": "bill",
+    "referenceNumber": "BILL-0153",
     "transactionDate": "2023-10-01",
     "amount": -1875.25
-  },
-  {
-    "clientName": "Staples",
-    "category": "expense",
-    "transactionDate": "2023-11-01",
-    "amount": -675.25
-  },
-  {
-    "clientName": "Staples",
-    "category": "expense",
-    "transactionDate": "2023-12-01",
-    "amount": -1475.25
-  },
-  {
-    "clientName": "Staples",
-    "category": "expense",
-    "transactionDate": "2024-01-01",
-    "amount": -1000
   }
 ]

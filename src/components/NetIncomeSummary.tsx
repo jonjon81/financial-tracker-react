@@ -15,8 +15,8 @@ const NetIncomeSummary: React.FC<SummaryProps> = ({
   expenseTotalPrevious12Months,
   expenseTotalPrevious24Months,
 }) => {
-  const lastYear = incomeTotalPrevious12Months + expenseTotalPrevious12Months;
-  const secondLastYear = incomeTotalPrevious24Months + expenseTotalPrevious24Months;
+  const lastYear = incomeTotalPrevious12Months - expenseTotalPrevious12Months;
+  const secondLastYear = incomeTotalPrevious24Months - expenseTotalPrevious24Months;
   const difference = lastYear - secondLastYear;
   const differencePercentage = lastYear !== 0 ? ((difference / secondLastYear) * 100).toFixed(2) : 'N/A';
 

@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import { InvoiceContext } from '../context/InvoiceContexts';
-import { Transaction } from '../types/Transaction';
+import { Invoice } from '../types/Invoice';
 
 interface SummaryProps {
-  transactions: Transaction[];
+  invoices: Invoice[];
 }
 
-const Last30Days: React.FC<SummaryProps> = () => {
+const InvoicesLast30: React.FC<SummaryProps> = () => {
   const { state: invoiceState } = useContext(InvoiceContext);
 
   const { invoices } = invoiceState;
@@ -29,4 +29,4 @@ const Last30Days: React.FC<SummaryProps> = () => {
   );
 };
 
-export default Last30Days;
+export default InvoicesLast30;

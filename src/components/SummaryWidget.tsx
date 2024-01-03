@@ -1,19 +1,20 @@
 import CashBalance from './CashBalance';
 import TotalIncomeSummary from './TotalIncomeSummary';
 import TotalExpensesSummary from './TotalExpensesSummary';
-import Last30Days from './Last30Days';
-import { useTransaction } from '../context/TransactionContexts';
+import InvoicesLast30 from './InvoicesLast30';
+import BillsLast30 from './BillsLast30';
+import { useBill } from '../context/BillContexts';
 import './SummaryWidget.css';
 import NetIncomeSummary from './NetIncomeSummary';
 import { useContext } from 'react';
 import { InvoiceContext } from '../context/InvoiceContexts';
 import { Invoice } from '../types/Invoice';
-import { Transaction } from '../types/Transaction';
+import { Bill } from '../types/Bill';
 
 const SummaryWidget = () => {
-  const { state: transactionState } = useTransaction();
+  const { state: billState } = useBill();
   const { state: invoiceState } = useContext(InvoiceContext);
-  const { transactions } = transactionState;
+  const { bills } = billState;
   const { invoices } = invoiceState;
 
   const filterInvoicesByDynamicMonths = (monthsAgo: number): Invoice[] => {
@@ -39,29 +40,27 @@ const SummaryWidget = () => {
     0
   );
 
-  const filterTransactionsByDynamicMonths = (monthsAgo: number): Transaction[] => {
+  const filterBillsByDynamicMonths = (monthsAgo: number): Bill[] => {
     const currentDate = new Date();
     const endDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
     const startDate = new Date(endDate.getFullYear(), endDate.getMonth() - monthsAgo, 1);
 
-    return transactions.filter((transaction: Transaction) => {
-      const transactionDate = new Date(transaction.transactionDate);
-      return transactionDate >= startDate && transactionDate <= endDate && transaction.category === 'expense';
+    return bills.filter((bill: Bill) => {
+      const billDate = new Date(bill.creationDate);
+      return billDate >= startDate && billDate <= endDate && bill.category === 'bill';
     });
   };
 
-  const filterTransactions: (monthsAgo: number) => Transaction[] = (monthsAgo) =>
-    filterTransactionsByDynamicMonths(monthsAgo);
+  const filterBills: (monthsAgo: number) => Bill[] = (monthsAgo) => filterBillsByDynamicMonths(monthsAgo);
 
-  const previous12MonthsTransactions = filterTransactions(12);
-  const previous24MonthsTransactions = filterTransactions(24);
-
-  const expensesTotalPrevious12Months = previous12MonthsTransactions.reduce(
-    (total: number, transaction: Transaction) => total + transaction.amount,
+  const previous12MonthsBills = filterBills(12);
+  const previous24MonthsBills = filterBills(24);
+  const expensesTotalPrevious12Months = previous12MonthsBills.reduce(
+    (total: number, bill: Bill) => total + bill.amount,
     0
   );
-  const expensesTotalPrevious24Months = previous24MonthsTransactions.reduce(
-    (total: number, transaction: Transaction) => total + transaction.amount,
+  const expensesTotalPrevious24Months = previous24MonthsBills.reduce(
+    (total: number, bill: Bill) => total + bill.amount,
     0
   );
 
@@ -71,12 +70,12 @@ const SummaryWidget = () => {
       <TotalIncomeSummary
         incomeTotalPrevious12Months={incomeTotalPrevious12Months}
         incomeTotalPrevious24Months={incomeTotalPrevious24Months}
-        transactions={[]}
+        invoices={[]}
       />
       <TotalExpensesSummary
         expenseTotalPrevious12Months={expensesTotalPrevious12Months}
         expenseTotalPrevious24Months={expensesTotalPrevious24Months}
-        transactions={[]}
+        bills={[]}
       />
       <NetIncomeSummary
         incomeTotalPrevious12Months={incomeTotalPrevious12Months}
@@ -85,7 +84,8 @@ const SummaryWidget = () => {
         expenseTotalPrevious24Months={expensesTotalPrevious24Months}
         transactions={[]}
       />
-      <Last30Days transactions={transactionState.transactions} />
+      <InvoicesLast30 invoices={[]} />
+      <BillsLast30 bills={[]} />
     </div>
   );
 };

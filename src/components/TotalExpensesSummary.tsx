@@ -1,8 +1,8 @@
-import { Transaction } from '../types/Transaction';
+import { Bill } from '../types/Bill';
 import { formatPriceWholeNumber } from '../utils/helpers';
 
 interface SummaryProps {
-  transactions: Transaction[];
+  bills: Bill[];
   expenseTotalPrevious12Months: number;
   expenseTotalPrevious24Months: number;
 }
