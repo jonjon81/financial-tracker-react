@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { Invoice } from '../types/Invoice';
+import { Bill } from '../types/Bill';
 import { Transaction } from '../types/Transaction';
 import { formatPrice } from '../utils/helpers';
 import './InvoicesWidget.css';
@@ -8,7 +9,9 @@ import { IoAddCircle } from 'react-icons/io5';
 import { RxReset } from 'react-icons/rx';
 import { FieldValues, useForm } from 'react-hook-form';
 import { setInvoices, addInvoice, updateInvoice, deleteInvoice } from '../actions/invoiceActions';
+import { setBills, addBill, updateBill, deleteBill } from '../actions/billActions';
 import { useInvoice } from '../context/InvoiceContexts';
+import { useBill } from '../context/BillContexts';
 import TableHeader from './TableHeader';
 
 interface InvoicesProps {
@@ -31,18 +34,29 @@ type ColumnHeader = keyof Invoice;
 
 const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   const { state, dispatch } = useInvoice();
-  const { invoices } = state;
+  const { invoices: stateInvoices } = state;
   const [showModal, setShowModal] = useState<boolean>(false);
   const [editInvoice, setEditInvoice] = useState<Invoice | null>(null);
+  const [editBill, setEditBill] = useState<Bill | null>(null);
   const [isNewInvoice, setIsNewInvoice] = useState<boolean>(false);
+  const [isNewBill, setIsNewBill] = useState<boolean>(false);
   const [referenceNumberError, setReferenceNumberError] = useState<string>('');
   const [searchText, setSearchText] = useState<string>('');
   const [filteredResultsLength, setFilteredResultsLength] = useState<number>(0);
   const [tableUpdateCounter, setTableUpdateCounter] = useState<number>(0);
+  const [useInvoiceData, setUseInvoiceData] = useState<boolean>(true);
   const [sortConfig, setSortConfig] = useState<{ column: ColumnHeader | null; direction: SortDirection }>({
     column: null,
     direction: SortDirection.ASC,
   });
+
+  const { state: invoiceState, dispatch: invoiceDispatch } = useInvoice();
+  const { invoices } = invoiceState;
+
+  const { state: billState, dispatch: billDispatch } = useBill();
+  const { bills } = billState;
+
+  const [activeDataType, setActiveDataType] = useState<'invoices' | 'bills'>('invoices');
 
   const MIN_SEARCH_LENGTH = 3;
 
@@ -60,6 +74,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
 
   const openEditModal = (invoice: Invoice) => {
     setEditInvoice(invoice);
+    setEditInvoice(invoice);
     setIsNewInvoice(false);
 
     if (invoice) {
@@ -69,6 +84,22 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
 
       setValue('date', invoice.creationDate);
       setValue('referenceNumber', invoice.referenceNumber);
+    }
+
+    setShowModal(true);
+  };
+
+  const openBillEditModal = (bill: Bill) => {
+    setEditBill(bill);
+    setIsNewBill(false);
+
+    if (bill) {
+      setValue('clientName', bill.vendor);
+      const amountAsString = bill.amount.toFixed(2);
+      setValue('amount', amountAsString);
+
+      setValue('date', bill.creationDate);
+      setValue('referenceNumber', bill.referenceNumber);
     }
 
     setShowModal(true);
@@ -108,6 +139,14 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     setShowModal(false);
     reset();
     setReferenceNumberError('');
+  };
+
+  const handleToggleInvoiceData = () => {
+    setActiveDataType('invoices');
+  };
+
+  const handleToggleBillData = () => {
+    setActiveDataType('bills');
   };
 
   const handleUpdateInvoice = (data: FormData) => {
@@ -256,7 +295,20 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   return (
     <div className="p-2 p-md-4 card">
       <div className="upper-container d-flex align-content-center justify-content-between flex-column flex-lg-row">
-        <h2 className="mb-2 d-flex align-items-end">Invoices</h2>
+        <div className="data-toggle-container mb-2 d-flex align-items-end">
+          <button
+            className={`btn btn-primary me-2 ${activeDataType === 'bills' ? 'active' : ''}`}
+            onClick={handleToggleBillData}
+          >
+            Bills
+          </button>
+          <button
+            className={`btn btn-primary ${activeDataType === 'invoices' ? 'active' : ''}`}
+            onClick={handleToggleInvoiceData}
+          >
+            Invoices
+          </button>
+        </div>
         <div className="mb-2 d-flex align-items-end position-relative search-bar w-100 mx-lg-2">
           <FaSearch className="fa-search position-absolute fs-5" />
           <input
@@ -308,54 +360,93 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>/ {filteredResultsLength}</th>
-              <TableHeader
-                column="creationDate"
-                activeColumn={activeColumn}
-                sortTable={sortTable}
-                renderSortIcon={renderSortIcon}
-              >
-                Date
-              </TableHeader>
-              <TableHeader
-                column="clientName"
-                activeColumn={activeColumn}
-                sortTable={sortTable}
-                renderSortIcon={renderSortIcon}
-              >
-                Client
-              </TableHeader>
-              <TableHeader
-                column="referenceNumber"
-                activeColumn={activeColumn}
-                sortTable={sortTable}
-                renderSortIcon={renderSortIcon}
-              >
-                ID
-              </TableHeader>
-              <TableHeader
-                column="amount"
-                activeColumn={activeColumn}
-                sortTable={sortTable}
-                renderSortIcon={renderSortIcon}
-              >
-                Amount
-              </TableHeader>
-              <TableHeader
-                column="status"
-                activeColumn={activeColumn}
-                sortTable={sortTable}
-                renderSortIcon={renderSortIcon}
-              >
-                Status
-              </TableHeader>
+              {activeDataType === 'invoices' && (
+                <>
+                  <th>/ {filteredResultsLength}</th>
+                  <TableHeader
+                    column="creationDate"
+                    activeColumn={activeColumn}
+                    sortTable={sortTable}
+                    renderSortIcon={renderSortIcon}
+                    setShouldUpdateChart={function (): void {
+                      throw new Error('Function not implemented.');
+                    }}
+                  >
+                    Date
+                  </TableHeader>
+                  <TableHeader
+                    column="clientName"
+                    activeColumn={activeColumn}
+                    sortTable={sortTable}
+                    renderSortIcon={renderSortIcon}
+                    setShouldUpdateChart={function (): void {
+                      throw new Error('Function not implemented.');
+                    }}
+                  >
+                    Client
+                  </TableHeader>
+                  <TableHeader
+                    column="referenceNumber"
+                    activeColumn={activeColumn}
+                    sortTable={sortTable}
+                    renderSortIcon={renderSortIcon}
+                    setShouldUpdateChart={function (): void {
+                      throw new Error('Function not implemented.');
+                    }}
+                  >
+                    ID
+                  </TableHeader>
+                  <TableHeader
+                    column="amount"
+                    activeColumn={activeColumn}
+                    sortTable={sortTable}
+                    renderSortIcon={renderSortIcon}
+                    setShouldUpdateChart={function (): void {
+                      throw new Error('Function not implemented.');
+                    }}
+                  >
+                    Amount
+                  </TableHeader>
+                  <TableHeader
+                    column="status"
+                    activeColumn={activeColumn}
+                    sortTable={sortTable}
+                    renderSortIcon={renderSortIcon}
+                    setShouldUpdateChart={function (): void {
+                      throw new Error('Function not implemented.');
+                    }}
+                  >
+                    Status
+                  </TableHeader>
+                </>
+              )}
+              {activeDataType === 'bills' && (
+                <>
+                  <th>/ Filter Length</th>
+                  <th scope="col" className="">
+                    <button className="btn btn-outline-primary">Date</button>
+                  </th>
+                  <th scope="col" className="">
+                    <button className="btn btn-outline-primary">Client</button>
+                  </th>
+                  <th scope="col" className="">
+                    <button className="btn btn-outline-primary">ID</button>
+                  </th>
+                  <th scope="col" className="">
+                    <button className="btn btn-outline-primary">Amount</button>
+                  </th>
+                  <th scope="col" className="">
+                    <button className="btn btn-outline-primary">Status</button>
+                  </th>
+                </>
+              )}
             </tr>
           </thead>
         </table>
       </div>
 
       <div className="table-body">
-        {filteredInvoices.length > 0 ? (
+        {activeDataType === 'invoices' && (
           <table className="table table-striped">
             <tbody>
               {filteredInvoices
@@ -385,8 +476,38 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                 ))}
             </tbody>
           </table>
-        ) : (
-          <div className="no-search-results">No search results found.</div>
+        )}
+
+        {activeDataType === 'bills' && (
+          <table className="table table-striped">
+            <tbody>
+              {bills
+                .slice()
+                .reverse()
+                .map((bill, index) => (
+                  <tr
+                    className="table-row"
+                    key={bill.referenceNumber}
+                    onClick={() => openBillEditModal(bill)}
+                    onKeyPress={(event) => {
+                      if (event.key === 'Enter') {
+                        openBillEditModal(bill);
+                      }
+                    }}
+                    tabIndex={0}
+                    aria-label={`Edit bill ${index + 1}`}
+                    role="button"
+                  >
+                    <th scope="row">{index + 1}</th>
+                    <td>{bill.creationDate}</td>
+                    <td className="text-capitalize">{bill.vendor}</td>
+                    <td className="text-uppercase">{bill.referenceNumber}</td>
+                    <td>{formatPrice(bill.amount)}</td>
+                    <td>{bill.status}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
         )}
       </div>
       {showModal && (
@@ -401,7 +522,17 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                 onClick={() => handleCloseModal()}
               ></button>
             </div>
-            <h2 className="mb-4">{isNewInvoice ? 'Add New Invoice' : 'Update Invoice'}</h2>
+            <h2 className="mb-4">
+              {isNewInvoice
+                ? 'Add New Invoice'
+                : isNewBill
+                ? 'Add New Bill'
+                : editBill
+                ? 'Update Bill'
+                : editInvoice
+                ? 'Update Invoice'
+                : ''}
+            </h2>
             <form
               onClick={(e) => e.stopPropagation()}
               onSubmit={isNewInvoice ? handleSubmit(onSubmit) : handleSubmit(handleUpdateInvoice)}
@@ -531,7 +662,15 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
               )}
 
               <button className="mt-2 w-100 btn btn-primary" type="submit">
-                {isNewInvoice ? 'Create Invoice' : 'Update Invoice'}
+                {isNewInvoice
+                  ? 'Create Invoice'
+                  : isNewBill
+                  ? 'Create New Bill'
+                  : editBill
+                  ? 'Update Bill'
+                  : editInvoice
+                  ? 'Update Invoice'
+                  : ''}
               </button>
               {!isNewInvoice && editInvoice && (
                 <button
