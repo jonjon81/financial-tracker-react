@@ -8,13 +8,14 @@ interface SummaryProps {
 }
 
 const TotalIncomeSummary: React.FC<SummaryProps> = ({ incomeTotalPrevious12Months, incomeTotalPrevious24Months }) => {
-  const difference = incomeTotalPrevious12Months - incomeTotalPrevious24Months;
-  const differencePercentage =
-    incomeTotalPrevious24Months !== 0 ? ((difference / incomeTotalPrevious24Months) * 100).toFixed(2) : 'N/A';
+  const lastYear = incomeTotalPrevious12Months;
+  const secondLastYear = incomeTotalPrevious24Months - incomeTotalPrevious12Months;
+  const difference = lastYear - secondLastYear;
+  const differencePercentage = lastYear !== 0 ? ((difference / secondLastYear) * 100).toFixed(2) : 'N/A';
 
   console.log('___________________________');
-  console.log('incomeTotalPrevious24Months', incomeTotalPrevious24Months);
-  console.log('incomeTotalPrevious12Months', incomeTotalPrevious12Months);
+  console.log('income last year', lastYear);
+  console.log('income 2nd last year', secondLastYear);
 
   return (
     <div className="card d-inline-block bg-light mb-2 me-2">
