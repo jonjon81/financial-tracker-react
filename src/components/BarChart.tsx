@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 import { useInvoice } from '../context/InvoiceContexts';
+import { useBill } from '../context/BillContexts';
 
 const BarChart = () => {
   const chartRef = useRef<HTMLCanvasElement | null>(null);
@@ -9,8 +10,12 @@ const BarChart = () => {
     state: { invoices },
   } = useInvoice();
 
+  const {
+    state: { bills },
+  } = useBill();
+
   useEffect(() => {
-    if (chartRef.current && invoices.length > 0) {
+    if (chartRef.current && invoices.length > 0 && bills.length > 0) {
       const ctx = chartRef.current.getContext('2d');
 
       if (ctx) {
@@ -44,7 +49,7 @@ const BarChart = () => {
           'December',
         ];
 
-        const monthlyRevenueData = last12Months.map(({ month, year }) => {
+        const monthlyInvoiceData = last12Months.map(({ month, year }) => {
           const filteredInvoices = invoices.filter(
             (invoice) =>
               new Date(invoice.creationDate).getFullYear() === year &&
@@ -60,8 +65,26 @@ const BarChart = () => {
           };
         });
 
-        const months = monthlyRevenueData.map(({ month, year }) => `${month} ${year}`);
-        const revenues = monthlyRevenueData.map(({ revenue }) => revenue);
+        const monthlyBillData = last12Months.map(({ month, year }) => {
+          const filteredBills = bills.filter(
+            (bill) =>
+              new Date(bill.creationDate).getFullYear() === year && new Date(bill.creationDate).getMonth() === month
+          );
+
+          const billTotal = filteredBills.reduce((total, bill) => total + bill.amount, 0);
+
+          return {
+            month: monthNames[month],
+            year,
+            bill: billTotal,
+          };
+        });
+
+        const months = monthlyInvoiceData.map(({ month, year }) => `${month} ${year}`);
+        const revenues = monthlyInvoiceData.map(({ revenue }) => revenue);
+        const billsData = monthlyBillData.map(({ bill }) => bill);
+
+        const netIncome = revenues.map((revenue, index) => revenue - billsData[index]);
 
         chartInstance.current = new Chart(ctx, {
           type: 'bar',
@@ -75,6 +98,20 @@ const BarChart = () => {
                 borderColor: 'rgba(54, 162, 235, 1)',
                 borderWidth: 1,
               },
+              {
+                label: 'Monthly Expenses',
+                data: billsData,
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1,
+              },
+              {
+                label: 'Net Income',
+                data: netIncome,
+                backgroundColor: 'rgba(75, 192, 192, 0.5)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1,
+              },
             ],
           },
           options: {
@@ -85,7 +122,7 @@ const BarChart = () => {
                 beginAtZero: true,
                 title: {
                   display: true,
-                  text: 'Revenue',
+                  text: 'Amount',
                 },
               },
               x: {
@@ -105,7 +142,7 @@ const BarChart = () => {
         chartInstance.current.destroy();
       }
     };
-  }, [invoices]);
+  }, [invoices, bills]);
 
   return (
     <div className="card mb-2 p-2" style={{ height: '200px' }}>

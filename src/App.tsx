@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import InvoicesWidget from './components/InvoicesWidget';
-import BarChart from './components/InvoicesBarChart';
+import BarChart from './components/BarChart';
 import { useInvoice } from './context/InvoiceContexts';
 import { useTransaction } from './context/TransactionContexts';
 import './App.css';
