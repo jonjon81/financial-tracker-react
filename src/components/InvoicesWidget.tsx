@@ -44,9 +44,8 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     direction: SortDirection.ASC,
   });
 
-  const handleSearchTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchText(e.target.value);
-  };
+  const [filteredSearchText, setFilteredSearchText] = useState<string>('');
+  const MIN_SEARCH_LENGTH = 3;
 
   const handleResetFilters = () => {
     setSearchText('');
@@ -235,12 +234,20 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
       (!startDate || new Date(invoice.creationDate) >= new Date(startDate)) &&
       (!endDate || new Date(invoice.creationDate) <= new Date(endDate));
 
-    if (searchText) {
+    if (searchText.length >= MIN_SEARCH_LENGTH) {
       return matchesSearchText && isInDateRange;
     } else {
       return isInDateRange;
     }
   });
+
+  useEffect(() => {
+    if (searchText.length >= MIN_SEARCH_LENGTH) {
+      setFilteredResultsLength(filteredInvoices.length);
+    } else {
+      setFilteredResultsLength(invoices.length);
+    }
+  }, [filteredInvoices, invoices, searchText]);
 
   useEffect(() => {
     setFilteredResultsLength(filteredInvoices.length);
@@ -257,7 +264,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
             type="text"
             placeholder="Search by Client or ID"
             value={searchText}
-            onChange={handleSearchTextChange}
+            onChange={(e) => setSearchText(e.target.value)}
           />
         </div>
         <div className="form-filter-container d-flex justify-content-between flex-wrap flex-md-nowrap">
