@@ -33,8 +33,9 @@ enum SortDirection {
 type ColumnHeader = keyof Invoice;
 
 const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
-  const { state, dispatch } = useInvoice();
-  const { invoices: stateInvoices } = state;
+  const { dispatch: invoiceDispatch } = useInvoice();
+  const { dispatch: billDispatch } = useBill();
+  // const { invoices: stateInvoices } = state;
   const [showModal, setShowModal] = useState<boolean>(false);
   const [editInvoice, setEditInvoice] = useState<Invoice | null>(null);
   const [editBill, setEditBill] = useState<Bill | null>(null);
@@ -44,16 +45,15 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   const [searchText, setSearchText] = useState<string>('');
   const [filteredResultsLength, setFilteredResultsLength] = useState<number>(0);
   const [tableUpdateCounter, setTableUpdateCounter] = useState<number>(0);
-  const [useInvoiceData, setUseInvoiceData] = useState<boolean>(true);
   const [sortConfig, setSortConfig] = useState<{ column: ColumnHeader | null; direction: SortDirection }>({
     column: null,
     direction: SortDirection.ASC,
   });
 
-  const { state: invoiceState, dispatch: invoiceDispatch } = useInvoice();
+  const { state: invoiceState } = useInvoice();
   const { invoices } = invoiceState;
 
-  const { state: billState, dispatch: billDispatch } = useBill();
+  const { state: billState } = useBill();
   const { bills } = billState;
 
   const [activeDataType, setActiveDataType] = useState<'invoices' | 'bills'>('invoices');
@@ -73,7 +73,6 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   };
 
   const openEditModal = (invoice: Invoice) => {
-    setEditInvoice(invoice);
     setEditInvoice(invoice);
     setIsNewInvoice(false);
 
@@ -134,7 +133,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
       category: 'invoice',
     };
 
-    dispatch(addInvoice(createdInvoice));
+    invoiceDispatch(addInvoice(createdInvoice));
 
     setShowModal(false);
     reset();
@@ -184,8 +183,8 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
         invoice.referenceNumber === editInvoice.referenceNumber ? updatedEditedInvoice : invoice
       );
 
-      dispatch(setInvoices(updatedInvoices));
-      dispatch(updateInvoice(updatedEditedInvoice));
+      invoiceDispatch(setInvoices(updatedInvoices));
+      invoiceDispatch(updateInvoice(updatedEditedInvoice));
       setShowModal(false);
       reset();
       setReferenceNumberError('');
@@ -195,10 +194,66 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     }
   };
 
+  const handleUpdateBill = (data: FormData) => {
+    if (editBill) {
+      const { referenceNumber, amount } = data;
+      const isReferenceNumberExists = bills.some(
+        (bill) =>
+          bill.referenceNumber.toLowerCase() === referenceNumber.toLowerCase() &&
+          bill.referenceNumber.toLowerCase() !== editBill.referenceNumber.toLowerCase()
+      );
+
+      if (isReferenceNumberExists) {
+        setReferenceNumberError('The bill number already exists');
+        return;
+      }
+
+      setReferenceNumberError('');
+
+      const parsedAmount = parseFloat(String(amount));
+
+      if (isNaN(parsedAmount)) {
+        console.error('Invalid amount');
+        return;
+      }
+
+      const updatedEditedBill: Bill = {
+        ...editBill,
+        vendor: data.clientName,
+        amount: parsedAmount,
+        creationDate: data.date,
+        referenceNumber: data.referenceNumber,
+      };
+
+      const updatedBills = bills.map((bill) =>
+        bill.referenceNumber === editBill.referenceNumber ? updatedEditedBill : bill
+      );
+
+      billDispatch(setBills(updatedBills));
+      billDispatch(updateBill(updatedEditedBill));
+      setShowModal(false);
+      reset();
+      setReferenceNumberError('');
+      setTableUpdateCounter((prevCounter) => prevCounter + 1);
+    } else {
+      console.error('Invalid bill data for update');
+    }
+  };
+
   const handleDeleteInvoice = (referenceNumberToDelete: string) => {
-    dispatch(deleteInvoice(Number(referenceNumberToDelete)));
+    invoiceDispatch(deleteInvoice(Number(referenceNumberToDelete)));
     const updatedInvoices = invoices.filter((invoice) => invoice.referenceNumber !== referenceNumberToDelete);
-    dispatch(setInvoices(updatedInvoices));
+    invoiceDispatch(setInvoices(updatedInvoices));
+    setShowModal(false);
+    reset();
+    setReferenceNumberError('');
+    setTableUpdateCounter((prevCounter) => prevCounter + 1);
+  };
+
+  const handleDeleteBill = (referenceNumberToDelete: string) => {
+    billDispatch(deleteBill(Number(referenceNumberToDelete)));
+    const updatedBills = bills.filter((invoice) => invoice.referenceNumber !== referenceNumberToDelete);
+    billDispatch(setBills(updatedBills));
     setShowModal(false);
     reset();
     setReferenceNumberError('');
@@ -223,9 +278,9 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     const statusesChanged = updatedInvoices.some((invoice, index) => invoice.status !== invoices[index].status);
 
     if (statusesChanged) {
-      dispatch(setInvoices(updatedInvoices));
+      invoiceDispatch(setInvoices(updatedInvoices));
     }
-  }, [invoices, transactions, dispatch, tableUpdateCounter]);
+  }, [invoices, transactions, invoiceDispatch, tableUpdateCounter]);
 
   const [activeColumn, setActiveColumn] = useState<ColumnHeader | null>(null);
 
@@ -347,7 +402,16 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
             <button
               className="btn btn-outline-danger ms-2 mb-2"
               onClick={() => {
-                setIsNewInvoice(true);
+                console.log('activeDataType', activeDataType);
+                if (activeDataType === 'invoices') {
+                  setIsNewInvoice(true);
+                  setIsNewBill(false);
+                }
+
+                if (activeDataType === 'bills') {
+                  setIsNewInvoice(false);
+                  setIsNewBill(true);
+                }
                 setShowModal(true);
               }}
             >
@@ -535,7 +599,15 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
             </h2>
             <form
               onClick={(e) => e.stopPropagation()}
-              onSubmit={isNewInvoice ? handleSubmit(onSubmit) : handleSubmit(handleUpdateInvoice)}
+              onSubmit={
+                isNewInvoice
+                  ? handleSubmit(onSubmit)
+                  : isNewBill
+                  ? handleSubmit(handleUpdateBill)
+                  : editInvoice
+                  ? handleSubmit(handleUpdateInvoice)
+                  : handleSubmit(handleUpdateBill)
+              }
             >
               {isNewInvoice ? (
                 <>
@@ -678,6 +750,14 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                   onClick={() => handleDeleteInvoice(editInvoice.referenceNumber)}
                 >
                   Delete Invoice
+                </button>
+              )}
+              {editBill && (
+                <button
+                  className="btn btn-danger mt-2 w-100"
+                  onClick={() => handleDeleteBill(editBill.referenceNumber)}
+                >
+                  Delete Bill
                 </button>
               )}
             </form>
