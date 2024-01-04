@@ -25,3 +25,7 @@
 label .text-danger {
   padding-top: 4px;
 }
+
+.perecent-change-block svg {
+  font-size: 25px;
+}

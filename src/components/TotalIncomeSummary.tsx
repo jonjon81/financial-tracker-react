@@ -1,5 +1,7 @@
 import { Invoice } from '../types/Invoice';
 import { formatPriceWholeNumber } from '../utils/helpers';
+import { FaLongArrowAltUp } from 'react-icons/fa';
+import { FaLongArrowAltDown } from 'react-icons/fa';
 
 interface SummaryProps {
   incomeTotalPrevious12Months: number;
@@ -22,11 +24,17 @@ const TotalIncomeSummary: React.FC<SummaryProps> = ({ incomeTotalPrevious12Month
             <strong>{formatPriceWholeNumber(incomeTotalPrevious12Months)}</strong>
           </span>
           <br />
-          <span className="ms-1 d-flex flex-column" style={{ fontSize: '12px' }}>
+          <span className="ms-1 d-flex flex-column perecent-change-block pt-2" style={{ fontSize: '12px' }}>
             {difference < 0 ? (
-              <span className="text-danger">-{Math.abs(Number(differencePercentage))}%</span>
+              <span className="pb-2">
+                <FaLongArrowAltDown className="text-danger" />
+                {Math.abs(Number(differencePercentage))}%
+              </span>
             ) : (
-              <span className="text-success">+{Number(differencePercentage)}%</span>
+              <span className="pb-2">
+                <FaLongArrowAltUp className="text-success" />
+                {Number(differencePercentage)}%
+              </span>
             )}{' '}
             from previous 12 months
           </span>

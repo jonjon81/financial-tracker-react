@@ -65,28 +65,33 @@ const SummaryWidget = () => {
   );
 
   return (
-    <div className="summary-main-container d-flex justify-content-between">
-      <CashBalance transactions={[]} />
-      <TotalIncomeSummary
-        incomeTotalPrevious12Months={incomeTotalPrevious12Months}
-        incomeTotalPrevious24Months={incomeTotalPrevious24Months}
-        invoices={[]}
-      />
-      <TotalExpensesSummary
-        expenseTotalPrevious12Months={expensesTotalPrevious12Months}
-        expenseTotalPrevious24Months={expensesTotalPrevious24Months}
-        bills={[]}
-      />
-      <NetIncomeSummary
-        incomeTotalPrevious12Months={incomeTotalPrevious12Months}
-        incomeTotalPrevious24Months={incomeTotalPrevious24Months}
-        expenseTotalPrevious12Months={expensesTotalPrevious12Months}
-        expenseTotalPrevious24Months={expensesTotalPrevious24Months}
-        transactions={[]}
-      />
-      <InvoicesLast30 invoices={[]} />
-      <BillsLast30 bills={[]} />
-    </div>
+    <>
+      {' '}
+      <div className="summary-main-container d-flex justify-content-between">
+        <CashBalance transactions={[]} />
+        <TotalIncomeSummary
+          incomeTotalPrevious12Months={incomeTotalPrevious12Months}
+          incomeTotalPrevious24Months={incomeTotalPrevious24Months}
+          invoices={[]}
+        />
+        <TotalExpensesSummary
+          expenseTotalPrevious12Months={expensesTotalPrevious12Months}
+          expenseTotalPrevious24Months={expensesTotalPrevious24Months}
+          bills={[]}
+        />
+        <NetIncomeSummary
+          incomeTotalPrevious12Months={incomeTotalPrevious12Months}
+          incomeTotalPrevious24Months={incomeTotalPrevious24Months}
+          expenseTotalPrevious12Months={expensesTotalPrevious12Months}
+          expenseTotalPrevious24Months={expensesTotalPrevious24Months}
+          transactions={[]}
+        />
+      </div>
+      <div className="row-2 d-flex">
+        <InvoicesLast30 invoices={[]} />
+        <BillsLast30 bills={[]} />
+      </div>
+    </>
   );
 };
 

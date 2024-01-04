@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { TransactionContext } from '../context/TransactionContexts';
 import { formatPriceWholeNumber } from '../utils/helpers';
 import { Transaction } from '../types/Transaction';
+import { FaLongArrowAltUp } from 'react-icons/fa';
+import { FaLongArrowAltDown } from 'react-icons/fa';
 
 interface SummaryProps {
   transactions: Transaction[];
@@ -55,18 +57,24 @@ const CashBalance: React.FC<SummaryProps> = () => {
     differenceText = (
       <>
         <span className="d-flex justify-content-center">
-          <span className={differenceColor}>-{Math.abs(Number(differencePercentage))}%</span>
+          <span>
+            <FaLongArrowAltDown className={differenceColor} />
+            {Math.abs(Number(differencePercentage))}%
+          </span>
         </span>
-        <span> from previous 12 months</span>
+        <span className="pt-2"> from previous 12 months</span>
       </>
     );
   } else if (differenceColor === 'text-success') {
     differenceText = (
       <>
         <span className="d-flex justify-content-center">
-          <span className={differenceColor}>+{Number(differencePercentage)}%</span>
+          <span>
+            <FaLongArrowAltUp className={differenceColor} />
+            {Number(differencePercentage)}%
+          </span>
         </span>
-        <span> from previous 12 months</span>
+        <span className="pt-2"> from previous 12 months</span>
       </>
     );
   } else {
@@ -82,7 +90,7 @@ const CashBalance: React.FC<SummaryProps> = () => {
             <strong>{formatPriceWholeNumber(totalPrevious12Months)}</strong>
           </span>
           <br />
-          <span className="ms-1 d-flex flex-column" style={{ fontSize: '12px' }}>
+          <span className="ms-1 d-flex flex-column perecent-change-block pt-2" style={{ fontSize: '12px' }}>
             {differenceText}
           </span>
         </p>

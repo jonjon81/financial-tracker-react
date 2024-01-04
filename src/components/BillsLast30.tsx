@@ -18,7 +18,7 @@ const BillsLast30: React.FC<SummaryProps> = () => {
   const billsLast30Days = bills.filter((bill) => new Date(bill.creationDate) > thirtyDaysAgo).length;
 
   return (
-    <div className="card d-inline-block bg-light mb-2 me-2 last-30-days">
+    <div className="card w-100 bg-light mb-2 last-30-days">
       <div className="card-body">
         <h2 className="card-title fs-6 text-center">bills last 30 days</h2>
         <p className="card-text text-center fs-2">
