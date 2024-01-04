@@ -145,7 +145,7 @@ const BarChart = () => {
   }, [invoices, bills]);
 
   return (
-    <div className="card mb-2 p-2 mt-2" style={{ height: '300px' }}>
+    <div className="card mb-2 p-2" style={{ height: '300px' }}>
       <canvas ref={chartRef} />
     </div>
   );
