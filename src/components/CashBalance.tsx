@@ -29,25 +29,25 @@ const CashBalance: React.FC<SummaryProps> = () => {
   };
 
   const previous12MonthsTransactions = filterTransactionsByDynamicMonths(12);
-  const previous24MonthsTransactions = filterTransactionsByDynamicMonths(24);
 
   const totalPrevious12Months = calculateTotalAmount(previous12MonthsTransactions);
-  const totalPrevious24Months = calculateTotalAmount(previous24MonthsTransactions);
+  const previous100MonthsTransactions = filterTransactionsByDynamicMonths(100);
+  const totalPrevious100Months = calculateTotalAmount(previous100MonthsTransactions); // Total of previous 100 months
 
-  const difference = totalPrevious12Months - totalPrevious24Months;
+  const balance12MonthsAgo = totalPrevious100Months - totalPrevious12Months;
   const differencePercentage =
-    totalPrevious24Months !== 0 ? ((difference / totalPrevious24Months) * 100).toFixed(2) : 'N/A';
+    totalPrevious100Months !== 0 ? ((totalPrevious12Months / balance12MonthsAgo) * 100).toFixed(2) : 'N/A';
 
   let totalAmountColor = 'text-dark';
   let differenceColor = 'text-dark';
 
-  if (totalPrevious12Months > 5000) totalAmountColor = 'text-success';
-  else if (totalPrevious12Months > 0) totalAmountColor = 'text-warning';
-  else if (totalPrevious12Months < 0) totalAmountColor = 'text-danger';
+  if (totalPrevious100Months > 5000) totalAmountColor = 'text-success';
+  else if (totalPrevious100Months > 0) totalAmountColor = 'text-warning';
+  else if (totalPrevious100Months < 0) totalAmountColor = 'text-danger';
 
-  if (difference < 0) {
+  if (balance12MonthsAgo < 0) {
     differenceColor = 'text-danger';
-  } else if (difference > 0) {
+  } else if (balance12MonthsAgo > 0) {
     differenceColor = 'text-success';
   }
 
@@ -87,7 +87,7 @@ const CashBalance: React.FC<SummaryProps> = () => {
         <h2 className="card-title fs-6 text-center">Cash Balance</h2>
         <p className="card-text text-center fs-2">
           <span className={`ms-1 ${totalAmountColor}`}>
-            <strong>{formatPriceWholeNumber(totalPrevious12Months)}</strong>
+            <strong>{formatPriceWholeNumber(totalPrevious100Months)}</strong>
           </span>
           <br />
           <span className="ms-1 d-flex flex-column perecent-change-block pt-2" style={{ fontSize: '12px' }}>

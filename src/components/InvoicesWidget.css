@@ -1,6 +1,10 @@
-.table-row:hover * {
+.table-row:hover > * {
   background: #000;
   color: #fff;
+}
+
+.table-row:hover > * > * {
+  color: #000;
 }
 
 .table tr * {
@@ -27,6 +31,12 @@ input {
   height: 200px;
   max-height: 200px;
   overflow-y: auto;
+}
+
+.status-style * {
+  max-width: 80px;
+  margin: auto;
+  border-radius: 5px;
 }
 
 @media (min-width: 768px) {

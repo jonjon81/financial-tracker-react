@@ -378,7 +378,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   };
 
   const renderSortBillIcon = (column: ColumnHeaderBill) => {
-    if (activeInvoiceColumn === column) {
+    if (activeBillColumn === column) {
       return sortBillConfig.direction === SortDirection.ASC ? <FaChevronUp /> : <FaChevronDown />;
     }
     return null;
@@ -675,7 +675,11 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                     <td className="text-capitalize">{invoice.clientName}</td>
                     <td className="text-uppercase">{invoice.referenceNumber}</td>
                     <td>{formatPrice(invoice.amount)}</td>
-                    <td>{invoice.status}</td>
+                    <td className="status-style">
+                      <div className={invoice.status === 'PAID' ? 'bg-success-subtle' : 'bg-danger-subtle'}>
+                        {invoice.status}
+                      </div>
+                    </td>
                   </tr>
                 ))}
             </tbody>
@@ -707,7 +711,11 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                     <td className="text-capitalize">{bill.vendor}</td>
                     <td className="text-uppercase">{bill.referenceNumber}</td>
                     <td>{formatPrice(bill.amount)}</td>
-                    <td>{bill.status}</td>
+                    <td className="status-style">
+                      <div className={bill.status === 'PAID' ? 'bg-success-subtle' : 'bg-danger-subtle'}>
+                        {bill.status}
+                      </div>
+                    </td>
                   </tr>
                 ))}
             </tbody>
