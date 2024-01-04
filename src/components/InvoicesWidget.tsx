@@ -377,7 +377,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   }, [filteredInvoices]);
 
   return (
-    <div className="p-2 p-md-4 card">
+    <div className="p-2 mb-2 p-md-4 card">
       <div className="upper-container d-flex align-content-center justify-content-between flex-column flex-lg-row">
         <div className="data-toggle-container mb-2 d-flex align-items-end">
           <button
