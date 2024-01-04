@@ -74,6 +74,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   };
 
   const openEditModal = (invoice: Invoice) => {
+    setEditBill(null);
     setEditInvoice(invoice);
     setIsNewInvoice(false);
 
@@ -90,6 +91,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   };
 
   const openBillEditModal = (bill: Bill) => {
+    setEditInvoice(null);
     setEditBill(bill);
     setIsNewBill(false);
 
@@ -171,10 +173,20 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
 
   const handleToggleInvoiceData = () => {
     setActiveDataType('invoices');
+    console.log('INVOICES');
+    console.log('editBill', editBill);
+    console.log('editInvoice', editInvoice);
+    console.log('isNewInvoice', isNewInvoice);
+    console.log('isNewBill', isNewBill);
   };
 
   const handleToggleBillData = () => {
     setActiveDataType('bills');
+    console.log('BILLS');
+    console.log('editBill', editBill);
+    console.log('editInvoice', editInvoice);
+    console.log('isNewInvoice', isNewInvoice);
+    console.log('isNewBill', isNewBill);
   };
 
   const handleUpdateInvoice = (data: FormData) => {
@@ -438,11 +450,12 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                   setIsNewInvoice(true);
                   setIsNewBill(false);
                 }
-
                 if (activeDataType === 'bills') {
                   setIsNewInvoice(false);
                   setIsNewBill(true);
                 }
+                setEditBill(null);
+                setEditInvoice(null);
                 setShowModal(true);
               }}
             >
@@ -691,7 +704,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                         className="w-100 form-control text-uppercase"
                         type="text"
                         id="referenceNumber"
-                        placeholder="INV-####"
+                        placeholder={activeDataType === 'invoices' ? 'INV-####' : 'BILL-####'}
                         {...register('referenceNumber', { required: true })}
                       />
                       {errors.referenceNumber?.type === 'required' && (
@@ -752,7 +765,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                         className="w-100 text-uppercase form-control"
                         type="text"
                         id="referenceNumber"
-                        placeholder="INV-####"
+                        placeholder={activeDataType === 'invoices' ? 'INV-####' : 'BILL-####'}
                         {...register('referenceNumber', { required: true })}
                       />
                       {errors.referenceNumber?.type === 'required' && (
@@ -775,7 +788,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                   ? 'Update Invoice'
                   : ''}
               </button>
-              {!isNewInvoice && editInvoice && (
+              {editInvoice && activeDataType === 'invoices' && (
                 <button
                   className="btn btn-danger mt-2 w-100"
                   onClick={() => handleDeleteInvoice(editInvoice.referenceNumber)}
@@ -783,7 +796,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                   Delete Invoice
                 </button>
               )}
-              {editBill && (
+              {editBill && activeDataType === 'bills' && (
                 <button
                   className="btn btn-danger mt-2 w-100"
                   onClick={() => handleDeleteBill(editBill.referenceNumber)}
