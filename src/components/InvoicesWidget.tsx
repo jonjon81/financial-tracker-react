@@ -440,7 +440,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   });
 
   useEffect(() => {
-    if (searchText.length >= MIN_SEARCH_LENGTH) {
+    if (searchText.length >= MIN_SEARCH_LENGTH || endDate || startDate) {
       setFilteredInvoiceResultsLength(filteredInvoices.length);
     } else {
       setFilteredInvoiceResultsLength(invoices.length);
@@ -448,7 +448,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   }, [filteredInvoices, invoices, searchText]);
 
   useEffect(() => {
-    if (searchText.length >= MIN_SEARCH_LENGTH) {
+    if (searchText.length >= MIN_SEARCH_LENGTH || endDate || startDate) {
       setFilteredBillResultsLength(filteredBills.length);
     } else {
       setFilteredBillResultsLength(bills.length);
