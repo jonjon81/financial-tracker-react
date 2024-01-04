@@ -104,7 +104,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     setIsNewBill(false);
 
     if (bill) {
-      setValue('clientName', bill.vendor);
+      setValue('vendor', bill.vendor);
       const amountAsString = bill.amount.toFixed(2);
       setValue('amount', amountAsString);
 
@@ -125,7 +125,9 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
 
   const onSubmit = (data: FieldValues) => {
     const { clientName, amount, date, referenceNumber } = data;
-    const isReferenceNumberExists = invoices.some((invoice) => invoice.referenceNumber === referenceNumber);
+    const isReferenceNumberExists = invoices.some(
+      (invoice) => invoice.referenceNumber.toLowerCase() === referenceNumber.toLowerCase()
+    );
     const parsedAmount = parseFloat(amount);
 
     if (isReferenceNumberExists) {
@@ -153,7 +155,9 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
 
   const onSubmitBill = (data: FieldValues) => {
     const { vendor, amount, date, referenceNumber } = data;
-    const isReferenceNumberExists = bills.some((bill) => bill.referenceNumber === referenceNumber);
+    const isReferenceNumberExists = bills.some(
+      (bill) => bill.referenceNumber.toLowerCase() === referenceNumber.toLowerCase()
+    );
     const parsedAmount = parseFloat(amount);
 
     if (isReferenceNumberExists) {
@@ -181,20 +185,10 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
 
   const handleToggleInvoiceData = () => {
     setActiveDataType('invoices');
-    console.log('INVOICES');
-    console.log('editBill', editBill);
-    console.log('editInvoice', editInvoice);
-    console.log('isNewInvoice', isNewInvoice);
-    console.log('isNewBill', isNewBill);
   };
 
   const handleToggleBillData = () => {
     setActiveDataType('bills');
-    console.log('BILLS');
-    console.log('editBill', editBill);
-    console.log('editInvoice', editInvoice);
-    console.log('isNewInvoice', isNewInvoice);
-    console.log('isNewBill', isNewBill);
   };
 
   const handleUpdateInvoice = (data: FormData) => {
@@ -345,7 +339,6 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   };
 
   const sortBillTable = (column: ColumnHeaderBill) => {
-    console.log('sortBillTable');
     const direction =
       sortBillConfig.column === column && sortBillConfig.direction === SortDirection.ASC
         ? SortDirection.DESC
@@ -353,9 +346,6 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
 
     setSortBillConfig({ column, direction });
     setActiveBillColumn(column);
-
-    console.log('direction', direction);
-    console.log('column', column);
   };
 
   const renderSortInvoiceIcon = (column: ColumnHeaderInvoice) => {
@@ -391,7 +381,6 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   }, [invoices, sortInvoiceConfig]);
 
   const sortedBills = useMemo(() => {
-    console.log('sortedBills in useMemo');
     if (sortBillConfig.column !== null) {
       return [...bills].sort((a, b) => {
         if (a[sortBillConfig.column!] < b[sortBillConfig.column!]) {
@@ -404,7 +393,6 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
       });
     }
     return bills;
-    console.log('bills', bills);
   }, [bills, sortBillConfig]);
 
   const filteredInvoices = sortedInvoices.filter((invoice) => {
@@ -512,7 +500,6 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
             <button
               className="btn btn-outline-danger ms-2 mb-2"
               onClick={() => {
-                console.log('activeDataType', activeDataType);
                 if (activeDataType === 'invoices') {
                   setIsNewInvoice(true);
                   setIsNewBill(false);
@@ -740,7 +727,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                   : handleSubmit(handleUpdateBill)
               }
             >
-              {isNewInvoice ? (
+              {isNewInvoice || editInvoice ? (
                 <>
                   <label className="d-flex flex-column justify-content-between mb-2">
                     Client Name:
@@ -752,7 +739,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                         {...register('clientName', { required: true, minLength: 3 })}
                       />
                       {errors.clientName?.type === 'required' && (
-                        <p className="text-danger m-0">The client name field is required.</p>
+                        <p className="text-danger m-0">The client name is required.</p>
                       )}
                       {errors.clientName?.type === 'minLength' && (
                         <p className="text-danger m-0">The client name must be at least 3 characters.</p>
@@ -804,19 +791,19 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
               ) : (
                 <>
                   <label className="d-flex flex-column justify-content-between mb-2">
-                    Client Name - do check here for bill vs invoice
+                    Vendor
                     <div>
                       <input
                         className="w-100 form-control"
                         type="text"
-                        id="editClientName"
-                        {...register('clientName', { required: true, minLength: 3 })}
+                        id="vendor"
+                        {...register('vendor', { required: true, minLength: 3 })}
                       />
-                      {errors.clientName?.type === 'required' && (
-                        <p className="text-danger m-0">The client name field is required.</p>
+                      {errors.vendor?.type === 'required' && (
+                        <p className="text-danger m-0">The vender name is required.</p>
                       )}
-                      {errors.clientName?.type === 'minLength' && (
-                        <p className="text-danger m-0">The client name must be at least 3 characters.</p>
+                      {errors.vendor?.type === 'minLength' && (
+                        <p className="text-danger m-0">The vendor name must be at least 3 characters.</p>
                       )}
                     </div>
                   </label>
