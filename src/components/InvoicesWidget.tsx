@@ -12,7 +12,8 @@ import { setInvoices, addInvoice, updateInvoice, deleteInvoice } from '../action
 import { setBills, addBill, updateBill, deleteBill } from '../actions/billActions';
 import { useInvoice } from '../context/InvoiceContexts';
 import { useBill } from '../context/BillContexts';
-import TableHeader from './TableHeader';
+import TableHeaderInvoice from './TableHeaderInvoice';
+import TableHeaderBill from './TableHeaderBill';
 
 interface InvoicesProps {
   transactions: Transaction[];
@@ -31,12 +32,10 @@ enum SortDirection {
   DESC = 'DESC',
 }
 
-type ColumnHeader = keyof Invoice;
-
 const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
+  const [activeDataType, setActiveDataType] = useState<'invoices' | 'bills'>('invoices');
   const { dispatch: invoiceDispatch } = useInvoice();
   const { dispatch: billDispatch } = useBill();
-  // const { invoices: stateInvoices } = state;
   const [showModal, setShowModal] = useState<boolean>(false);
   const [editInvoice, setEditInvoice] = useState<Invoice | null>(null);
   const [editBill, setEditBill] = useState<Bill | null>(null);
@@ -44,9 +43,21 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   const [isNewBill, setIsNewBill] = useState<boolean>(false);
   const [referenceNumberError, setReferenceNumberError] = useState<string>('');
   const [searchText, setSearchText] = useState<string>('');
-  const [filteredResultsLength, setFilteredResultsLength] = useState<number>(0);
+  const [filteredInvoiceResultsLength, setFilteredInvoiceResultsLength] = useState<number>(0);
+  const [filteredBillResultsLength, setFilteredBillResultsLength] = useState<number>(0);
   const [tableUpdateCounter, setTableUpdateCounter] = useState<number>(0);
-  const [sortConfig, setSortConfig] = useState<{ column: ColumnHeader | null; direction: SortDirection }>({
+
+  type ColumnHeaderInvoice = keyof Invoice;
+  type ColumnHeaderBill = keyof Bill;
+  const [sortInvoiceConfig, setSortInvoiceConfig] = useState<{
+    column: ColumnHeaderInvoice | null;
+    direction: SortDirection;
+  }>({
+    column: null,
+    direction: SortDirection.ASC,
+  });
+
+  const [sortBillConfig, setSortBillConfig] = useState<{ column: ColumnHeaderBill | null; direction: SortDirection }>({
     column: null,
     direction: SortDirection.ASC,
   });
@@ -56,9 +67,6 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
 
   const { state: billState } = useBill();
   const { bills } = billState;
-
-  const [activeDataType, setActiveDataType] = useState<'invoices' | 'bills'>('invoices');
-
   const MIN_SEARCH_LENGTH = 3;
 
   const handleResetFilters = () => {
@@ -323,21 +331,43 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     }
   }, [invoices, transactions, invoiceDispatch, tableUpdateCounter]);
 
-  const [activeColumn, setActiveColumn] = useState<ColumnHeader | null>(null);
+  const [activeInvoiceColumn, setActiveInvoiceColumn] = useState<ColumnHeaderInvoice | null>(null);
+  const [activeBillColumn, setActiveBillColumn] = useState<ColumnHeaderBill | null>(null);
 
-  const sortTable = (column: ColumnHeader) => {
+  const sortInvoiceTable = (column: ColumnHeaderInvoice) => {
     const direction =
-      sortConfig.column === column && sortConfig.direction === SortDirection.ASC
+      sortInvoiceConfig.column === column && sortInvoiceConfig.direction === SortDirection.ASC
         ? SortDirection.DESC
         : SortDirection.ASC;
 
-    setSortConfig({ column, direction });
-    setActiveColumn(column);
+    setSortInvoiceConfig({ column, direction });
+    setActiveInvoiceColumn(column);
   };
 
-  const renderSortIcon = (column: ColumnHeader) => {
-    if (activeColumn === column) {
-      return sortConfig.direction === SortDirection.ASC ? <FaChevronUp /> : <FaChevronDown />;
+  const sortBillTable = (column: ColumnHeaderBill) => {
+    console.log('sortBillTable');
+    const direction =
+      sortBillConfig.column === column && sortBillConfig.direction === SortDirection.ASC
+        ? SortDirection.DESC
+        : SortDirection.ASC;
+
+    setSortBillConfig({ column, direction });
+    setActiveBillColumn(column);
+
+    console.log('direction', direction);
+    console.log('column', column);
+  };
+
+  const renderSortInvoiceIcon = (column: ColumnHeaderInvoice) => {
+    if (activeInvoiceColumn === column) {
+      return sortInvoiceConfig.direction === SortDirection.ASC ? <FaChevronUp /> : <FaChevronDown />;
+    }
+    return null;
+  };
+
+  const renderSortBillIcon = (column: ColumnHeaderBill) => {
+    if (activeInvoiceColumn === column) {
+      return sortBillConfig.direction === SortDirection.ASC ? <FaChevronUp /> : <FaChevronDown />;
     }
     return null;
   };
@@ -346,19 +376,36 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
   const [endDate, setEndDate] = useState<string>('');
 
   const sortedInvoices = useMemo(() => {
-    if (sortConfig.column !== null) {
+    if (sortInvoiceConfig.column !== null) {
       return [...invoices].sort((a, b) => {
-        if (a[sortConfig.column!] < b[sortConfig.column!]) {
-          return sortConfig.direction === SortDirection.DESC ? -1 : 1;
+        if (a[sortInvoiceConfig.column!] < b[sortInvoiceConfig.column!]) {
+          return sortInvoiceConfig.direction === SortDirection.DESC ? -1 : 1;
         }
-        if (a[sortConfig.column!] > b[sortConfig.column!]) {
-          return sortConfig.direction === SortDirection.DESC ? 1 : -1;
+        if (a[sortInvoiceConfig.column!] > b[sortInvoiceConfig.column!]) {
+          return sortInvoiceConfig.direction === SortDirection.DESC ? 1 : -1;
         }
         return 0;
       });
     }
     return invoices;
-  }, [invoices, sortConfig]);
+  }, [invoices, sortInvoiceConfig]);
+
+  const sortedBills = useMemo(() => {
+    console.log('sortedBills in useMemo');
+    if (sortBillConfig.column !== null) {
+      return [...bills].sort((a, b) => {
+        if (a[sortBillConfig.column!] < b[sortBillConfig.column!]) {
+          return sortBillConfig.direction === SortDirection.DESC ? -1 : 1;
+        }
+        if (a[sortBillConfig.column!] > b[sortBillConfig.column!]) {
+          return sortBillConfig.direction === SortDirection.DESC ? 1 : -1;
+        }
+        return 0;
+      });
+    }
+    return bills;
+    console.log('bills', bills);
+  }, [bills, sortBillConfig]);
 
   const filteredInvoices = sortedInvoices.filter((invoice) => {
     const matchesSearchText =
@@ -376,17 +423,37 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     }
   });
 
+  const filteredBills = sortedBills.filter((bill) => {
+    const matchesSearchText =
+      bill.vendor.toLowerCase().includes(searchText.toLowerCase()) ||
+      bill.referenceNumber.toLowerCase().includes(searchText.toLowerCase());
+
+    const isInDateRange =
+      (!startDate || new Date(bill.creationDate) >= new Date(startDate)) &&
+      (!endDate || new Date(bill.creationDate) <= new Date(endDate));
+
+    if (searchText.length >= MIN_SEARCH_LENGTH) {
+      return matchesSearchText && isInDateRange;
+    } else {
+      return isInDateRange;
+    }
+  });
+
   useEffect(() => {
     if (searchText.length >= MIN_SEARCH_LENGTH) {
-      setFilteredResultsLength(filteredInvoices.length);
+      setFilteredInvoiceResultsLength(filteredInvoices.length);
     } else {
-      setFilteredResultsLength(invoices.length);
+      setFilteredInvoiceResultsLength(invoices.length);
     }
   }, [filteredInvoices, invoices, searchText]);
 
   useEffect(() => {
-    setFilteredResultsLength(filteredInvoices.length);
-  }, [filteredInvoices]);
+    if (searchText.length >= MIN_SEARCH_LENGTH) {
+      setFilteredBillResultsLength(filteredBills.length);
+    } else {
+      setFilteredBillResultsLength(bills.length);
+    }
+  }, [filteredBills, bills, searchText]);
 
   return (
     <div className="p-2 mb-2 p-md-4 card">
@@ -470,82 +537,102 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
             <tr>
               {activeDataType === 'invoices' && (
                 <>
-                  <th>/ {filteredResultsLength}</th>
-                  <TableHeader
+                  <th>/ {filteredInvoiceResultsLength}</th>
+                  <TableHeaderInvoice
                     column="creationDate"
-                    activeColumn={activeColumn}
-                    sortTable={sortTable}
-                    renderSortIcon={renderSortIcon}
-                    setShouldUpdateChart={function (): void {
-                      throw new Error('Function not implemented.');
-                    }}
+                    activeColumn={activeInvoiceColumn}
+                    sortTable={sortInvoiceTable}
+                    renderSortIcon={renderSortInvoiceIcon}
+                    setShouldUpdateChart={function (): void {}}
                   >
                     Date
-                  </TableHeader>
-                  <TableHeader
+                  </TableHeaderInvoice>
+                  <TableHeaderInvoice
                     column="clientName"
-                    activeColumn={activeColumn}
-                    sortTable={sortTable}
-                    renderSortIcon={renderSortIcon}
-                    setShouldUpdateChart={function (): void {
-                      throw new Error('Function not implemented.');
-                    }}
+                    activeColumn={activeInvoiceColumn}
+                    sortTable={sortInvoiceTable}
+                    renderSortIcon={renderSortInvoiceIcon}
+                    setShouldUpdateChart={function (): void {}}
                   >
                     Client
-                  </TableHeader>
-                  <TableHeader
+                  </TableHeaderInvoice>
+                  <TableHeaderInvoice
                     column="referenceNumber"
-                    activeColumn={activeColumn}
-                    sortTable={sortTable}
-                    renderSortIcon={renderSortIcon}
-                    setShouldUpdateChart={function (): void {
-                      throw new Error('Function not implemented.');
-                    }}
+                    activeColumn={activeInvoiceColumn}
+                    sortTable={sortInvoiceTable}
+                    renderSortIcon={renderSortInvoiceIcon}
+                    setShouldUpdateChart={function (): void {}}
                   >
                     ID
-                  </TableHeader>
-                  <TableHeader
+                  </TableHeaderInvoice>
+                  <TableHeaderInvoice
                     column="amount"
-                    activeColumn={activeColumn}
-                    sortTable={sortTable}
-                    renderSortIcon={renderSortIcon}
-                    setShouldUpdateChart={function (): void {
-                      throw new Error('Function not implemented.');
-                    }}
+                    activeColumn={activeInvoiceColumn}
+                    sortTable={sortInvoiceTable}
+                    renderSortIcon={renderSortInvoiceIcon}
+                    setShouldUpdateChart={function (): void {}}
                   >
                     Amount
-                  </TableHeader>
-                  <TableHeader
+                  </TableHeaderInvoice>
+                  <TableHeaderInvoice
                     column="status"
-                    activeColumn={activeColumn}
-                    sortTable={sortTable}
-                    renderSortIcon={renderSortIcon}
-                    setShouldUpdateChart={function (): void {
-                      throw new Error('Function not implemented.');
-                    }}
+                    activeColumn={activeInvoiceColumn}
+                    sortTable={sortInvoiceTable}
+                    renderSortIcon={renderSortInvoiceIcon}
+                    setShouldUpdateChart={function (): void {}}
                   >
                     Status
-                  </TableHeader>
+                  </TableHeaderInvoice>
                 </>
               )}
               {activeDataType === 'bills' && (
                 <>
-                  <th>/ Filter Length</th>
-                  <th scope="col" className="">
-                    <button className="btn btn-outline-primary">Date</button>
-                  </th>
-                  <th scope="col" className="">
-                    <button className="btn btn-outline-primary">Client</button>
-                  </th>
-                  <th scope="col" className="">
-                    <button className="btn btn-outline-primary">ID</button>
-                  </th>
-                  <th scope="col" className="">
-                    <button className="btn btn-outline-primary">Amount</button>
-                  </th>
-                  <th scope="col" className="">
-                    <button className="btn btn-outline-primary">Status</button>
-                  </th>
+                  <th>/ {filteredBillResultsLength}</th>
+                  <TableHeaderBill
+                    column="creationDate"
+                    activeColumn={activeBillColumn}
+                    sortTable={sortBillTable}
+                    renderSortIcon={renderSortBillIcon}
+                    setShouldUpdateChart={function (): void {}}
+                  >
+                    Date
+                  </TableHeaderBill>
+                  <TableHeaderBill
+                    column="vendor"
+                    activeColumn={activeBillColumn}
+                    sortTable={sortBillTable}
+                    renderSortIcon={renderSortBillIcon}
+                    setShouldUpdateChart={function (): void {}}
+                  >
+                    Vendor
+                  </TableHeaderBill>
+                  <TableHeaderBill
+                    column="referenceNumber"
+                    activeColumn={activeBillColumn}
+                    sortTable={sortBillTable}
+                    renderSortIcon={renderSortBillIcon}
+                    setShouldUpdateChart={function (): void {}}
+                  >
+                    ID
+                  </TableHeaderBill>
+                  <TableHeaderBill
+                    column="amount"
+                    activeColumn={activeBillColumn}
+                    sortTable={sortBillTable}
+                    renderSortIcon={renderSortBillIcon}
+                    setShouldUpdateChart={function (): void {}}
+                  >
+                    Amount
+                  </TableHeaderBill>
+                  <TableHeaderBill
+                    column="status"
+                    activeColumn={activeBillColumn}
+                    sortTable={sortBillTable}
+                    renderSortIcon={renderSortBillIcon}
+                    setShouldUpdateChart={function (): void {}}
+                  >
+                    Status
+                  </TableHeaderBill>
                 </>
               )}
             </tr>
@@ -589,7 +676,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
         {activeDataType === 'bills' && (
           <table className="table table-striped">
             <tbody>
-              {bills
+              {filteredBills
                 .slice()
                 .reverse()
                 .map((bill, index) => (

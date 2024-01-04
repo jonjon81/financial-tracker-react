@@ -12,17 +12,17 @@ interface TableHeaderProps {
   setShouldUpdateChart: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const TableHeader: React.FC<TableHeaderProps> = ({
+const TableHeaderInvoice: React.FC<TableHeaderProps> = ({
   children,
   column,
   activeColumn,
   sortTable,
   renderSortIcon,
-  setShouldUpdateChart,
+  // setShouldUpdateChart,
 }) => {
   const handleSortClick = () => {
     sortTable(column);
-    setShouldUpdateChart(false);
+    // setShouldUpdateChart(false);
   };
 
   return (
@@ -34,4 +34,4 @@ const TableHeader: React.FC<TableHeaderProps> = ({
   );
 };
 
-export default TableHeader;
+export default TableHeaderInvoice;
