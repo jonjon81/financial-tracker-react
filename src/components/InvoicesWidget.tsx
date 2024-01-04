@@ -19,6 +19,7 @@ interface InvoicesProps {
 }
 
 interface FormData {
+  vendor: string;
   clientName: string;
   amount: string;
   date: string;
@@ -140,6 +141,34 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     setReferenceNumberError('');
   };
 
+  const onSubmitBill = (data: FieldValues) => {
+    const { vendor, amount, date, referenceNumber } = data;
+    const isReferenceNumberExists = bills.some((bill) => bill.referenceNumber === referenceNumber);
+    const parsedAmount = parseFloat(amount);
+
+    if (isReferenceNumberExists) {
+      setReferenceNumberError('The bill number already exists');
+      return;
+    }
+
+    setReferenceNumberError('');
+
+    const createdBill: Bill = {
+      vendor,
+      creationDate: date,
+      referenceNumber,
+      amount: parsedAmount,
+      status: 'UNPAID',
+      category: 'expense',
+    };
+
+    billDispatch(addBill(createdBill));
+
+    setShowModal(false);
+    reset();
+    setReferenceNumberError('');
+  };
+
   const handleToggleInvoiceData = () => {
     setActiveDataType('invoices');
   };
@@ -219,7 +248,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
 
       const updatedEditedBill: Bill = {
         ...editBill,
-        vendor: data.clientName,
+        vendor: data.vendor,
         amount: parsedAmount,
         creationDate: data.date,
         referenceNumber: data.referenceNumber,
@@ -352,14 +381,16 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
       <div className="upper-container d-flex align-content-center justify-content-between flex-column flex-lg-row">
         <div className="data-toggle-container mb-2 d-flex align-items-end">
           <button
-            className={`btn btn-primary me-2 ${activeDataType === 'bills' ? 'active' : ''}`}
+            className={`btn btn-outline-primary w-50 me-2 ${activeDataType === 'bills' ? 'active' : ''}`}
             onClick={handleToggleBillData}
+            style={{ minWidth: '100px' }}
           >
             Bills
           </button>
           <button
-            className={`btn btn-primary ${activeDataType === 'invoices' ? 'active' : ''}`}
+            className={`btn btn-outline-primary w-50 ${activeDataType === 'invoices' ? 'active' : ''}`}
             onClick={handleToggleInvoiceData}
+            style={{ minWidth: '100px' }}
           >
             Invoices
           </button>
@@ -369,7 +400,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
           <input
             className="form-control bg-body-secondary"
             type="text"
-            placeholder="Search by Client or ID"
+            placeholder="Search"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
@@ -603,7 +634,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
                 isNewInvoice
                   ? handleSubmit(onSubmit)
                   : isNewBill
-                  ? handleSubmit(handleUpdateBill)
+                  ? handleSubmit(onSubmitBill)
                   : editInvoice
                   ? handleSubmit(handleUpdateInvoice)
                   : handleSubmit(handleUpdateBill)
@@ -673,7 +704,7 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
               ) : (
                 <>
                   <label className="d-flex flex-column justify-content-between mb-2">
-                    Client Name:
+                    Client Name - do check here for bill vs invoice
                     <div>
                       <input
                         className="w-100 form-control"

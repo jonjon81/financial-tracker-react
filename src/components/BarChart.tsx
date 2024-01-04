@@ -92,14 +92,14 @@ const BarChart = () => {
             labels: months,
             datasets: [
               {
-                label: 'Monthly Revenue',
+                label: 'Revenue',
                 data: revenues,
                 backgroundColor: 'rgba(54, 162, 235, 0.5)',
                 borderColor: 'rgba(54, 162, 235, 1)',
                 borderWidth: 1,
               },
               {
-                label: 'Monthly Expenses',
+                label: 'Expenses',
                 data: billsData,
                 backgroundColor: 'rgba(255, 99, 132, 0.5)',
                 borderColor: 'rgba(255, 99, 132, 1)',
