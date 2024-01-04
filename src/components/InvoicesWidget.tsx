@@ -325,6 +325,28 @@ const InvoicesWidget: React.FC<InvoicesProps> = ({ transactions }) => {
     }
   }, [invoices, transactions, invoiceDispatch, tableUpdateCounter]);
 
+  useEffect(() => {
+    const updatedBills = bills.map((bill) => {
+      const matchedTransaction = transactions.find(
+        (transaction) =>
+          new Date(transaction.transactionDate) > new Date(bill.creationDate) &&
+          transaction.amount * -1 === bill.amount &&
+          transaction.referenceNumber === bill.referenceNumber
+      );
+
+      return {
+        ...bill,
+        status: matchedTransaction ? 'PAID' : 'UNPAID',
+      };
+    });
+
+    const statusesChanged = updatedBills.some((bill, index) => bill.status !== bills[index].status);
+
+    if (statusesChanged) {
+      billDispatch(setBills(updatedBills));
+    }
+  }, [bills, transactions, billDispatch, tableUpdateCounter]);
+
   const [activeInvoiceColumn, setActiveInvoiceColumn] = useState<ColumnHeaderInvoice | null>(null);
   const [activeBillColumn, setActiveBillColumn] = useState<ColumnHeaderBill | null>(null);
 

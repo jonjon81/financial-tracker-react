@@ -37,7 +37,7 @@
   {
     "clientName": "Christiansen, VonRueden and Fisher",
     "category": "invoice",
-    "transactionDate": "2021-03-01",
+    "transactionDate": "2021-03-02",
     "referenceNumber": "INV-0006",
     "amount": 1231.8
   },
@@ -72,7 +72,7 @@
   {
     "clientName": "Davis LLC",
     "category": "invoice",
-    "transactionDate": "2021-04-01",
+    "transactionDate": "2021-04-02",
     "referenceNumber": "INV-0011",
     "amount": 702.86
   },
@@ -142,7 +142,7 @@
   {
     "clientName": "Bosco, O'Connell and Langworth",
     "category": "invoice",
-    "transactionDate": "2021-06-01",
+    "transactionDate": "2021-06-02",
     "referenceNumber": "INV-0021",
     "amount": 705.18
   },
@@ -177,7 +177,7 @@
   {
     "clientName": "Wuckert, O'Reilly and Cremin",
     "category": "invoice",
-    "transactionDate": "2021-07-01",
+    "transactionDate": "2021-07-02",
     "referenceNumber": "INV-0026",
     "amount": 1041.46
   },
@@ -247,7 +247,7 @@
   {
     "clientName": "Graham, Zemlak and Lueilwitz",
     "category": "invoice",
-    "transactionDate": "2021-09-01",
+    "transactionDate": "2021-09-02",
     "referenceNumber": "INV-0036",
     "amount": 2185.39
   },
@@ -1235,1029 +1235,1029 @@
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0002",
-    "transactionDate": "2021-02-01",
+    "transactionDate": "2021-03-01",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0003",
-    "transactionDate": "2021-03-01",
+    "transactionDate": "2021-04-01",
     "amount": -11279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0004",
-    "transactionDate": "2021-04-01",
+    "transactionDate": "2021-05-01",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0005",
-    "transactionDate": "2021-05-01",
+    "transactionDate": "2021-06-01",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0006",
-    "transactionDate": "2021-06-01",
+    "transactionDate": "2021-07-01",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0007",
-    "transactionDate": "2021-07-01",
+    "transactionDate": "2021-08-01",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0008",
-    "transactionDate": "2021-08-01",
+    "transactionDate": "2021-09-01",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0009",
-    "transactionDate": "2021-09-01",
+    "transactionDate": "2021-10-01",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0010",
-    "transactionDate": "2021-10-01",
+    "transactionDate": "2021-11-01",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0011",
-    "transactionDate": "2021-11-01",
+    "transactionDate": "2021-12-01",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0012",
-    "transactionDate": "2021-12-01",
+    "transactionDate": "2021-12-02",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0013",
-    "transactionDate": "2024-01-01",
+    "transactionDate": "2024-01-02",
     "amount": -1000
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0014",
-    "transactionDate": "2021-01-01",
+    "transactionDate": "2021-01-02",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0015",
-    "transactionDate": "2021-02-01",
+    "transactionDate": "2021-02-02",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0016",
-    "transactionDate": "2021-03-01",
+    "transactionDate": "2021-03-02",
     "amount": -11279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0017",
-    "transactionDate": "2021-04-01",
+    "transactionDate": "2021-04-02",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0018",
-    "transactionDate": "2021-05-01",
+    "transactionDate": "2021-05-02",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0019",
-    "transactionDate": "2021-06-01",
+    "transactionDate": "2021-06-02",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0020",
-    "transactionDate": "2021-07-01",
+    "transactionDate": "2021-07-02",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0021",
-    "transactionDate": "2021-08-01",
+    "transactionDate": "2021-08-02",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0022",
-    "transactionDate": "2022-09-01",
+    "transactionDate": "2022-09-02",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0023",
-    "transactionDate": "2022-10-01",
+    "transactionDate": "2022-10-02",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0024",
-    "transactionDate": "2022-11-01",
+    "transactionDate": "2022-11-02",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0025",
-    "transactionDate": "2022-12-01",
+    "transactionDate": "2022-12-02",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0026",
-    "transactionDate": "2024-01-01",
+    "transactionDate": "2024-01-02",
     "amount": -1000
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0027",
-    "transactionDate": "2022-01-01",
+    "transactionDate": "2022-01-02",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0028",
-    "transactionDate": "2022-02-01",
+    "transactionDate": "2022-02-02",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0029",
-    "transactionDate": "2022-03-01",
+    "transactionDate": "2022-03-02",
     "amount": -11279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0030",
-    "transactionDate": "2022-04-01",
+    "transactionDate": "2022-04-02",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0032",
-    "transactionDate": "2022-05-01",
+    "transactionDate": "2022-05-02",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0033",
-    "transactionDate": "2022-06-01",
+    "transactionDate": "2022-06-02",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0034",
-    "transactionDate": "2022-07-01",
+    "transactionDate": "2022-07-02",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0035",
-    "transactionDate": "2022-08-01",
+    "transactionDate": "2022-08-02",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0036",
-    "transactionDate": "2022-09-01",
+    "transactionDate": "2022-09-02",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0037",
-    "transactionDate": "2022-10-01",
+    "transactionDate": "2022-10-02",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0038",
-    "transactionDate": "2022-11-01",
+    "transactionDate": "2022-11-02",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0039",
-    "transactionDate": "2022-12-01",
+    "transactionDate": "2022-12-02",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0040",
-    "transactionDate": "2024-01-01",
+    "transactionDate": "2024-01-02",
     "amount": -1000
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0041",
-    "transactionDate": "2022-01-01",
+    "transactionDate": "2022-01-02",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0042",
-    "transactionDate": "2022-02-01",
+    "transactionDate": "2022-02-02",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0043",
-    "transactionDate": "2022-03-01",
+    "transactionDate": "2022-03-02",
     "amount": -11279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0044",
-    "transactionDate": "2022-04-01",
+    "transactionDate": "2022-04-02",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0045",
-    "transactionDate": "2022-05-01",
+    "transactionDate": "2022-05-02",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0046",
-    "transactionDate": "2023-06-01",
+    "transactionDate": "2023-06-02",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0047",
-    "transactionDate": "2023-07-01",
+    "transactionDate": "2023-07-02",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0048",
-    "transactionDate": "2023-08-01",
+    "transactionDate": "2023-08-02",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0049",
-    "transactionDate": "2023-09-01",
+    "transactionDate": "2023-09-02",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0050",
-    "transactionDate": "2023-10-01",
+    "transactionDate": "2023-10-02",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0051",
-    "transactionDate": "2023-11-01",
+    "transactionDate": "2023-11-02",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0052",
-    "transactionDate": "2023-12-01",
+    "transactionDate": "2023-12-02",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0053",
-    "transactionDate": "2024-01-01",
+    "transactionDate": "2024-01-02",
     "amount": -11000
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0054",
-    "transactionDate": "2023-01-01",
+    "transactionDate": "2023-01-02",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0055",
-    "transactionDate": "2023-02-01",
+    "transactionDate": "2023-02-02",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0056",
-    "transactionDate": "2023-03-01",
+    "transactionDate": "2023-03-02",
     "amount": -11279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0057",
-    "transactionDate": "2023-04-01",
+    "transactionDate": "2023-04-02",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0058",
-    "transactionDate": "2023-05-01",
+    "transactionDate": "2023-05-02",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0059",
-    "transactionDate": "2023-06-01",
+    "transactionDate": "2023-06-02",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0060",
-    "transactionDate": "2023-07-01",
+    "transactionDate": "2023-07-02",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0061",
-    "transactionDate": "2023-08-01",
+    "transactionDate": "2023-08-02",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0062",
-    "transactionDate": "2023-09-01",
+    "transactionDate": "2023-09-02",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0063",
-    "transactionDate": "2023-10-01",
+    "transactionDate": "2023-10-02",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0064",
-    "transactionDate": "2023-11-01",
+    "transactionDate": "2023-11-02",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0065",
-    "transactionDate": "2023-12-01",
+    "transactionDate": "2023-12-02",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0066",
-    "transactionDate": "2024-01-01",
+    "transactionDate": "2024-01-02",
     "amount": -1000
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0067",
-    "transactionDate": "2023-01-01",
+    "transactionDate": "2023-01-02",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0068",
-    "transactionDate": "2023-02-01",
+    "transactionDate": "2023-02-02",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0069",
-    "transactionDate": "2023-03-01",
+    "transactionDate": "2023-03-02",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0070",
-    "transactionDate": "2023-04-01",
+    "transactionDate": "2023-04-02",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0071",
-    "transactionDate": "2023-05-01",
+    "transactionDate": "2023-05-02",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0072",
-    "transactionDate": "2023-06-01",
+    "transactionDate": "2023-06-02",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0073",
-    "transactionDate": "2023-07-01",
+    "transactionDate": "2023-07-02",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0074",
-    "transactionDate": "2023-08-01",
+    "transactionDate": "2023-08-02",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0075",
-    "transactionDate": "2023-09-01",
+    "transactionDate": "2023-09-02",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0076",
-    "transactionDate": "2023-10-01",
+    "transactionDate": "2023-10-02",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0077",
-    "transactionDate": "2023-12-01",
+    "transactionDate": "2023-12-02",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0078",
-    "transactionDate": "2024-01-01",
+    "transactionDate": "2024-01-02",
     "amount": -1000
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0079",
-    "transactionDate": "2023-01-01",
+    "transactionDate": "2023-01-02",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0080",
-    "transactionDate": "2023-02-01",
+    "transactionDate": "2023-02-02",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0081",
-    "transactionDate": "2023-03-01",
+    "transactionDate": "2023-03-02",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0082",
-    "transactionDate": "2023-04-01",
+    "transactionDate": "2023-04-02",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0083",
-    "transactionDate": "2023-05-01",
+    "transactionDate": "2023-05-02",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0084",
-    "transactionDate": "2023-06-01",
+    "transactionDate": "2023-06-02",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0085",
-    "transactionDate": "2023-07-01",
+    "transactionDate": "2023-07-02",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0086",
-    "transactionDate": "2023-08-01",
+    "transactionDate": "2023-08-02",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0087",
-    "transactionDate": "2023-09-01",
+    "transactionDate": "2023-09-02",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0088",
-    "transactionDate": "2023-10-01",
+    "transactionDate": "2023-10-02",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0089",
-    "transactionDate": "2023-11-01",
+    "transactionDate": "2023-11-02",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0090",
-    "transactionDate": "2023-12-01",
+    "transactionDate": "2023-12-02",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0091",
-    "transactionDate": "2024-01-01",
+    "transactionDate": "2024-01-02",
     "amount": -1000
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0092",
-    "transactionDate": "2023-01-01",
+    "transactionDate": "2023-01-02",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0093",
-    "transactionDate": "2023-02-01",
+    "transactionDate": "2023-02-02",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0094",
-    "transactionDate": "2023-03-01",
+    "transactionDate": "2023-03-02",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0095",
-    "transactionDate": "2023-04-01",
+    "transactionDate": "2023-04-02",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0096",
-    "transactionDate": "2023-05-01",
+    "transactionDate": "2023-05-02",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0097",
-    "transactionDate": "2023-06-01",
+    "transactionDate": "2023-06-02",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0098",
-    "transactionDate": "2023-07-01",
+    "transactionDate": "2023-07-02",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0099",
-    "transactionDate": "2023-08-01",
+    "transactionDate": "2023-08-02",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0100",
-    "transactionDate": "2023-09-01",
+    "transactionDate": "2023-09-02",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0101",
-    "transactionDate": "2023-10-01",
+    "transactionDate": "2023-10-02",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0102",
-    "transactionDate": "2023-11-01",
+    "transactionDate": "2023-11-02",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0103",
-    "transactionDate": "2023-12-01",
+    "transactionDate": "2023-12-02",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0104",
-    "transactionDate": "2024-01-01",
+    "transactionDate": "2024-01-02",
     "amount": -1000
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0105",
-    "transactionDate": "2023-01-01",
+    "transactionDate": "2023-01-02",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0106",
-    "transactionDate": "2023-02-01",
+    "transactionDate": "2023-02-02",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0107",
-    "transactionDate": "2023-03-01",
+    "transactionDate": "2023-03-02",
     "amount": -11279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0108",
-    "transactionDate": "2023-04-01",
+    "transactionDate": "2023-04-02",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0109",
-    "transactionDate": "2023-05-01",
+    "transactionDate": "2023-05-02",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0110",
-    "transactionDate": "2023-06-01",
+    "transactionDate": "2023-06-02",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0111",
-    "transactionDate": "2023-07-01",
+    "transactionDate": "2023-07-02",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0112",
-    "transactionDate": "2023-08-01",
+    "transactionDate": "2023-08-02",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0113",
-    "transactionDate": "2023-09-01",
+    "transactionDate": "2023-09-02",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0114",
-    "transactionDate": "2023-10-01",
+    "transactionDate": "2023-10-02",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0115",
-    "transactionDate": "2023-11-01",
+    "transactionDate": "2023-11-02",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0116",
-    "transactionDate": "2023-12-01",
+    "transactionDate": "2023-12-02",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0117",
-    "transactionDate": "2024-01-01",
+    "transactionDate": "2024-01-02",
     "amount": -1000
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0118",
-    "transactionDate": "2023-01-01",
+    "transactionDate": "2023-01-02",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0119",
-    "transactionDate": "2023-02-01",
+    "transactionDate": "2023-02-02",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0120",
-    "transactionDate": "2023-03-01",
+    "transactionDate": "2023-03-02",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0121",
-    "transactionDate": "2023-04-01",
+    "transactionDate": "2023-04-02",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0122",
-    "transactionDate": "2023-05-01",
+    "transactionDate": "2023-05-02",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0123",
-    "transactionDate": "2023-06-01",
+    "transactionDate": "2023-06-02",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0124",
-    "transactionDate": "2023-07-01",
+    "transactionDate": "2023-07-02",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0125",
-    "transactionDate": "2023-08-01",
+    "transactionDate": "2023-08-02",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0126",
-    "transactionDate": "2023-09-01",
+    "transactionDate": "2023-09-02",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0127",
-    "transactionDate": "2023-10-01",
+    "transactionDate": "2023-10-02",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0128",
-    "transactionDate": "2023-11-01",
+    "transactionDate": "2023-11-02",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0129",
-    "transactionDate": "2023-12-01",
+    "transactionDate": "2023-12-02",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0130",
-    "transactionDate": "2024-01-01",
+    "transactionDate": "2024-01-02",
     "amount": -1000
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0131",
-    "transactionDate": "2023-01-01",
+    "transactionDate": "2023-01-02",
     "amount": -2279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0132",
-    "transactionDate": "2023-02-01",
+    "transactionDate": "2023-02-02",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0133",
-    "transactionDate": "2023-03-01",
+    "transactionDate": "2023-03-02",
     "amount": -1279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0134",
-    "transactionDate": "2023-04-01",
+    "transactionDate": "2023-04-02",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0135",
-    "transactionDate": "2023-05-01",
+    "transactionDate": "2023-05-02",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0136",
-    "transactionDate": "2023-06-01",
+    "transactionDate": "2023-06-02",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0137",
-    "transactionDate": "2023-07-01",
+    "transactionDate": "2023-07-02",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0138",
-    "transactionDate": "2023-08-01",
+    "transactionDate": "2023-08-02",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0139",
-    "transactionDate": "2023-09-01",
+    "transactionDate": "2023-09-02",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0140",
-    "transactionDate": "2023-10-01",
+    "transactionDate": "2023-10-02",
     "amount": -1875.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0141",
-    "transactionDate": "2023-11-01",
+    "transactionDate": "2023-11-02",
     "amount": -675.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0142",
-    "transactionDate": "2023-12-01",
+    "transactionDate": "2023-12-02",
     "amount": -1475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0147",
-    "transactionDate": "2023-04-01",
+    "transactionDate": "2023-04-02",
     "amount": -279.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0148",
-    "transactionDate": "2023-05-01",
+    "transactionDate": "2023-05-02",
     "amount": -175.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0149",
-    "transactionDate": "2023-06-01",
+    "transactionDate": "2023-06-02",
     "amount": -275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0150",
-    "transactionDate": "2023-07-01",
+    "transactionDate": "2023-07-02",
     "amount": -375.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0151",
-    "transactionDate": "2023-08-01",
+    "transactionDate": "2023-08-02",
     "amount": -475.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0152",
-    "transactionDate": "2023-09-01",
+    "transactionDate": "2023-09-02",
     "amount": -1275.25
   },
   {
     "clientName": "Staples",
     "category": "bill",
     "referenceNumber": "BILL-0153",
-    "transactionDate": "2023-10-01",
+    "transactionDate": "2023-10-02",
     "amount": -1875.25
   }
 ]

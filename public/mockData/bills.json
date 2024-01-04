@@ -1,6 +1,6 @@
 [
   {
-    "vendor": "Staples",
+    "vendor": "Company A",
     "category": "bill",
     "referenceNumber": "BILL-0002",
     "creationDate": "2021-02-01",
@@ -49,1022 +49,1022 @@
     "amount": 475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company A",
     "category": "bill",
     "referenceNumber": "BILL-0009",
     "creationDate": "2021-09-01",
     "amount": 1275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company A",
     "category": "bill",
     "referenceNumber": "BILL-0010",
     "creationDate": "2021-10-01",
     "amount": 1875.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company A",
     "category": "bill",
     "referenceNumber": "BILL-0011",
     "creationDate": "2021-11-01",
     "amount": 675.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company B",
     "category": "bill",
     "referenceNumber": "BILL-0012",
     "creationDate": "2021-12-01",
     "amount": 1475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company B",
     "category": "bill",
     "referenceNumber": "BILL-0013",
     "creationDate": "2024-01-01",
     "amount": 1000
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company B",
     "category": "bill",
     "referenceNumber": "BILL-0014",
     "creationDate": "2021-01-01",
     "amount": 2279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company B",
     "category": "bill",
     "referenceNumber": "BILL-0015",
     "creationDate": "2021-02-01",
     "amount": 1279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company B",
     "category": "bill",
     "referenceNumber": "BILL-0016",
     "creationDate": "2021-03-01",
     "amount": 11279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company C",
     "category": "bill",
     "referenceNumber": "BILL-0017",
     "creationDate": "2021-04-01",
     "amount": 279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company C",
     "category": "bill",
     "referenceNumber": "BILL-0018",
     "creationDate": "2021-05-01",
     "amount": 175.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company C",
     "category": "bill",
     "referenceNumber": "BILL-0019",
     "creationDate": "2021-06-01",
     "amount": 275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company C",
     "category": "bill",
     "referenceNumber": "BILL-0020",
     "creationDate": "2021-07-01",
     "amount": 375.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company C",
     "category": "bill",
     "referenceNumber": "BILL-0021",
     "creationDate": "2021-08-01",
     "amount": 475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company D",
     "category": "bill",
     "referenceNumber": "BILL-0022",
     "creationDate": "2022-09-01",
     "amount": 1275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company D",
     "category": "bill",
     "referenceNumber": "BILL-0023",
     "creationDate": "2022-10-01",
     "amount": 1875.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company D",
     "category": "bill",
     "referenceNumber": "BILL-0024",
     "creationDate": "2022-11-01",
     "amount": 675.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company D",
     "category": "bill",
     "referenceNumber": "BILL-0025",
     "creationDate": "2022-12-01",
     "amount": 1475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company D",
     "category": "bill",
     "referenceNumber": "BILL-0026",
     "creationDate": "2024-01-01",
     "amount": 1000
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company E",
     "category": "bill",
     "referenceNumber": "BILL-0027",
     "creationDate": "2022-01-01",
     "amount": 2279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company E",
     "category": "bill",
     "referenceNumber": "BILL-0028",
     "creationDate": "2022-02-01",
     "amount": 1279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company E",
     "category": "bill",
     "referenceNumber": "BILL-0029",
     "creationDate": "2022-03-01",
     "amount": 11279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company E",
     "category": "bill",
     "referenceNumber": "BILL-0030",
     "creationDate": "2022-04-01",
     "amount": 279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company E",
     "category": "bill",
     "referenceNumber": "BILL-0032",
     "creationDate": "2022-05-01",
     "amount": 175.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company E",
     "category": "bill",
     "referenceNumber": "BILL-0033",
     "creationDate": "2022-06-01",
     "amount": 275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company E",
     "category": "bill",
     "referenceNumber": "BILL-0034",
     "creationDate": "2022-07-01",
     "amount": 375.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company E",
     "category": "bill",
     "referenceNumber": "BILL-0035",
     "creationDate": "2022-08-01",
     "amount": 475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company E",
     "category": "bill",
     "referenceNumber": "BILL-0036",
     "creationDate": "2022-09-01",
     "amount": 1275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company E",
     "category": "bill",
     "referenceNumber": "BILL-0037",
     "creationDate": "2022-10-01",
     "amount": 1875.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company F",
     "category": "bill",
     "referenceNumber": "BILL-0038",
     "creationDate": "2022-11-01",
     "amount": 675.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company F",
     "category": "bill",
     "referenceNumber": "BILL-0039",
     "creationDate": "2022-12-01",
     "amount": 1475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company F",
     "category": "bill",
     "referenceNumber": "BILL-0040",
     "creationDate": "2024-01-01",
     "amount": 1000
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company F",
     "category": "bill",
     "referenceNumber": "BILL-0041",
     "creationDate": "2022-01-01",
     "amount": 2279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company F",
     "category": "bill",
     "referenceNumber": "BILL-0042",
     "creationDate": "2022-02-01",
     "amount": 1279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company G",
     "category": "bill",
     "referenceNumber": "BILL-0043",
     "creationDate": "2022-03-01",
     "amount": 11279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company G",
     "category": "bill",
     "referenceNumber": "BILL-0044",
     "creationDate": "2022-04-01",
     "amount": 279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company G",
     "category": "bill",
     "referenceNumber": "BILL-0045",
     "creationDate": "2022-05-01",
     "amount": 175.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company G",
     "category": "bill",
     "referenceNumber": "BILL-0046",
     "creationDate": "2023-06-01",
     "amount": 275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company G",
     "category": "bill",
     "referenceNumber": "BILL-0047",
     "creationDate": "2023-07-01",
     "amount": 375.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company H",
     "category": "bill",
     "referenceNumber": "BILL-0048",
     "creationDate": "2023-08-01",
     "amount": 475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company H",
     "category": "bill",
     "referenceNumber": "BILL-0049",
     "creationDate": "2023-09-01",
     "amount": 1275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company H",
     "category": "bill",
     "referenceNumber": "BILL-0050",
     "creationDate": "2023-10-01",
     "amount": 1875.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company H",
     "category": "bill",
     "referenceNumber": "BILL-0051",
     "creationDate": "2023-11-01",
     "amount": 675.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company H",
     "category": "bill",
     "referenceNumber": "BILL-0052",
     "creationDate": "2023-12-01",
     "amount": 1475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company I",
     "category": "bill",
     "referenceNumber": "BILL-0053",
     "creationDate": "2024-01-01",
     "amount": 11000
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company I",
     "category": "bill",
     "referenceNumber": "BILL-0054",
     "creationDate": "2023-01-01",
     "amount": 2279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company I",
     "category": "bill",
     "referenceNumber": "BILL-0055",
     "creationDate": "2023-02-01",
     "amount": 1279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company I",
     "category": "bill",
     "referenceNumber": "BILL-0056",
     "creationDate": "2023-03-01",
     "amount": 11279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company I",
     "category": "bill",
     "referenceNumber": "BILL-0057",
     "creationDate": "2023-04-01",
     "amount": 279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company J",
     "category": "bill",
     "referenceNumber": "BILL-0058",
     "creationDate": "2023-05-01",
     "amount": 175.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company J",
     "category": "bill",
     "referenceNumber": "BILL-0059",
     "creationDate": "2023-06-01",
     "amount": 275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company J",
     "category": "bill",
     "referenceNumber": "BILL-0060",
     "creationDate": "2023-07-01",
     "amount": 375.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company J",
     "category": "bill",
     "referenceNumber": "BILL-0061",
     "creationDate": "2023-08-01",
     "amount": 475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company J",
     "category": "bill",
     "referenceNumber": "BILL-0062",
     "creationDate": "2023-09-01",
     "amount": 1275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company K",
     "category": "bill",
     "referenceNumber": "BILL-0063",
     "creationDate": "2023-10-01",
     "amount": 1875.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company K",
     "category": "bill",
     "referenceNumber": "BILL-0064",
     "creationDate": "2023-11-01",
     "amount": 675.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company K",
     "category": "bill",
     "referenceNumber": "BILL-0065",
     "creationDate": "2023-12-01",
     "amount": 1475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company K",
     "category": "bill",
     "referenceNumber": "BILL-0066",
     "creationDate": "2024-01-01",
     "amount": 1000
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company K",
     "category": "bill",
     "referenceNumber": "BILL-0067",
     "creationDate": "2023-01-01",
     "amount": 2279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company L",
     "category": "bill",
     "referenceNumber": "BILL-0068",
     "creationDate": "2023-02-01",
     "amount": 1279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company L",
     "category": "bill",
     "referenceNumber": "BILL-0069",
     "creationDate": "2023-03-01",
     "amount": 1279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company L",
     "category": "bill",
     "referenceNumber": "BILL-0070",
     "creationDate": "2023-04-01",
     "amount": 279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company L",
     "category": "bill",
     "referenceNumber": "BILL-0071",
     "creationDate": "2023-05-01",
     "amount": 175.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company L",
     "category": "bill",
     "referenceNumber": "BILL-0072",
     "creationDate": "2023-06-01",
     "amount": 275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company M",
     "category": "bill",
     "referenceNumber": "BILL-0073",
     "creationDate": "2023-07-01",
     "amount": 375.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company M",
     "category": "bill",
     "referenceNumber": "BILL-0074",
     "creationDate": "2023-08-01",
     "amount": 475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company M",
     "category": "bill",
     "referenceNumber": "BILL-0075",
     "creationDate": "2023-09-01",
     "amount": 1275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company M",
     "category": "bill",
     "referenceNumber": "BILL-0076",
     "creationDate": "2023-10-01",
     "amount": 1875.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company M",
     "category": "bill",
     "referenceNumber": "BILL-0077",
     "creationDate": "2023-12-01",
     "amount": 1475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company N",
     "category": "bill",
     "referenceNumber": "BILL-0078",
     "creationDate": "2024-01-01",
     "amount": 1000
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company N",
     "category": "bill",
     "referenceNumber": "BILL-0079",
     "creationDate": "2023-01-01",
     "amount": 2279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company N",
     "category": "bill",
     "referenceNumber": "BILL-0080",
     "creationDate": "2023-02-01",
     "amount": 1279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company N",
     "category": "bill",
     "referenceNumber": "BILL-0081",
     "creationDate": "2023-03-01",
     "amount": 1279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company N",
     "category": "bill",
     "referenceNumber": "BILL-0082",
     "creationDate": "2023-04-01",
     "amount": 279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company O",
     "category": "bill",
     "referenceNumber": "BILL-0083",
     "creationDate": "2023-05-01",
     "amount": 175.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company O",
     "category": "bill",
     "referenceNumber": "BILL-0084",
     "creationDate": "2023-06-01",
     "amount": 275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company O",
     "category": "bill",
     "referenceNumber": "BILL-0085",
     "creationDate": "2023-07-01",
     "amount": 375.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company O",
     "category": "bill",
     "referenceNumber": "BILL-0086",
     "creationDate": "2023-08-01",
     "amount": 475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company O",
     "category": "bill",
     "referenceNumber": "BILL-0087",
     "creationDate": "2023-09-01",
     "amount": 1275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company P",
     "category": "bill",
     "referenceNumber": "BILL-0088",
     "creationDate": "2023-10-01",
     "amount": 1875.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company P",
     "category": "bill",
     "referenceNumber": "BILL-0089",
     "creationDate": "2023-11-01",
     "amount": 675.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company P",
     "category": "bill",
     "referenceNumber": "BILL-0090",
     "creationDate": "2023-12-01",
     "amount": 1475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company P",
     "category": "bill",
     "referenceNumber": "BILL-0091",
     "creationDate": "2024-01-01",
     "amount": 1000
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company P",
     "category": "bill",
     "referenceNumber": "BILL-0092",
     "creationDate": "2023-01-01",
     "amount": 2279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company Q",
     "category": "bill",
     "referenceNumber": "BILL-0093",
     "creationDate": "2023-02-01",
     "amount": 1279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company Q",
     "category": "bill",
     "referenceNumber": "BILL-0094",
     "creationDate": "2023-03-01",
     "amount": 1279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company Q",
     "category": "bill",
     "referenceNumber": "BILL-0095",
     "creationDate": "2023-04-01",
     "amount": 279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company Q",
     "category": "bill",
     "referenceNumber": "BILL-0096",
     "creationDate": "2023-05-01",
     "amount": 175.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company Q",
     "category": "bill",
     "referenceNumber": "BILL-0097",
     "creationDate": "2023-06-01",
     "amount": 275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company R",
     "category": "bill",
     "referenceNumber": "BILL-0098",
     "creationDate": "2023-07-01",
     "amount": 375.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company R",
     "category": "bill",
     "referenceNumber": "BILL-0099",
     "creationDate": "2023-08-01",
     "amount": 475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company R",
     "category": "bill",
     "referenceNumber": "BILL-0100",
     "creationDate": "2023-09-01",
     "amount": 1275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company R",
     "category": "bill",
     "referenceNumber": "BILL-0101",
     "creationDate": "2023-10-01",
     "amount": 1875.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company R",
     "category": "bill",
     "referenceNumber": "BILL-0102",
     "creationDate": "2023-11-01",
     "amount": 675.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company S",
     "category": "bill",
     "referenceNumber": "BILL-0103",
     "creationDate": "2023-12-01",
     "amount": 1475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company S",
     "category": "bill",
     "referenceNumber": "BILL-0104",
     "creationDate": "2024-01-01",
     "amount": 1000
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company S",
     "category": "bill",
     "referenceNumber": "BILL-0105",
     "creationDate": "2023-01-01",
     "amount": 2279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company S",
     "category": "bill",
     "referenceNumber": "BILL-0106",
     "creationDate": "2023-02-01",
     "amount": 1279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company S",
     "category": "bill",
     "referenceNumber": "BILL-0107",
     "creationDate": "2023-03-01",
     "amount": 11279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company T",
     "category": "bill",
     "referenceNumber": "BILL-0108",
     "creationDate": "2023-04-01",
     "amount": 279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company T",
     "category": "bill",
     "referenceNumber": "BILL-0109",
     "creationDate": "2023-05-01",
     "amount": 175.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company T",
     "category": "bill",
     "referenceNumber": "BILL-0110",
     "creationDate": "2023-06-01",
     "amount": 275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company T",
     "category": "bill",
     "referenceNumber": "BILL-0111",
     "creationDate": "2023-07-01",
     "amount": 375.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company T",
     "category": "bill",
     "referenceNumber": "BILL-0112",
     "creationDate": "2023-08-01",
     "amount": 475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company U",
     "category": "bill",
     "referenceNumber": "BILL-0113",
     "creationDate": "2023-09-01",
     "amount": 1275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company U",
     "category": "bill",
     "referenceNumber": "BILL-0114",
     "creationDate": "2023-10-01",
     "amount": 1875.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company U",
     "category": "bill",
     "referenceNumber": "BILL-0115",
     "creationDate": "2023-11-01",
     "amount": 675.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company U",
     "category": "bill",
     "referenceNumber": "BILL-0116",
     "creationDate": "2023-12-01",
     "amount": 1475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company U",
     "category": "bill",
     "referenceNumber": "BILL-0117",
     "creationDate": "2024-01-01",
     "amount": 1000
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company V",
     "category": "bill",
     "referenceNumber": "BILL-0118",
     "creationDate": "2023-01-01",
     "amount": 2279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company V",
     "category": "bill",
     "referenceNumber": "BILL-0119",
     "creationDate": "2023-02-01",
     "amount": 1279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company V",
     "category": "bill",
     "referenceNumber": "BILL-0120",
     "creationDate": "2023-03-01",
     "amount": 1279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company V",
     "category": "bill",
     "referenceNumber": "BILL-0121",
     "creationDate": "2023-04-01",
     "amount": 279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company V",
     "category": "bill",
     "referenceNumber": "BILL-0122",
     "creationDate": "2023-05-01",
     "amount": 175.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company W",
     "category": "bill",
     "referenceNumber": "BILL-0123",
     "creationDate": "2023-06-01",
     "amount": 275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company W",
     "category": "bill",
     "referenceNumber": "BILL-0124",
     "creationDate": "2023-07-01",
     "amount": 375.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company W",
     "category": "bill",
     "referenceNumber": "BILL-0125",
     "creationDate": "2023-08-01",
     "amount": 475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company W",
     "category": "bill",
     "referenceNumber": "BILL-0126",
     "creationDate": "2023-09-01",
     "amount": 1275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company X",
     "category": "bill",
     "referenceNumber": "BILL-0127",
     "creationDate": "2023-10-01",
     "amount": 1875.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company X",
     "category": "bill",
     "referenceNumber": "BILL-0128",
     "creationDate": "2023-11-01",
     "amount": 675.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company X",
     "category": "bill",
     "referenceNumber": "BILL-0129",
     "creationDate": "2023-12-01",
     "amount": 1475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company X",
     "category": "bill",
     "referenceNumber": "BILL-0130",
     "creationDate": "2024-01-01",
     "amount": 1000
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company X",
     "category": "bill",
     "referenceNumber": "BILL-0131",
     "creationDate": "2023-01-01",
     "amount": 2279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company Y",
     "category": "bill",
     "referenceNumber": "BILL-0132",
     "creationDate": "2023-02-01",
     "amount": 1279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company Y",
     "category": "bill",
     "referenceNumber": "BILL-0133",
     "creationDate": "2023-03-01",
     "amount": 1279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company Y",
     "category": "bill",
     "referenceNumber": "BILL-0134",
     "creationDate": "2023-04-01",
     "amount": 279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company Y",
     "category": "bill",
     "referenceNumber": "BILL-0135",
     "creationDate": "2023-05-01",
     "amount": 175.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company Y",
     "category": "bill",
     "referenceNumber": "BILL-0136",
     "creationDate": "2023-06-01",
     "amount": 275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company Z",
     "category": "bill",
     "referenceNumber": "BILL-0137",
     "creationDate": "2023-07-01",
     "amount": 375.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company Z",
     "category": "bill",
     "referenceNumber": "BILL-0138",
     "creationDate": "2023-08-01",
     "amount": 475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company Z",
     "category": "bill",
     "referenceNumber": "BILL-0139",
     "creationDate": "2023-09-01",
     "amount": 1275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company Z",
     "category": "bill",
     "referenceNumber": "BILL-0140",
     "creationDate": "2023-10-01",
     "amount": 1875.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company Z",
     "category": "bill",
     "referenceNumber": "BILL-0141",
     "creationDate": "2023-11-01",
     "amount": 675.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company 123",
     "category": "bill",
     "referenceNumber": "BILL-0142",
     "creationDate": "2023-12-01",
     "amount": 1475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company 123",
     "category": "bill",
     "referenceNumber": "BILL-0143",
     "creationDate": "2024-01-01",
     "amount": 1000
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company 123",
     "category": "bill",
     "referenceNumber": "BILL-0144",
     "creationDate": "2023-01-01",
     "amount": 2279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company 123",
     "category": "bill",
     "referenceNumber": "BILL-0145",
     "creationDate": "2023-02-01",
     "amount": 1279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company 123",
     "category": "bill",
     "referenceNumber": "BILL-0146",
     "creationDate": "2023-03-01",
     "amount": 1279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company XYZ",
     "category": "bill",
     "referenceNumber": "BILL-0147",
     "creationDate": "2023-04-01",
     "amount": 279.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company XYZ",
     "category": "bill",
     "referenceNumber": "BILL-0148",
     "creationDate": "2023-05-01",
     "amount": 175.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company XYZ",
     "category": "bill",
     "referenceNumber": "BILL-0149",
     "creationDate": "2023-06-01",
     "amount": 275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company XYZ",
     "category": "bill",
     "referenceNumber": "BILL-0150",
     "creationDate": "2023-07-01",
     "amount": 375.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Intuit",
     "category": "bill",
     "referenceNumber": "BILL-0151",
     "creationDate": "2023-08-01",
     "amount": 475.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company A",
     "category": "bill",
     "referenceNumber": "BILL-0152",
     "creationDate": "2023-09-01",
     "amount": 1275.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Company 123",
     "category": "bill",
     "referenceNumber": "BILL-0153",
     "creationDate": "2023-10-01",
     "amount": 1875.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Intuit",
     "category": "bill",
     "referenceNumber": "BILL-0154",
     "creationDate": "2023-11-01",
     "amount": 675.25
   },
   {
-    "vendor": "Staples",
+    "vendor": "Google",
     "category": "bill",
     "referenceNumber": "BILL-0155",
     "creationDate": "2023-12-01",
