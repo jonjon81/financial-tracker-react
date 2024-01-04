@@ -28,8 +28,8 @@ const App: React.FC = () => {
       ) : (
         <div className="dashboard">
           <SummaryWidget />
-          <BarChart />
           <InvoicesWidget transactions={transactionState.transactions} />
+          <BarChart />
         </div>
       )}
     </div>
